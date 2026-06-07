@@ -1,4 +1,4 @@
-﻿# tFUS simulation starter
+# fus-sim
 
 This workspace starts a lightweight Python reproduction path for transcranial focused ultrasound simulation.
 
@@ -48,7 +48,7 @@ The project is active research software. Current outputs are useful for reproduc
 New platform modules should start from an evidence brief before implementation. This keeps paper parameters, public-tool references, and current platform gaps tied to engineering decisions.
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module freefield_calibration --output-dir outputs\evidence_briefs\freefield_calibration
+python generate_module_evidence_brief.py --module freefield_calibration --output-dir outputs\evidence_briefs\freefield_calibration
 ```
 
 Outputs:
@@ -74,7 +74,7 @@ Rules are documented in `EVIDENCE_DRIVEN_DEVELOPMENT.md`. The first generated br
 The current roadmap shifts the platform from "can run" toward "each default parameter has evidence." Use the parameter evidence generator before treating a value as a platform default:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_platform_parameter_profile.py
+python generate_platform_parameter_profile.py
 ```
 
 Outputs:
@@ -97,9 +97,9 @@ The Chinese report records the current interpretation boundaries:
 Roadmap stage 2 adds a water/free-field sanity check before treating any transducer geometry as a reusable platform setting.
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_freefield_transducer.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --output-dir outputs\freefield_calibration\ap25_r30_f500
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_freefield_transducer.py --aperture-mm 30 --radius-mm 35 --frequency-khz 500 --source-pressure-mpa 1 --medium water --output-dir outputs\freefield_calibration\ap30_r35_f500
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe compare_freefield_calibration.py --baseline-dir outputs\freefield_calibration\ap25_r30_f500 --candidate-dir outputs\freefield_calibration\ap30_r35_f500 --output-dir outputs\freefield_calibration
+python simulate_freefield_transducer.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --output-dir outputs\freefield_calibration\ap25_r30_f500
+python simulate_freefield_transducer.py --aperture-mm 30 --radius-mm 35 --frequency-khz 500 --source-pressure-mpa 1 --medium water --output-dir outputs\freefield_calibration\ap30_r35_f500
+python compare_freefield_calibration.py --baseline-dir outputs\freefield_calibration\ap25_r30_f500 --candidate-dir outputs\freefield_calibration\ap30_r35_f500 --output-dir outputs\freefield_calibration
 ```
 
 Outputs:
@@ -116,9 +116,9 @@ Boundary: these are quick uniform-medium calibration runs. Source pressure, free
 CT material mapping is now profile-based. The old hard-coded `HU >= 300` behavior is preserved by `simple_hu300.json`, while `simple_hu250.json` is available only for sensitivity comparison.
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module ct_hu_mapping --output-dir outputs\evidence_briefs\ct_hu_mapping
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --target-index 93,121,63 --mapping-profile acoustic_mapping_profiles\simple_hu300.json --output-dir outputs\ct_acoustic_model_3d_profile_hu300
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe compare_ct_mapping_profiles.py --baseline-dir outputs\ct_acoustic_model_3d --candidate-dir outputs\ct_acoustic_model_3d_profile_hu300 --extra-dir outputs\ct_acoustic_model_3d_profile_hu250 --output-dir outputs\ct_mapping_profile_compare_079
+python generate_module_evidence_brief.py --module ct_hu_mapping --output-dir outputs\evidence_briefs\ct_hu_mapping
+python build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --target-index 93,121,63 --mapping-profile acoustic_mapping_profiles\simple_hu300.json --output-dir outputs\ct_acoustic_model_3d_profile_hu300
+python compare_ct_mapping_profiles.py --baseline-dir outputs\ct_acoustic_model_3d --candidate-dir outputs\ct_acoustic_model_3d_profile_hu300 --extra-dir outputs\ct_acoustic_model_3d_profile_hu250 --output-dir outputs\ct_mapping_profile_compare_079
 ```
 
 Profile files:
@@ -142,8 +142,8 @@ Boundary: mapping-profile comparison does not run k-Wave and does not replace th
 The source-backed attenuation route `prestus_fit_alpha_power_2` now has an evidence brief and isolated 079 model-build validation:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module fit_alpha_power_migration --output-dir outputs\evidence_briefs\fit_alpha_power_migration
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --target-index 93,121,63 --mapping-profile acoustic_mapping_profiles\prestus_fit_alpha_power_2.json --output-dir outputs\ct_acoustic_model_3d_profile_prestus_fit_alpha_power_2
+python generate_module_evidence_brief.py --module fit_alpha_power_migration --output-dir outputs\evidence_briefs\fit_alpha_power_migration
+python build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --target-index 93,121,63 --mapping-profile acoustic_mapping_profiles\prestus_fit_alpha_power_2.json --output-dir outputs\ct_acoustic_model_3d_profile_prestus_fit_alpha_power_2
 ```
 
 Outputs:
@@ -201,18 +201,18 @@ The script samples the transducer as coherent point sources on a spherical cap, 
 ## Run
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_spherical_focus.py
+python simulate_spherical_focus.py
 ```
 
 ## Environment
 
-The project uses a dedicated Python 3.12 virtual environment at `D:\AIprogram\python-envs\kwave312`.
+For full k-Wave workflows, use a Python 3.12 environment with `requirements-kwave312.txt` installed.
 Python 3.14 is still installed separately and is not used for k-Wave work.
 
 To verify the environment:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe -c "import numpy, scipy, matplotlib, h5py; import kwave; print('ok')"
+python -c "import numpy, scipy, matplotlib, h5py; import kwave; print('ok')"
 ```
 
 ## Notes
@@ -233,7 +233,7 @@ This starter script is not yet a k-Wave time-domain solver. It is a fast baselin
 Run:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_2d_focus.py
+python simulate_kwave_2d_focus.py
 ```
 
 Outputs:
@@ -252,7 +252,7 @@ The script sets `TEMP`, `TMP`, and `MPLCONFIGDIR` to project-local folders befor
 Run:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_3d_acoustic_model.py
+python build_3d_acoustic_model.py
 ```
 
 Outputs:
@@ -272,7 +272,7 @@ The `.npz` file contains `labels`, `sound_speed`, `density`, `alpha_coeff`, `dx_
 Run:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py
+python simulate_kwave_3d_focus.py
 ```
 
 Outputs:
@@ -292,7 +292,7 @@ Outputs:
 To re-analyze an existing 3D output without re-running k-Wave:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe analyze_kwave_3d_focus.py
+python analyze_kwave_3d_focus.py
 ```
 
 Current main line:
@@ -308,21 +308,21 @@ Current main line:
 Install CT import support if needed:
 
 ```powershell
-$env:TEMP='D:\AIprogram\fus-sim\.tmp'
-$env:TMP='D:\AIprogram\fus-sim\.tmp'
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe -m pip install --cache-dir D:\AIprogram\fus-sim\.tmp\pip-cache pydicom==3.0.1 nibabel==5.4.2
+$env:TEMP='.tmp'
+$env:TMP='.tmp'
+python -m pip install --cache-dir .tmp\pip-cache pydicom==3.0.1 nibabel==5.4.2
 ```
 
 Convert the downloaded 079 NIfTI CT case:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0
+python build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0
 ```
 
 Convert a DICOM CT case:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_ct_acoustic_model.py --dicom-dir data\raw_ct\case001
+python build_ct_acoustic_model.py --dicom-dir data\raw_ct\case001
 ```
 
 Outputs:
@@ -337,8 +337,8 @@ Outputs:
 Run 3D k-Wave with a CT-derived model:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\kwave_3d_focus_ct_079
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe analyze_kwave_3d_focus.py --input-dir outputs\kwave_3d_focus_ct_079
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\kwave_3d_focus_ct_079
+python analyze_kwave_3d_focus.py --input-dir outputs\kwave_3d_focus_ct_079
 ```
 
 For the 079 quick run, the default target is the centroid of soft-tissue voxels. This is enough to validate the real CT pipeline, but the next modeling step is to choose a clinically meaningful target and force the source bowl to sit outside the skull along the desired entry path.
@@ -346,20 +346,20 @@ For the 079 quick run, the default target is the centroid of soft-tissue voxels.
 Plan a left-side extracranial entry path and run a faster smoke simulation:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe plan_ct_target_entry.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_plan_079
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --entry-plan outputs\ct_entry_plan_079\entry_plan.json --output-dir outputs\kwave_3d_focus_ct_079_entry_fast --sim-time-us 25 --quick-lateral-mm 17 --quick-post-target-mm 8
+python plan_ct_target_entry.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_plan_079
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --entry-plan outputs\ct_entry_plan_079\entry_plan.json --output-dir outputs\kwave_3d_focus_ct_079_entry_fast --sim-time-us 25 --quick-lateral-mm 17 --quick-post-target-mm 8
 ```
 
 Scan several left-side entry offsets safely. The default command only generates and ranks candidates; it does not run k-Wave:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079
+python scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079
 ```
 
 Run k-Wave only for the lightest ranked candidate:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079 --run-fast --max-fast-runs 1
+python scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079 --run-fast --max-fast-runs 1
 ```
 
 The scan runner now estimates fast simulation time from source-target distance. For the 079 center candidate this gives about 51 us, long enough for the wave to reach the target region.
@@ -367,7 +367,7 @@ The scan runner now estimates fast simulation time from source-target distance. 
 Validate the top three geometry-ranked candidates while reusing any existing `kwave_fast` result:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079 --run-fast --top-ranked 3
+python scan_ct_entry_positions.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --output-dir outputs\ct_entry_scan_079 --run-fast --top-ranked 3
 ```
 
 The early 079 entry scan found `candidate_011` as the best of the first three candidates by target-window pressure. The current best quick-3D configuration is now:
@@ -387,7 +387,7 @@ output: outputs/ct_transducer_stability_target_020/ap30_r35_c8_t55/
 This current best gives a target-window peak pressure of about `2.254 MPa` in quick mode. A first-order thermal estimate can be generated from this pressure field:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe estimate_temperature_rise.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\thermal_estimate_target_020_best --sonication-s 1.0
+python estimate_temperature_rise.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\thermal_estimate_target_020_best --sonication-s 1.0
 ```
 
 The thermal estimate is a first-order heat deposition calculation, not a full Pennes bioheat simulation. For 1 second equivalent continuous sonication it reports about `1.45 C` at the target voxel and about `23.76 C` maximum temperature rise near the high-absorption region, so later safety analysis should refine duty cycle, perfusion, and diffusion.
@@ -395,7 +395,7 @@ The thermal estimate is a first-order heat deposition calculation, not a full Pe
 A lightweight Pennes-style bioheat estimate adds duty cycle, thermal diffusion, and soft-tissue perfusion:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_best --duration-s 0.067 --duty-cycle 0.06 --dt-s 0.005
+python simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_best --duration-s 0.067 --duty-cycle 0.06 --dt-s 0.005
 ```
 
 Using the paper-like `67 ms` stimulus train and `6%` duty cycle, the lightweight Pennes estimate reports about `0.006 C` at the target voxel and about `0.094 C` maximum temperature rise. This is still a quick cropped-domain safety estimate with approximate material and perfusion maps.
@@ -403,8 +403,8 @@ Using the paper-like `67 ms` stimulus train and `6%` duty cycle, the lightweight
 The Pennes script also supports explicit pulse timing. For the paper-like `300 Hz` PRF and `6%` duty cycle, one `67 ms` train produces about `0.006 C` target rise and `0.099 C` max rise; three trains separated by `2.5 s` produce about `0.018 C` target rise and `0.175 C` max rise:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_pulse_train1 --pulse-mode explicit --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --trains 1 --dt-s 0.001
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_pulse_train3 --pulse-mode explicit --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --inter-train-s 2.5 --trains 3 --dt-s 0.005
+python simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_pulse_train1 --pulse-mode explicit --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --trains 1 --dt-s 0.001
+python simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_bioheat_target_020_pulse_train3 --pulse-mode explicit --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --inter-train-s 2.5 --trains 3 --dt-s 0.005
 ```
 
 The thermal script supports three heat-source modes:
@@ -416,13 +416,13 @@ The thermal script supports three heat-source modes:
 For the paper-like three-train protocol, `protocol-averaged` uses an effective duty cycle of about `0.242%` over `5.201 s`. It gives about `0.016 C` target rise and `0.155 C` max rise, close to the explicit three-train result:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_protocol_avg_target_020_train3 --pulse-mode protocol-averaged --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --inter-train-s 2.5 --trains 3 --dt-s 0.005
+python simulate_pennes_bioheat.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_protocol_avg_target_020_train3 --pulse-mode protocol-averaged --prf-hz 300 --pulse-duty-cycle 0.06 --train-duration-s 0.067 --inter-train-s 2.5 --trains 3 --dt-s 0.005
 ```
 
 A protocol-averaged sensitivity scan over soft-tissue perfusion and skull conductivity can be run with:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_pennes_sensitivity.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_sensitivity_target_020_protocol_avg --pulse-mode protocol-averaged
+python scan_pennes_sensitivity.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_sensitivity_target_020_protocol_avg --pulse-mode protocol-averaged
 ```
 
 The protocol-averaged 12-case scan completed in about 34 seconds. The worst case was zero soft-tissue perfusion with skull conductivity `0.20 W/m/K`, giving max temperature about `37.19 C`, target rise about `0.016 C`, and target-window rise about `0.023 C`.
@@ -432,7 +432,7 @@ The old constant-averaged upper-bound scan can still be reproduced with `--pulse
 To estimate dose accumulation over repeated paper-like trains, run:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_pennes_protocol_dose.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_protocol_dose_target_020
+python scan_pennes_protocol_dose.py --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --output-dir outputs\pennes_protocol_dose_target_020
 ```
 
 The default dose scan uses the conservative thermal materials `soft_perfusion_s=0` and skull conductivity `0.20 W/m/K`, then scans `1,3,10,30,60,90,120` trains. In the current quick model, the hottest scanned case is `120` trains with max temperature about `37.87 C`, target rise about `0.124 C`, and margin to `42 C` about `4.13 C`. This is a dose-trend estimate from the cropped quick model, not a medical safety claim.
@@ -440,7 +440,7 @@ The default dose scan uses the conservative thermal materials `soft_perfusion_s=
 Generate a case-level QC report that gathers the CT model, current best pressure run, and thermal trend outputs:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_case_report.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --ct-summary outputs\ct_acoustic_model_3d\summary.json --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --thermal-dir outputs\pennes_protocol_avg_target_020_train3 --sensitivity-dir outputs\pennes_sensitivity_target_020_protocol_avg --dose-dir outputs\pennes_protocol_dose_target_020 --output-dir outputs\case_report_079
+python generate_case_report.py --model outputs\ct_acoustic_model_3d\acoustic_model_3d.npz --ct-summary outputs\ct_acoustic_model_3d\summary.json --pressure-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --thermal-dir outputs\pennes_protocol_avg_target_020_train3 --sensitivity-dir outputs\pennes_sensitivity_target_020_protocol_avg --dose-dir outputs\pennes_protocol_dose_target_020 --output-dir outputs\case_report_079
 ```
 
 The report is written to `outputs/case_report_079/case_report_079.md` with a machine-readable companion `case_report_079_summary.json`. It is meant for internal review and explicitly separates platform validation from paper-level reproduction or medical safety claims.
@@ -448,7 +448,7 @@ The report is written to `outputs/case_report_079/case_report_079.md` with a mac
 Evaluate CT skull threshold sensitivity before rebuilding the acoustic model:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe evaluate_ct_segmentation.py --nifti-file data\raw_ct\079.nii --target-index 93,121,63 --entry-index 63,131,63 --output-dir outputs\ct_segmentation_eval_079
+python evaluate_ct_segmentation.py --nifti-file data\raw_ct\079.nii --target-index 93,121,63 --entry-index 63,131,63 --output-dir outputs\ct_segmentation_eval_079
 ```
 
 This writes `outputs/ct_segmentation_eval_079/segmentation_eval.csv` plus per-threshold label previews. For the current target/entry path, `250 HU` and `300 HU` retain a bone crossing, while `400 HU` and above lose the current entry-path skull crossing. The evaluator recommends `250 HU` as a separate rebuild candidate, but it does not overwrite the current model or any best-result outputs.
@@ -456,9 +456,9 @@ This writes `outputs/ct_segmentation_eval_079/segmentation_eval.csv` plus per-th
 The `250 HU` candidate can be rebuilt and compared without replacing the current best model:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --bone-threshold-hu 250 --target-index 93,121,63 --output-dir outputs\ct_acoustic_model_3d_bone_250
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d_bone_250\acoustic_model_3d.npz --entry-plan outputs\ct_entry_offset_scan_target_020_safe\candidate_006\entry_plan.json --output-dir outputs\ct_pressure_compare_bone_250\ap30_r35_c8_t55 --sim-time-us 55 --cycles 8 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 30 --radius-mm 35
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe compare_pressure_runs.py --baseline-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --candidate-dir outputs\ct_pressure_compare_bone_250\ap30_r35_c8_t55 --output-dir outputs\ct_pressure_compare_bone_250
+python build_ct_acoustic_model.py --nifti-file data\raw_ct\079.nii --target-dx-mm 1.0 --bone-threshold-hu 250 --target-index 93,121,63 --output-dir outputs\ct_acoustic_model_3d_bone_250
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_model_3d_bone_250\acoustic_model_3d.npz --entry-plan outputs\ct_entry_offset_scan_target_020_safe\candidate_006\entry_plan.json --output-dir outputs\ct_pressure_compare_bone_250\ap30_r35_c8_t55 --sim-time-us 55 --cycles 8 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 30 --radius-mm 35
+python compare_pressure_runs.py --baseline-dir outputs\ct_transducer_stability_target_020\ap30_r35_c8_t55 --candidate-dir outputs\ct_pressure_compare_bone_250\ap30_r35_c8_t55 --output-dir outputs\ct_pressure_compare_bone_250
 ```
 
 In the current comparison, the `250 HU` source mask remains background-only, but target-window peak drops from `2.254 MPa` to `1.645 MPa`, and effective peak distance does not improve. Keep the `300 HU` run as the current best; do not keep tuning bone threshold blindly.
@@ -468,7 +468,7 @@ In the current comparison, the `250 HU` source mask remains background-only, but
 `inventory_ct_cases.py` scans local CT inputs under `data/raw_ct/` and writes a manifest without downloading data, rebuilding acoustic models, or running k-Wave. It currently recognizes NIfTI files (`.nii`, `.nii.gz`) and DICOM folders:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe inventory_ct_cases.py --input-dir data\raw_ct --output-dir data\processed
+python inventory_ct_cases.py --input-dir data\raw_ct --output-dir data\processed
 ```
 
 Outputs:
@@ -479,8 +479,8 @@ Outputs:
 Run lightweight QC for one case before converting it into an acoustic model:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe validate_ct_case.py --case-id 079 --ct-path data\raw_ct\079.nii --output-dir outputs\ct_case_qc\079
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe validate_ct_case.py --case-id synthetic_case --ct-path data\raw_ct\synthetic_case --output-dir outputs\ct_case_qc\synthetic_case
+python validate_ct_case.py --case-id 079 --ct-path data\raw_ct\079.nii --output-dir outputs\ct_case_qc\079
+python validate_ct_case.py --case-id synthetic_case --ct-path data\raw_ct\synthetic_case --output-dir outputs\ct_case_qc\synthetic_case
 ```
 
 Current local cases:
@@ -497,8 +497,8 @@ case manifest -> new-case QC -> CT acoustic model conversion -> reusable quick p
 Build independent acoustic models for all manifest-approved local cases without touching the current 079 best model:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe batch_build_ct_models.py --manifest data\processed\ct_case_manifest.json --output-root outputs\ct_acoustic_models_batch
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe batch_build_ct_models.py --manifest data\processed\ct_case_manifest.json --output-root outputs\ct_acoustic_models_batch --run
+python batch_build_ct_models.py --manifest data\processed\ct_case_manifest.json --output-root outputs\ct_acoustic_models_batch
+python batch_build_ct_models.py --manifest data\processed\ct_case_manifest.json --output-root outputs\ct_acoustic_models_batch --run
 ```
 
 The first command is a dry-run plan. The second command writes per-case model folders such as:
@@ -511,7 +511,7 @@ Each case folder includes `acoustic_model_3d.npz`, `summary.json`, preview image
 Prepare reusable quick-pressure entry/safety packages from the batch models without running k-Wave:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_case_quick_pressure.py --batch-summary outputs\ct_acoustic_models_batch\batch_summary.json --output-dir outputs\case_quick_pressure_plan
+python prepare_case_quick_pressure.py --batch-summary outputs\ct_acoustic_models_batch\batch_summary.json --output-dir outputs\case_quick_pressure_plan
 ```
 
 Outputs:
@@ -527,9 +527,9 @@ For the current local cases, `079` is ready for a manual smoke run and its sourc
 Run the prepared `079` smoke case manually and summarize smoke outputs:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_batch\079_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\case_quick_pressure_plan\079\entry_plan.json --output-dir outputs\case_quick_pressure_runs\079_smoke --sim-time-us 45 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe analyze_kwave_3d_focus.py --input-dir outputs\case_quick_pressure_runs\079_smoke
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_quick_pressure_runs.py --plan-summary outputs\case_quick_pressure_plan\quick_pressure_plan_summary.json --runs-root outputs\case_quick_pressure_runs
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_batch\079_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\case_quick_pressure_plan\079\entry_plan.json --output-dir outputs\case_quick_pressure_runs\079_smoke --sim-time-us 45 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python analyze_kwave_3d_focus.py --input-dir outputs\case_quick_pressure_runs\079_smoke
+python summarize_quick_pressure_runs.py --plan-summary outputs\case_quick_pressure_plan\quick_pressure_plan_summary.json --runs-root outputs\case_quick_pressure_runs
 ```
 
 Current smoke summary:
@@ -542,7 +542,7 @@ The `079_smoke` run validates the multi-case plumbing from batch model to k-Wave
 Prepare a per-case refinement plan for weak smoke runs without launching k-Wave:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_case_refinement_plan.py --run-summary outputs\case_quick_pressure_runs\quick_pressure_run_summary.json --output-dir outputs\case_refinement_plan
+python prepare_case_refinement_plan.py --run-summary outputs\case_quick_pressure_runs\quick_pressure_run_summary.json --output-dir outputs\case_refinement_plan
 ```
 
 For `079`, this refinement planner recovers the earlier useful target candidate `[93,121,63]` from the batch model and writes:
@@ -558,9 +558,9 @@ The generated recommendation is geometry/safety-ranked and does not claim pressu
 Validate the pressure-tuned refinement candidate `(10,0)` as a single direct k-Wave run:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_batch\079_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\case_refinement_plan\079\candidate_006\entry_plan.json --output-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0 --sim-time-us 55 --cycles 8 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 30 --radius-mm 35
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe analyze_kwave_3d_focus.py --input-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_refinement_runs.py --runs-root outputs\case_refinement_runs --case-id 079 --candidate-id candidate_006 --run-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0 --entry-plan outputs\case_refinement_plan\079\candidate_006\entry_plan.json
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_batch\079_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\case_refinement_plan\079\candidate_006\entry_plan.json --output-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0 --sim-time-us 55 --cycles 8 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 30 --radius-mm 35
+python analyze_kwave_3d_focus.py --input-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0
+python summarize_refinement_runs.py --runs-root outputs\case_refinement_runs --case-id 079 --candidate-id candidate_006 --run-dir outputs\case_refinement_runs\079_candidate_006_offset_10_0 --entry-plan outputs\case_refinement_plan\079\candidate_006\entry_plan.json
 ```
 
 This recovered the hand-tuned quick result from the batch/refinement path: `target_window_peak_mpa=2.254`, about `169x` the default smoke result, with source mask still background-only. This confirms the reusable multi-case pipeline can reproduce the known 079 tuned route.
@@ -568,7 +568,7 @@ This recovered the hand-tuned quick result from the batch/refinement path: `targ
 Generate the current multi-case stage report without running new simulations:
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_multicase_stage_report.py --manifest data\processed\ct_case_manifest.json --batch-summary outputs\ct_acoustic_models_batch\batch_summary.json --quick-plan outputs\case_quick_pressure_plan\quick_pressure_plan_summary.json --smoke-summary outputs\case_quick_pressure_runs\quick_pressure_run_summary.json --refinement-plan outputs\case_refinement_plan\refinement_plan_summary.json --refinement-summary outputs\case_refinement_runs\refinement_run_summary.json --output-dir outputs\multicase_stage_report
+python generate_multicase_stage_report.py --manifest data\processed\ct_case_manifest.json --batch-summary outputs\ct_acoustic_models_batch\batch_summary.json --quick-plan outputs\case_quick_pressure_plan\quick_pressure_plan_summary.json --smoke-summary outputs\case_quick_pressure_runs\quick_pressure_run_summary.json --refinement-plan outputs\case_refinement_plan\refinement_plan_summary.json --refinement-summary outputs\case_refinement_runs\refinement_run_summary.json --output-dir outputs\multicase_stage_report
 ```
 
 Report outputs:
@@ -582,8 +582,8 @@ The report documents that there is currently one real CT case (`079`) and one DI
 登记公开 CT 数据源，并生成 dry-run 下载计划；这一步不下载任何文件：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe catalog_public_ct_sources.py --output-dir data\processed
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe plan_public_ct_download.py --sources data\processed\public_ct_sources.json --output-dir outputs\public_ct_download_plan
+python catalog_public_ct_sources.py --output-dir data\processed
+python plan_public_ct_download.py --sources data\processed\public_ct_sources.json --output-dir outputs\public_ct_download_plan
 ```
 
 输出：
@@ -598,7 +598,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe plan_public_ct_download.py 
 生成下一例公开 CT 病例的候选 shortlist：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe shortlist_public_ct_cases.py --sources data\processed\public_ct_sources.json --output-dir outputs\public_ct_case_shortlist
+python shortlist_public_ct_cases.py --sources data\processed\public_ct_sources.json --output-dir outputs\public_ct_case_shortlist
 ```
 
 输出：
@@ -612,7 +612,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe shortlist_public_ct_cases.p
 为这个公开病例目标准备下载前/下载后的接入守门检查：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_public_case_import.py --case-id hn_cetuximab_0522c0027_series5577 --output-dir outputs\public_case_import
+python prepare_public_case_import.py --case-id hn_cetuximab_0522c0027_series5577 --output-dir outputs\public_case_import
 ```
 
 在本地放入文件之前，该命令会写出 `pending_manual_download` 状态。手动把单个 CT series 放入 `data/raw_ct/public/hn_cetuximab_0522c0027_series5577/` 后，重新运行同一命令，它会执行轻量 DICOM/CT QC，并生成后续 manifest、batch build、quick pressure 准备命令。公开病例的 manifest 会写到 `data/processed/public_import/`，避免覆盖当前本地 `079` manifest。
@@ -620,7 +620,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_public_case_import.
 为选中的单个 TCIA/NBIA series 生成中文手动下载指南：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe write_tcia_download_guide.py --import-status outputs\public_case_import\hn_cetuximab_0522c0027_series5577\import_status.json --output-dir outputs\public_tcia_download_guide
+python write_tcia_download_guide.py --import-status outputs\public_case_import\hn_cetuximab_0522c0027_series5577\import_status.json --output-dir outputs\public_tcia_download_guide
 ```
 
 输出：
@@ -635,7 +635,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe write_tcia_download_guide.p
 如果从平台下载到的是 GC/Gen3 manifest CSV，而不是 DICOM zip 本体，先复核 manifest：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe review_public_gc_manifest.py --manifest "data\processed\GC File Manifest 2026-05-17 13-34-32.csv" --output-dir outputs\public_gc_manifest_review
+python review_public_gc_manifest.py --manifest "data\processed\GC File Manifest 2026-05-17 13-34-32.csv" --output-dir outputs\public_gc_manifest_review
 ```
 
 输出：
@@ -649,7 +649,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe review_public_gc_manifest.p
 下载到 zip 后，先用本地 zip 守门脚本检查完整性；默认只检查，不解压：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_public_zip_import.py --manifest-review outputs\public_gc_manifest_review\gc_manifest_review.json --output-dir outputs\public_zip_import
+python prepare_public_zip_import.py --manifest-review outputs\public_gc_manifest_review\gc_manifest_review.json --output-dir outputs\public_zip_import
 ```
 
 默认期望 zip 放在：
@@ -667,10 +667,10 @@ data\raw_ct\public\hn_cetuximab_0522c0027_series5577\
 Visible Human Head CT 的 Dataverse zip 已接入为两个公开病例：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_visible_human_zip_import.py --zip-path data\raw_ct\dataverse_files.zip --output-dir outputs\visible_human_zip_import --extract
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe inventory_ct_cases.py --input-dir data\raw_ct\public --output-dir data\processed\public_import
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe batch_build_ct_models.py --manifest data\processed\public_import\ct_case_manifest.json --output-root outputs\ct_acoustic_models_public --run
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_case_quick_pressure.py --batch-summary outputs\ct_acoustic_models_public\batch_summary.json --output-dir outputs\case_quick_pressure_plan_public
+python prepare_visible_human_zip_import.py --zip-path data\raw_ct\dataverse_files.zip --output-dir outputs\visible_human_zip_import --extract
+python inventory_ct_cases.py --input-dir data\raw_ct\public --output-dir data\processed\public_import
+python batch_build_ct_models.py --manifest data\processed\public_import\ct_case_manifest.json --output-root outputs\ct_acoustic_models_public --run
+python prepare_case_quick_pressure.py --batch-summary outputs\ct_acoustic_models_public\batch_summary.json --output-dir outputs\case_quick_pressure_plan_public
 ```
 
 当前公开病例：
@@ -683,10 +683,10 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe prepare_case_quick_pressure
 Visible Human 公开病例的源面安全扫描和单例 quick smoke：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_visible_human_safe_entries.py --models-root outputs\ct_acoustic_models_public --output-dir outputs\visible_human_source_safety_scan
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_source_safety_scan\visible_human_female_head_1mm\candidate_031\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_best_safe --sim-time-us 45 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe analyze_kwave_3d_focus.py --input-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_best_safe
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_visible_human_smoke_runs.py --runs-root outputs\visible_human_quick_smoke_runs
+python scan_visible_human_safe_entries.py --models-root outputs\ct_acoustic_models_public --output-dir outputs\visible_human_source_safety_scan
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_source_safety_scan\visible_human_female_head_1mm\candidate_031\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_best_safe --sim-time-us 45 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python analyze_kwave_3d_focus.py --input-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_best_safe
+python summarize_visible_human_smoke_runs.py --runs-root outputs\visible_human_quick_smoke_runs
 ```
 
 当前结果：`visible_human_female_head_1mm / candidate_031` 的 source mask 完全在背景区（`{"0":97}`），quick smoke 成功生成压力场和焦域指标。目标窗口峰值约 `0.0035 MPa`，有效峰值距目标约 `97.7 mm`，说明这只是公开病例链路 smoke 验证，还需要后续时间窗、target/entry 和换能器参数调优。
@@ -694,8 +694,8 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_visible_human_smo
 对同一安全候选延长时间窗到 `85 us` 后，结果与 `45 us` 基本一致：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_source_safety_scan\visible_human_female_head_1mm\candidate_031\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_candidate031_c6_t85 --sim-time-us 85 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_visible_human_smoke_runs.py --runs-root outputs\visible_human_quick_smoke_runs --case-run visible_human_female_head_1mm_t45=visible_human_female_head_1mm_best_safe --case-run visible_human_female_head_1mm_t85=visible_human_female_head_1mm_candidate031_c6_t85
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_source_safety_scan\visible_human_female_head_1mm\candidate_031\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_candidate031_c6_t85 --sim-time-us 85 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python summarize_visible_human_smoke_runs.py --runs-root outputs\visible_human_quick_smoke_runs --case-run visible_human_female_head_1mm_t45=visible_human_female_head_1mm_best_safe --case-run visible_human_female_head_1mm_t85=visible_human_female_head_1mm_candidate031_c6_t85
 ```
 
 `t85` 的 `nt=512`、source mask 仍为 `{"0":97}`，但目标窗口峰值仍约 `0.0035 MPa`，有效峰值距目标仍约 `97.7 mm`。因此当前问题不是传播时间窗不足，下一步应做 Visible Human 的 target/entry 或 aperture/radius 调参。
@@ -703,9 +703,9 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe summarize_visible_human_smo
 Visible Human female 的第一轮 target refinement 选择了 `target_037=[110,122,40]`，并在 `standoff=32 mm`、`entry offset=(0,10) mm` 下找到 source-safe 候选：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe select_ct_target_candidates.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --source-standoff-mm 28 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_ct_entry_positions.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --target-index 110,122,40 --source-standoff-mm 32 --y-offsets-mm=-10,0,10 --z-offsets-mm=-10,0,10 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm_target_037_entry_scan_s32
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_target_037_entry_scan_s32\candidate_005\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target037_s32_candidate005_c6_t65 --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python select_ct_target_candidates.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --source-standoff-mm 28 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm
+python scan_ct_entry_positions.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --target-index 110,122,40 --source-standoff-mm 32 --y-offsets-mm=-10,0,10 --z-offsets-mm=-10,0,10 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm_target_037_entry_scan_s32
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_target_037_entry_scan_s32\candidate_005\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target037_s32_candidate005_c6_t65 --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
 ```
 
 该候选 source mask 仍为纯背景（`{"0":95}`），但目标窗口峰值约 `0.0029 MPa`，低于默认候选的 `0.0035 MPa`；有效峰值距目标约 `77.1 mm`，比默认候选的 `97.7 mm` 更近但仍明显偏离目标。结论是：`target_037` 当前只证明了安全 refinement 流程可运行，尚未解决 Visible Human 聚焦弱的问题。下一步应优先比较更多目标点或做小范围 aperture/radius 调参，而不是继续延长同一时间窗。
@@ -713,8 +713,8 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py 
 Visible Human female 多目标安全筛选进一步比较了 `target_055,target_074,target_040,target_004,target_028`：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe scan_visible_human_target_refinement.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --target-candidates outputs\visible_human_refinement_plan\visible_human_female_head_1mm\target_candidates.csv --skip-targets target_037 --top-targets 5 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_074\target_074_s40_y0_z10\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_multi_target_best --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python scan_visible_human_target_refinement.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --target-candidates outputs\visible_human_refinement_plan\visible_human_female_head_1mm\target_candidates.csv --skip-targets target_037 --top-targets 5 --output-dir outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_074\target_074_s40_y0_z10\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_multi_target_best --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
 ```
 
 本轮推荐并验证了 `target_074=[118,122,48]`、`standoff=40 mm`、`entry offset=(0,10) mm`。source mask 仍为纯背景（`{"0":95}`），目标窗口峰值升至约 `0.0092 MPa`，高于默认 `t85` 与 `target_037`；但有效峰值距目标约 `111.9 mm`，更远，且 source-to-target 到达时间估计约 `81.8 us`，本次按 quick 上限只跑 `65 us`。因此它是“目标窗口改善但尚未聚焦”的候选，下一步如果继续该路线，应优先对同一候选跑更长时间窗（例如 `90 us`）或选择 source-to-target 更短的目标候选。
@@ -722,7 +722,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py 
 `target_074` 的 `90 us` 时间窗复核已完成：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_074\target_074_s40_y0_z10\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target074_s40_t90 --sim-time-us 90 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_074\target_074_s40_y0_z10\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target074_s40_t90 --sim-time-us 90 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
 ```
 
 `90 us` 与 `65 us` 指标完全一致：`target_window_peak_mpa≈0.0092`、`effective_peak_to_target_distance_mm≈111.9`，source mask 仍为纯背景（`{"0":95}`）。因此 `target_074` 的目标区偏弱不是时间窗不足导致。下一步应转向 source-to-target 更短的候选（例如 `target_040_s28_y0_z0`）或换能器/入射方向调参，而不是继续延长同一候选时间窗。
@@ -730,7 +730,7 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py 
 更短路径候选 `target_040_s28_y0_z0` 已完成单次 quick 验证：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_040\target_040_s28_y0_z0\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target040_s28_y0_z0_t65 --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
+python simulate_kwave_3d_focus.py --model outputs\ct_acoustic_models_public\visible_human_female_head_1mm_bone300_dx1\acoustic_model_3d.npz --entry-plan outputs\visible_human_refinement_plan\visible_human_female_head_1mm_multi_target_scan\target_040\target_040_s28_y0_z0\entry_plan.json --output-dir outputs\visible_human_quick_smoke_runs\visible_human_female_head_1mm_target040_s28_y0_z0_t65 --sim-time-us 65 --cycles 6 --quick-lateral-mm 17 --quick-post-target-mm 8 --aperture-mm 25 --radius-mm 30
 ```
 
 该候选 source mask 纯背景（`{"0":97}`），目标窗口峰值约 `0.0030 MPa`，有效峰值距目标约 `79.1 mm`。它比 `target_074` 的有效峰值距离更近，但目标窗口声压低；同时仍略差于 `target_037` 的有效峰值距离约 `77.1 mm`。因此当前左侧 `left_x` 几何目标点 quick 验证未找到明确聚焦改善，后续应转向 aperture/radius 调参或扩展到其他入射方向，而不是继续盲跑同类候选。
@@ -756,7 +756,7 @@ outputs/evidence_briefs/<module>/gap_feedback.json
 当前已生成 k-Wave 数值质量 brief：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module kwave_simulation_quality --output-dir outputs\evidence_briefs\kwave_simulation_quality
+python generate_module_evidence_brief.py --module kwave_simulation_quality --output-dir outputs\evidence_briefs\kwave_simulation_quality
 ```
 
 该 brief 明确：quick 只能用于 screening；standard/paper-grade 必须记录 PPW、PML、CFL、grid size、runtime、backend、memory estimate 和网格收敛/边界风险。下一步应先实现 `simulation_presets.json` 和 summary metadata，再考虑任何新的 standard k-Wave 运行。
@@ -793,7 +793,7 @@ run_kwave_command.py
 默认 runner 只生成计划，不执行 k-Wave：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe run_kwave_command.py --script simulate_freefield_transducer.py --output-dir outputs\kwave_runner_tests\freefield_standard_plan --preset standard --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 1.0
+python run_kwave_command.py --script simulate_freefield_transducer.py --output-dir outputs\kwave_runner_tests\freefield_standard_plan --preset standard --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 1.0
 ```
 
 只有显式追加 `--execute` 才会真实运行；runner 会先执行 `--dry-run-quality`，并记录 stdout、stderr 和 `runner_status.json`。
@@ -803,8 +803,8 @@ D:\AIprogram\python-envs\kwave312\Scripts\python.exe run_kwave_command.py --scri
 已新增自由场网格收敛计划层，用来在真实 finer-grid k-Wave 前先比较 `dx / PPW / grid / nt / memory / runtime risk`。本阶段不运行 k-Wave，也不生成压力场。
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module freefield_grid_convergence --output-dir outputs\evidence_briefs\freefield_grid_convergence
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe plan_freefield_grid_convergence.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 1.0,0.75,0.5 --preset standard --output-dir outputs\freefield_grid_convergence_plan\ap25_r30_f500
+python generate_module_evidence_brief.py --module freefield_grid_convergence --output-dir outputs\evidence_briefs\freefield_grid_convergence
+python plan_freefield_grid_convergence.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 1.0,0.75,0.5 --preset standard --output-dir outputs\freefield_grid_convergence_plan\ap25_r30_f500
 ```
 
 当前 dry-run 结论：`dx=0.75 mm` 是下一次最多单个 finer-grid sanity run 的推荐候选，PPW 约 `3.95`，相对工作量约 `3.17x`；`dx=0.5 mm` 相对工作量约 `14.93x`，暂时只作为风险估算点。任何真实运行都必须通过 `run_kwave_command.py --execute`，并保留 2 分钟检查点和硬停止条件。该计划仍不是 paper-grade 结果。
@@ -821,8 +821,8 @@ outputs/freefield_grid_convergence_runs/freefield_grid_convergence_comparison.md
 已新增自由场 PML/边界 dry-run 计划层：
 
 ```powershell
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe generate_module_evidence_brief.py --module freefield_pml_boundary_review --output-dir outputs\evidence_briefs\freefield_pml_boundary_review
-D:\AIprogram\python-envs\kwave312\Scripts\python.exe plan_freefield_pml_boundary_review.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 0.75 --pml-size 8,12,16 --preset standard --output-dir outputs\freefield_pml_boundary_plan\ap25_r30_f500_dx075
+python generate_module_evidence_brief.py --module freefield_pml_boundary_review --output-dir outputs\evidence_briefs\freefield_pml_boundary_review
+python plan_freefield_pml_boundary_review.py --aperture-mm 25 --radius-mm 30 --frequency-khz 500 --source-pressure-mpa 1 --medium water --dx-mm 0.75 --pml-size 8,12,16 --preset standard --output-dir outputs\freefield_pml_boundary_plan\ap25_r30_f500_dx075
 ```
 
 当前 PML dry-run 结论：`pml=12` 是下一次最多单个边界 sanity run 的推荐候选，PML 厚度约 `9.0 mm`，grid `93x67x67`，相对工作量约 `1.04x`；`pml=16` 相对工作量约 `1.09x`。本阶段没有运行 k-Wave，也没有生成压力场。
@@ -1046,3 +1046,5 @@ outputs/evidence_briefs/source_backed_alpha_stage_report/gap_feedback.md
 - `prestus_fit_alpha_power_2` 和 `no_dispersion` 仍是 exploratory / review-pending 路线，不能自动升级为默认 profile。
 - 报告发现 `fit_alpha_power_migration` 的 gap feedback 与 dry-run summary 对 `pressure_allowed_by_alpha_semantics` 的记录存在冲突；在冲突解决前按保守策略处理：不升级、不新跑 pressure。
 - 本阶段未运行 k-Wave，未重建 CT，未生成新的 `pressure_max_mpa.npz`。
+
+
