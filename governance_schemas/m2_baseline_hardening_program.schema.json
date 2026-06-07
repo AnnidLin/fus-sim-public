@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.m2_baseline_hardening_program.schema.v1",
+  "title": "fus-sim M2 Baseline Hardening Program",
+  "type": "object",
+  "required": [
+    "program_version",
+    "module",
+    "current_state",
+    "completed_governance_prerequisites",
+    "next_execution_target",
+    "blocked_actions",
+    "milestones"
+  ],
+  "properties": {
+    "program_version": {"const": "1.0.0"},
+    "module": {"const": "m2_baseline_hardening_program"},
+    "current_state": {"type": "object"},
+    "completed_governance_prerequisites": {"type": "array"},
+    "next_execution_target": {"type": "object"},
+    "blocked_actions": {"type": "array"},
+    "milestones": {"type": "array"}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.gate_state_machine.schema.v1",
+  "title": "fus-sim Gate State Machine",
+  "type": "object",
+  "required": [
+    "state_machine_version",
+    "generated_at",
+    "module",
+    "required_gates",
+    "gates",
+    "transition_policy",
+    "global_locks",
+    "recommended_next_gate"
+  ],
+  "properties": {
+    "state_machine_version": {"type": "string"},
+    "module": {"const": "gate_state_machine"},
+    "required_gates": {"type": "array", "items": {"type": "string"}},
+    "gates": {"type": "object"},
+    "transition_policy": {"type": "object"},
+    "global_locks": {"type": "object"},
+    "recommended_next_gate": {"type": "string"}
+  }
+}

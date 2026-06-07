@@ -1,0 +1,20 @@
+# Data and output directories
+data/
+outputs/
+.tmp/
+__pycache__/
+*.pyc
+
+# Heavy scientific and data files
+*.npz
+*.nii
+*.zip
+*.bin
+*.exe
+
+# IDE and system files
+.vscode/
+.idea/
+literature_tFUS_review/.obsidian/workspace.json
+.DS_Store
+Thumbs.db

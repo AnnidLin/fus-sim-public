@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.run_ledger.schema.v1",
+  "title": "fus-sim Run Ledger Entry",
+  "type": "object",
+  "required": [
+    "ledger_version",
+    "run_id",
+    "case_id",
+    "candidate_id",
+    "profile",
+    "preset",
+    "output_dir",
+    "runner_status",
+    "runtime_s",
+    "pressure_generated",
+    "summary_generated",
+    "claim_level",
+    "authorization",
+    "blocked_claims"
+  ],
+  "properties": {
+    "ledger_version": {"type": "string"},
+    "run_id": {"type": "string"},
+    "case_id": {"type": "string"},
+    "candidate_id": {"type": "string"},
+    "profile": {"type": "string"},
+    "preset": {"type": "string"},
+    "output_dir": {"type": "string"},
+    "runner_status": {"type": "string"},
+    "runtime_s": {"type": "number"},
+    "pressure_generated": {"type": "boolean"},
+    "summary_generated": {"type": "boolean"},
+    "claim_level": {"type": "string"},
+    "authorization": {"type": "string"},
+    "blocked_claims": {"type": "array", "items": {"type": "string"}}
+  }
+}

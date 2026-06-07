@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.module_boundary_manifest.schema.v1",
+  "title": "fus-sim Module Boundary Manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "module",
+    "physical_reorganization_allowed",
+    "categories",
+    "script_entries",
+    "unclassified_scripts",
+    "proposed_future_layout"
+  ],
+  "properties": {
+    "manifest_version": {"const": "1.0.0"},
+    "module": {"const": "module_boundary_manifest"},
+    "physical_reorganization_allowed": {"const": false},
+    "categories": {"type": "object"},
+    "script_entries": {"type": "array"},
+    "unclassified_scripts": {"type": "array"},
+    "proposed_future_layout": {"type": "object"}
+  }
+}

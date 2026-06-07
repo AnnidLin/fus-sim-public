@@ -1,0 +1,65 @@
+[
+  {
+    "paper_id": "Gao2022_local",
+    "title": "经颅聚焦超声调控系统的参数仿真研究",
+    "application": "neuromodulation_simulation",
+    "key_parameters": {
+      "frequency_khz": {"value": 500, "evidence_level": "原文明确", "definition": "main simulation frequency"},
+      "source_pressure_mpa": {"value": 1, "evidence_level": "原文明确", "definition": "source/excitation pressure, not confirmed as in situ"},
+      "duty_cycle_percent": {"value": 6, "evidence_level": "原文明确", "definition": "seed protocol duty; protocol definition needs care"},
+      "prf_hz": {"value": 300, "evidence_level": "原文明确", "definition": "pulse repetition frequency"},
+      "train_duration_ms": {"value": 67, "evidence_level": "原文明确", "definition": "on duration per train"},
+      "train_interval_s": {"value": 2.5, "evidence_level": "原文明确", "definition": "off interval between trains"},
+      "aperture_mm": {"value": 25, "evidence_level": "原文明确", "definition": "single-bowl aperture diameter"},
+      "curvature_radius_mm": {"value": 30, "evidence_level": "原文明确", "definition": "curvature radius / focus proxy"},
+      "thermal_threshold_degC": {"value": 42, "evidence_level": "原文明确", "definition": "coarse safety threshold"}
+    },
+    "platform_role": "baseline seed paper; not field-wide consensus",
+    "source_locator": "local PDF; literature_tFUS_review/01_seed_papers_summary.md"
+  },
+  {
+    "paper_id": "Pan2021_local",
+    "title": "经颅聚焦超声联合微泡开放血脑屏障的数值仿真研究",
+    "application": "BBB_simulation",
+    "key_parameters": {
+      "frequency_range_mhz": {"value": "0.2-0.7", "evidence_level": "原文明确", "definition": "BBB microbubble range"},
+      "MI_effective_window": {"value": "0.3-0.7", "evidence_level": "原文明确", "definition": "BBB safe/effective MI window"},
+      "microbubble_density_max_1_per_m3": {"value": "1.56e10", "evidence_level": "原文明确", "definition": "upper density in study"}
+    },
+    "platform_role": "future BBB/MI/PCD reference only",
+    "do_not_mix_with": "low-intensity neuromodulation baseline"
+  },
+  {
+    "paper_id": "Sun2021_local",
+    "title": "经颅聚焦超声治疗脑血栓的数值仿真研究",
+    "application": "thrombolysis_simulation",
+    "key_parameters": {
+      "frequency_sweep_mhz": {"value": "0.5-1.1", "evidence_level": "原文明确", "definition": "thrombolysis sweep"},
+      "best_frequency_mhz": {"value": 0.8, "evidence_level": "原文明确", "definition": "best in transcranial/open-skull models"},
+      "PNP_thresholds_mpa": {"value": [-6, -8], "evidence_level": "原文明确", "definition": "thrombolysis/histotripsy thresholds"}
+    },
+    "platform_role": "review reference only",
+    "do_not_mix_with": "neuromodulation pressure target"
+  },
+  {
+    "paper_id": "Legon2014",
+    "title": "Transcranial focused ultrasound modulates the activity of primary somatosensory cortex in humans",
+    "application": "human_neuromodulation",
+    "key_parameters": {
+      "frequency_mhz": {"value": 0.5, "evidence_level": "原文/期刊页明确", "definition": "human S1 tFUS frequency"},
+      "peak_rarefactional_pressure_mpa": {"value": 0.80, "evidence_level": "二手信息/待全文复核", "definition": "pressure definition needs full-text check"},
+      "PRF_khz": {"value": 1, "evidence_level": "二手信息/待全文复核", "definition": "pulse repetition frequency"}
+    },
+    "platform_role": "human neuromodulation range anchor"
+  },
+  {
+    "paper_id": "Review2025_Panoramic",
+    "title": "A panoramic review of transcranial focused ultrasound neuromodulation",
+    "application": "review_neuromodulation",
+    "key_parameters": {
+      "frequency_common_range_mhz": {"value": "0.25-0.65", "evidence_level": "综述明确", "definition": "typical neuromodulation frequency range"},
+      "pressure_common_range_mpa": {"value": "0.1-1.0", "evidence_level": "综述明确", "definition": "typical human neuromodulation pressure range"}
+    },
+    "platform_role": "range sanity check; not a replacement for primary papers"
+  }
+]
