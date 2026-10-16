@@ -1,0 +1,25 @@
+case,endpoint,value,unit,frozen_gate,status
+"Effective bowl, dx0.50 mm",Axial peak-position error,1.855663098473805,mm,<= 1.0,fail
+"Effective bowl, dx0.50 mm",Axial normalized L2,3.7795648289407207,%,<= 10.0,pass
+"Effective bowl, dx0.50 mm",Transverse peak-pressure error,1.6890957034921819,%,|x| <= 10.0,pass
+"Effective bowl, dx0.50 mm",Transverse peak-position error,0.0,mm,<= 1.5,pass
+"Effective bowl, dx0.50 mm",Transverse normalized correlation,0.9874639285627752,,>= 0.95,pass
+"Effective bowl, dx0.50 mm",Transverse normalized L2,15.003596760628557,%,<= 10.0,fail
+"Effective bowl, dx0.50 mm",Transverse x -6 dB width error,3.138710390451537,%,|x| <= 10.0,pass
+"Effective bowl, dx0.50 mm",Transverse y -6 dB width error,5.989443599559902,%,|x| <= 10.0,pass
+"Effective bowl, dx0.30 mm",Axial peak-position error,2.1768326986148026,mm,<= 1.0,fail
+"Effective bowl, dx0.30 mm",Axial normalized L2,3.779594045757485,%,<= 10.0,pass
+"Effective bowl, dx0.30 mm",Transverse peak-pressure error,0.6017155423993004,%,|x| <= 10.0,pass
+"Effective bowl, dx0.30 mm",Transverse peak-position error,0.0,mm,<= 1.5,pass
+"Effective bowl, dx0.30 mm",Transverse normalized correlation,0.9873603634812257,,>= 0.95,pass
+"Effective bowl, dx0.30 mm",Transverse normalized L2,15.469311341107025,%,<= 10.0,fail
+"Effective bowl, dx0.30 mm",Transverse x -6 dB width error,4.295445193466717,%,|x| <= 10.0,pass
+"Effective bowl, dx0.30 mm",Transverse y -6 dB width error,7.160086887327891,%,|x| <= 10.0,pass
+"Nominal 64/64-mm bowl, dx0.50 mm",Axial peak-position error,10.028251313768685,mm,<= 1.0,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Axial normalized L2,31.02956510204785,%,<= 10.0,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse peak-pressure error,-55.49627497982692,%,|x| <= 10.0,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse peak-position error,4.497999912928208,mm,<= 1.5,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse normalized correlation,0.8955975237663577,,>= 0.95,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse normalized L2,118.28556878596117,%,<= 10.0,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse x -6 dB width error,25.742253633596803,%,|x| <= 10.0,fail
+"Nominal 64/64-mm bowl, dx0.50 mm",Transverse y -6 dB width error,147.1468632252167,%,|x| <= 10.0,fail

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "trace_id": "TRACE-20260829-001",
+  "status": "open_author_and_release_actions",
+  "submission_ready": false,
+  "actions": [
+    {"id": "A01", "priority": "blocking", "owner": "corresponding_author", "action": "Select target journal and article type", "evidence_needed": "Current official author instructions and scope", "impact": "journal_submission", "status": "pending"},
+    {"id": "A02", "priority": "blocking", "owner": "all_authors", "action": "Approve author order, affiliations, ORCIDs and CRediT roles", "evidence_needed": "Private author approvals", "impact": "journal_submission", "status": "pending"},
+    {"id": "A03", "priority": "blocking", "owner": "corresponding_author", "action": "Approve funding, conflicts, acknowledgements and assistance disclosure", "evidence_needed": "Institutional and journal records", "impact": "journal_submission", "status": "pending"},
+    {"id": "A04", "priority": "blocking", "owner": "data_responsible_author", "action": "Privately verify PhysioNet registered access/DUA and consent-waiver wording", "evidence_needed": "Private access record and target-journal policy; no credentials in repository", "impact": "ethics_and_data_statement", "status": "pending"},
+    {"id": "A05", "priority": "blocking", "owner": "scientific_lead", "action": "Approve the unvalidated engineering boundary for mapping, segmentation, target and single-case numerical scope", "evidence_needed": "Signed manuscript review or new independent physical, anatomical or numerical evidence", "impact": "claim_scope", "status": "pending"},
+    {"id": "A06", "priority": "blocking", "owner": "copyright_holder", "action": "Choose repository licence", "evidence_needed": "Copyright-holder decision", "impact": "public_release", "status": "pending"},
+    {"id": "A07", "priority": "blocking", "owner": "repository_maintainer", "action": "Freeze immutable source revision and release version", "evidence_needed": "Clean commit/tag selected by author", "impact": "public_release", "status": "pending"},
+    {"id": "A08", "priority": "blocking", "owner": "corresponding_author", "action": "Mint and report archive DOI or stable accession", "evidence_needed": "Approved archive deposit", "impact": "public_release_and_submission", "status": "pending"},
+    {"id": "A09", "priority": "required_before_final_claim", "owner": "repository_maintainer", "action": "Freeze a development/test dependency lock and run the full non-solver test suite", "evidence_needed": "Pinned test runner and retained test report", "impact": "software_reproducibility", "status": "pending"},
+    {"id": "A10", "priority": "blocking", "owner": "all_authors", "action": "Perform final line-numbered manuscript and supplement review", "evidence_needed": "Author sign-off retaining all failed endpoints and limitations", "impact": "journal_submission", "status": "pending"}
+  ],
+  "prohibited_repository_content": ["credentials", "signed data-use agreements", "private ethics records", "personal identifiers"],
+  "claim_boundary": "Completing administrative actions does not upgrade nonpassing H115 results or validate Case079 physics."
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "status": "generated_from_accepted_artifacts",
+  "pressure_definition": "max(abs(p_max), abs(p_min)) / 1e6 MPa at each voxel",
+  "projection_definition": {
+    "figure2": "maximum pressure magnitude along k/z; common baseline/TR scale",
+    "figure4": "signed PML16-minus-PML12 difference selected at maximum absolute difference along k/z; common baseline/TR difference scale"
+  },
+  "coordinate_definition": "x and y in mm relative to the frozen target index; PML fields aligned with crop_origin_ijk before subtraction",
+  "claim_boundary": "Single Case079 engineering evidence; PML perturbation only; not formal convergence, efficacy or safety evidence.",
+  "pml_rendering": {
+    "shared_absolute_limit_mpa": 0.0003795027732849121
+  },
+  "sources": {
+    "outputs\\pub2_250khz_reference_pair_throttled_20260807\\baseline\\pressure_max_mpa.npz": "176313af72ce6663ddc21ce2d344472ed722d8fef655348ff077267bf237bacf",
+    "outputs\\pub2_250khz_reference_pair_throttled_20260807\\tr\\pressure_max_mpa.npz": "1b11aa03ba2cce8a9eec487e23b6813d9bc44f11801ca468dd0ae30b4fe84922",
+    "outputs\\pub2_250khz_reference_pair_throttled_20260807\\baseline\\focus_metrics.json": "eb2d3c6544ed090efab1dff994514a6a5b05c196e91d5b9c16c593415f7ca75f",
+    "outputs\\pub2_250khz_reference_pair_throttled_20260807\\tr\\focus_metrics.json": "649b5c17d55b807077edccff318d0184b5fb17e7b9b924d254ac322617c4945c",
+    "outputs\\pub2_250khz_pml16_baseline_20260810\\pressure_max_mpa.npz": "5f5b42e34bea2c5ea3b067df464eb06e0ff34002d891905469073f923ea30d9f",
+    "outputs\\pub2_250khz_pml16_tr_20260811\\tr\\pressure_max_mpa.npz": "ce1e0afbcb8149fc848a937cd3c82308eb5ba3c5e5f16df139d7ec864fa21692",
+    "outputs\\pub2_250khz_pml16_tr_analysis_20260812\\paired_pml_analysis.json": "d4044bda7781a34f533b9ae67ef879838fc24d011751271ce0f3e894d9b7976e"
+  },
+  "outputs": {
+    "paper\\figures\\pub2_20260812\\figure2_baseline_vs_tr_localization.png": "6653f4e2041daf5f121bae0bba3b3c4841a28fef639e67babd5653419f04dcf5",
+    "paper\\figures\\pub2_20260812\\figure2_baseline_vs_tr_localization.svg": "6c09d1bba0b4d4b613848f540bcae22a0a363d5846a8a77033244831208a5ea4",
+    "paper\\figures\\pub2_20260812\\figure3_primary_endpoints.png": "445436057df9ddbb0154e851d242041e82449849dee94eff2d2d038d3d52a451",
+    "paper\\figures\\pub2_20260812\\figure3_primary_endpoints.svg": "fb04288ace9d1ea8f49dd2ba25b7c87d78cc90ae0eaf69693192ee51dbd70d97",
+    "paper\\figures\\pub2_20260812\\figure4_pml12_vs_pml16_difference.png": "5c1565073fbc41031e75d4bf20ab0f0d8ad8e99b092607c0e63fef64a19e565f",
+    "paper\\figures\\pub2_20260812\\figure4_pml12_vs_pml16_difference.svg": "a3e0d62774d70c4cf8df05ebfe5b54ae11cce0fa98ec46964ebbd9bfc00b2af1"
+  }
+}

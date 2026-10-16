@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fus-sim.local/schema/bbb-simulation-plan-v1.json",
+  "title": "fus-sim BBB Simulation Plan",
+  "type": "object",
+  "required": ["schema_version", "plan_id", "stage", "patient_model", "target_roi", "transducer_plan", "exposure_protocol", "plan_metrics", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "stage": {"const": "research_pure_simulation"},
+    "patient_model": {"$ref": "#/$defs/PatientModel"},
+    "target_roi": {"$ref": "#/$defs/TargetROI"},
+    "transducer_plan": {"$ref": "#/$defs/TransducerPlan"},
+    "exposure_protocol": {"$ref": "#/$defs/ExposureProtocol"},
+    "plan_metrics": {"$ref": "#/$defs/PlanMetrics"},
+    "provenance": {"$ref": "#/$defs/Provenance"}
+  },
+  "$defs": {
+    "Index3": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 0},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "Vector3Positive": {
+      "type": "array",
+      "items": {"type": "number", "exclusiveMinimum": 0},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "PatientModel": {
+      "type": "object",
+      "required": ["case_id", "model_path", "model_sha256", "shape_ijk", "spacing_m_ijk", "axis_order", "index_origin", "array_order", "crop_origin_ijk", "material_labels", "world_mapping"],
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {"type": "string", "minLength": 1},
+        "model_path": {"type": "string", "minLength": 1},
+        "model_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "shape_ijk": {"$ref": "#/$defs/Index3"},
+        "spacing_m_ijk": {"$ref": "#/$defs/Vector3Positive"},
+        "axis_order": {"const": "ijk"},
+        "index_origin": {"const": "zero_based"},
+        "array_order": {"const": "numpy_c_order"},
+        "crop_origin_ijk": {"$ref": "#/$defs/Index3"},
+        "material_labels": {
+          "type": "object",
+          "required": ["background", "soft_tissue", "skull"],
+          "additionalProperties": false,
+          "properties": {
+            "background": {"const": 0},
+            "soft_tissue": {"const": 1},
+            "skull": {"const": 2}
+          }
+        },
+        "world_mapping": {
+          "type": "object",
+          "required": ["status", "reason"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {"enum": ["available", "unavailable"]},
+            "reason": {"type": "string", "minLength": 1},
+            "affine_ijk_to_world_mm": {
+              "type": ["array", "null"],
+              "items": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+              "minItems": 4,
+              "maxItems": 4
+            }
+          }
+        }
+      }
+    },
+    "TargetROI": {
+      "type": "object",
+      "required": ["roi_id", "roi_kind", "anatomical_status", "coordinate_space", "center_full_ijk", "center_local_ijk", "voxel_count", "generation"],
+      "additionalProperties": false,
+      "properties": {
+        "roi_id": {"type": "string", "minLength": 1},
+        "roi_kind": {"enum": ["binary_mask", "label_mask", "synthetic_sphere_proxy"]},
+        "anatomical_status": {"enum": ["registered_anatomical", "synthetic_not_anatomical"]},
+        "coordinate_space": {"const": "full_model_zero_based_ijk"},
+        "center_full_ijk": {"$ref": "#/$defs/Index3"},
+        "center_local_ijk": {"$ref": "#/$defs/Index3"},
+        "voxel_count": {"type": "integer", "minimum": 1},
+        "generation": {
+          "type": "object",
+          "required": ["method", "radius_m", "mask_path"],
+          "additionalProperties": false,
+          "properties": {
+            "method": {"enum": ["loaded_mask", "sphere_from_center"]},
+            "radius_m": {"type": ["number", "null"], "exclusiveMinimum": 0},
+            "mask_path": {"type": ["string", "null"]}
+          }
+        }
+      }
+    },
+    "TransducerPlan": {
+      "type": "object",
+      "required": ["trajectory_id", "entry_plan_path", "entry_plan_sha256", "frequency_hz", "aperture_diameter_m", "radius_of_curvature_m", "source_point_count", "source_point_order", "source_mask_sha256", "target_full_ijk", "source_center_full_ijk", "entry_full_ijk", "pml_size", "cfl"],
+      "additionalProperties": false,
+      "properties": {
+        "trajectory_id": {"type": "string", "minLength": 1},
+        "entry_plan_path": {"type": "string", "minLength": 1},
+        "entry_plan_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "frequency_hz": {"type": "number", "exclusiveMinimum": 0},
+        "aperture_diameter_m": {"type": "number", "exclusiveMinimum": 0},
+        "radius_of_curvature_m": {"type": "number", "exclusiveMinimum": 0},
+        "source_point_count": {"type": "integer", "minimum": 1},
+        "source_point_order": {"const": "numpy_c_order_argwhere"},
+        "source_mask_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "target_full_ijk": {"$ref": "#/$defs/Index3"},
+        "source_center_full_ijk": {"$ref": "#/$defs/Index3"},
+        "entry_full_ijk": {"$ref": "#/$defs/Index3"},
+        "pml_size": {"type": "integer", "minimum": 1},
+        "cfl": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "ExposureProtocol": {
+      "type": "object",
+      "required": ["purpose", "status", "drive_pressure_pa", "pressure_semantics", "tone_burst_cycles", "prf_hz", "duty_cycle_fraction", "total_sonication_time_s", "microbubble", "clinical_dose_claim"],
+      "additionalProperties": false,
+      "properties": {
+        "purpose": {"const": "bbb_opening_simulation_proxy"},
+        "status": {"enum": ["calibration_reference_only", "simulation_candidate"]},
+        "drive_pressure_pa": {"type": "number", "exclusiveMinimum": 0},
+        "pressure_semantics": {"enum": ["source_excitation_not_insitu_dose", "waveform_derived_insitu_pnp"]},
+        "tone_burst_cycles": {"type": "integer", "minimum": 1},
+        "prf_hz": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "duty_cycle_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "total_sonication_time_s": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "microbubble": {
+          "type": "object",
+          "required": ["status", "product", "dose", "timing"],
+          "additionalProperties": false,
+          "properties": {
+            "status": {"enum": ["not_specified", "protocol_input"]},
+            "product": {"type": ["string", "null"]},
+            "dose": {"type": ["string", "null"]},
+            "timing": {"type": ["string", "null"]}
+          }
+        },
+        "clinical_dose_claim": {"const": false}
+      }
+    },
+    "PlanMetrics": {
+      "type": "object",
+      "required": ["status", "roi_peak_pressure_pa", "roi_mean_pressure_pa", "roi_coverage_fraction", "insitu_pnp_pa", "mechanical_index", "skull_peak_pressure_pa", "global_peak_pressure_pa", "max_temperature_rise_c", "clinical_safety_claim"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {"enum": ["not_computed", "computed"]},
+        "roi_peak_pressure_pa": {"type": ["number", "null"], "minimum": 0},
+        "roi_mean_pressure_pa": {"type": ["number", "null"], "minimum": 0},
+        "roi_coverage_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "insitu_pnp_pa": {"type": ["number", "null"], "minimum": 0},
+        "mechanical_index": {"type": ["number", "null"], "minimum": 0},
+        "skull_peak_pressure_pa": {"type": ["number", "null"], "minimum": 0},
+        "global_peak_pressure_pa": {"type": ["number", "null"], "minimum": 0},
+        "max_temperature_rise_c": {"type": ["number", "null"], "minimum": 0},
+        "clinical_safety_claim": {"const": false}
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "required": ["created_at", "created_by", "source_evidence_brief", "pressure_execution"],
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {"type": "string", "minLength": 1},
+        "created_by": {"type": "string", "minLength": 1},
+        "source_evidence_brief": {"type": "string", "minLength": 1},
+        "pressure_execution": {"const": false}
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "figure": "UCL H115 nominal-vs-effective source geometry, registration and aperture sensitivity",
+  "inputs": [
+    "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p5_coordinate_audit.json",
+    "outputs\\ucl_h115_water_nominal64_dx0p5_20260825\\comparison.json",
+    "outputs\\ucl_h115_source_registration_audit_20260825\\source_registration_sensitivity.json"
+  ],
+  "outputs": {
+    "png": {
+      "path": "paper\\figures\\ucl_h115_source_registration_20260825\\figure_ucl_h115_source_registration.png",
+      "sha256": "c8d92b1184b53428e638979ddf36dbcfba16317728761070d46cb2415b05264e"
+    },
+    "pdf": {
+      "path": "paper\\figures\\ucl_h115_source_registration_20260825\\figure_ucl_h115_source_registration.pdf",
+      "sha256": "9fd3e2915983376e756c50ab8cc98e3209dfeb8ad3b6009d3b7dee8d504359cc"
+    }
+  },
+  "claim_boundary": "Engineering sensitivity with a nonpassing primary external comparison; registration and aperture panels are secondary only."
+}

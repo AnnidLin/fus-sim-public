@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-25T16:48:31.857428+00:00",
+  "status": "passed",
+  "row_count": 24,
+  "counts": {
+    "Effective bowl, dx0.50 mm": {
+      "pass": 6,
+      "fail": 2
+    },
+    "Effective bowl, dx0.30 mm": {
+      "pass": 6,
+      "fail": 2
+    },
+    "Nominal 64/64-mm bowl, dx0.50 mm": {
+      "pass": 0,
+      "fail": 8
+    }
+  },
+  "rows": [
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Axial peak-position error",
+      "value": 1.855663098473805,
+      "unit": "mm",
+      "frozen_gate": "<= 1.0",
+      "status": "fail"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Axial normalized L2",
+      "value": 3.7795648289407207,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse peak-pressure error",
+      "value": 1.6890957034921819,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse peak-position error",
+      "value": 0.0,
+      "unit": "mm",
+      "frozen_gate": "<= 1.5",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse normalized correlation",
+      "value": 0.9874639285627752,
+      "unit": "",
+      "frozen_gate": ">= 0.95",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse normalized L2",
+      "value": 15.003596760628557,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse x -6 dB width error",
+      "value": 3.138710390451537,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.50 mm",
+      "endpoint": "Transverse y -6 dB width error",
+      "value": 5.989443599559902,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Axial peak-position error",
+      "value": 2.1768326986148026,
+      "unit": "mm",
+      "frozen_gate": "<= 1.0",
+      "status": "fail"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Axial normalized L2",
+      "value": 3.779594045757485,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse peak-pressure error",
+      "value": 0.6017155423993004,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse peak-position error",
+      "value": 0.0,
+      "unit": "mm",
+      "frozen_gate": "<= 1.5",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse normalized correlation",
+      "value": 0.9873603634812257,
+      "unit": "",
+      "frozen_gate": ">= 0.95",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse normalized L2",
+      "value": 15.469311341107025,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse x -6 dB width error",
+      "value": 4.295445193466717,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Effective bowl, dx0.30 mm",
+      "endpoint": "Transverse y -6 dB width error",
+      "value": 7.160086887327891,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "pass"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Axial peak-position error",
+      "value": 10.028251313768685,
+      "unit": "mm",
+      "frozen_gate": "<= 1.0",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Axial normalized L2",
+      "value": 31.02956510204785,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse peak-pressure error",
+      "value": -55.49627497982692,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse peak-position error",
+      "value": 4.497999912928208,
+      "unit": "mm",
+      "frozen_gate": "<= 1.5",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse normalized correlation",
+      "value": 0.8955975237663577,
+      "unit": "",
+      "frozen_gate": ">= 0.95",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse normalized L2",
+      "value": 118.28556878596117,
+      "unit": "%",
+      "frozen_gate": "<= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse x -6 dB width error",
+      "value": 25.742253633596803,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "fail"
+    },
+    {
+      "case": "Nominal 64/64-mm bowl, dx0.50 mm",
+      "endpoint": "Transverse y -6 dB width error",
+      "value": 147.1468632252167,
+      "unit": "%",
+      "frozen_gate": "|x| <= 10.0",
+      "status": "fail"
+    }
+  ],
+  "claim_boundary": "Held-out engineering comparison only; external validation remains nonpassing."
+}

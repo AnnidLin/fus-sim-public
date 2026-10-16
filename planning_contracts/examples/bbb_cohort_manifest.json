@@ -1,0 +1,19 @@
+{
+  "manifest_version": "1.0.0",
+  "cohort_id": "bbb_case079_platform_fixture_v1",
+  "cases": [
+    {
+      "case_id": "079",
+      "plan_path": "planning_contracts/examples/case079_h1_bbb_simulation_plan.json",
+      "artifacts": {
+        "plan_report": "outputs/bbb_simulation_plan_report_20260721/plan_report.json",
+        "report_validation": "outputs/bbb_simulation_plan_report_20260721/validation.json",
+        "roi_summary": "outputs/bbb_roi_case079_20260721/roi_summary.json",
+        "registered_roi_intake": "outputs/bbb_registered_roi_intake_20260722/registered_roi_intake.json",
+        "path_ranking": "outputs/bbb_acoustic_path_ranking_20260721/path_ranking.json",
+        "element_plan": "outputs/bbb_element_plan_h3_20260722/element_plan_summary.json",
+        "exposure_proxy": "outputs/bbb_exposure_proxy_case079_20260721/exposure_proxy_boundary.json"
+      }
+    }
+  ]
+}

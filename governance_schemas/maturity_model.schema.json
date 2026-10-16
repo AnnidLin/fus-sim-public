@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.maturity_model.schema.v1",
+  "title": "fus-sim Maturity Model",
+  "type": "object",
+  "required": ["model_version", "module", "current_level", "levels", "transition_requirements", "blocked_upgrades"],
+  "properties": {
+    "model_version": {"type": "string"},
+    "module": {"const": "maturity_model"},
+    "current_level": {"type": "string"},
+    "levels": {"type": "object"},
+    "transition_requirements": {"type": "object"},
+    "blocked_upgrades": {"type": "array"}
+  }
+}

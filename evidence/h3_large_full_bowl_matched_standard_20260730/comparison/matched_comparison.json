@@ -1,0 +1,161 @@
+{
+  "report_version": "1.0.0",
+  "module": "freq250_h3_large_full_bowl_intermediate_domain_20260730",
+  "claim_level": "matched_standard_intermediate_domain_engineering_evidence",
+  "inputs": {
+    "model": {
+      "recorded_path": "outputs\\ct_acoustic_model_3d_profile_hu300_dx0p75\\acoustic_model_3d.npz",
+      "resolved_path": "<PRIVATE_WORKSPACE>\\outputs\\ct_acoustic_model_3d_profile_hu300_dx0p75\\acoustic_model_3d.npz",
+      "exists": true,
+      "size_bytes": 60224002,
+      "sha256": "c5848bf564f0538d542b407700663dc57f9e43bd6e8563479ffc333454f6eb91"
+    },
+    "entry_plan": {
+      "recorded_path": "outputs\\a5_heldout_d60_trajectory_selection_20260719\\offset_y+12p5_z-15p0\\entry_plan.json",
+      "resolved_path": "<PRIVATE_WORKSPACE>\\outputs\\a5_heldout_d60_trajectory_selection_20260719\\offset_y+12p5_z-15p0\\entry_plan.json",
+      "exists": true,
+      "size_bytes": 990,
+      "sha256": "99df1c57074d5eaefafdfc6b95ea4ba1fc36b26a4e8390851c86180d1b67046b"
+    }
+  },
+  "equivalence": {
+    "valid": true,
+    "shared_config_fields_checked": [
+      "model_path",
+      "entry_plan_path",
+      "frequency_hz",
+      "source_pressure_pa",
+      "transducer_radius_m",
+      "aperture_diameter_m",
+      "tone_burst_cycles",
+      "cfl",
+      "simulation_time_s",
+      "pml_size",
+      "preset",
+      "backend",
+      "device",
+      "quick_mode",
+      "quick_lateral_half_width_m",
+      "quick_post_target_margin_m",
+      "alpha_power",
+      "nearfield_exclusion_m",
+      "allow_entry_plan_resolution_mismatch"
+    ],
+    "model_fields_checked": [
+      "model_shape",
+      "crop_origin_ijk",
+      "target_index_ijk"
+    ],
+    "source_fields_checked": [
+      "source_points",
+      "source_label_counts"
+    ],
+    "tr_config_fields_checked": [
+      "calibration_pressure_pa",
+      "normalize_source"
+    ],
+    "background_only_source": true,
+    "expected_model_shape": [
+      133,
+      98,
+      101
+    ],
+    "expected_source_points": 4971,
+    "tr_normalize_required": true,
+    "drift": {}
+  },
+  "artifacts": {
+    "complete": true,
+    "files": {
+      "baseline/summary.json": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\baseline\\summary.json",
+        "exists": true,
+        "size_bytes": 10020,
+        "sha256": "5aeabe7f02894778421192d7ecdcae5251e5329032cbd0b179ccb11b12141c75"
+      },
+      "baseline/pressure_max_mpa.npz": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\baseline\\pressure_max_mpa.npz",
+        "exists": true,
+        "size_bytes": 4702470,
+        "sha256": "176313af72ce6663ddc21ce2d344472ed722d8fef655348ff077267bf237bacf"
+      },
+      "baseline/focus_metrics.json": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\baseline\\focus_metrics.json",
+        "exists": true,
+        "size_bytes": 2870,
+        "sha256": "eb2d3c6544ed090efab1dff994514a6a5b05c196e91d5b9c16c593415f7ca75f"
+      },
+      "tr/summary_calibrate.json": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\tr\\summary_calibrate.json",
+        "exists": true,
+        "size_bytes": 9213,
+        "sha256": "e1df4f1ddebe9fe2e2a663a8c8b3920697c824f2fbe765e49e1dab892f4bc464"
+      },
+      "tr/element_signals.npz": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\tr\\element_signals.npz",
+        "exists": true,
+        "size_bytes": 35825700,
+        "sha256": "5606ab011073a0466e698b85884d3f5099ed8ccb552b1e74e2564fd36e86dc90"
+      },
+      "tr/summary.json": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\tr\\summary.json",
+        "exists": true,
+        "size_bytes": 13744,
+        "sha256": "388e3bc558826378439df10db77d9995a1bb05fb9c19e9d314fe42bc6cac149b"
+      },
+      "tr/pressure_max_mpa.npz": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\tr\\pressure_max_mpa.npz",
+        "exists": true,
+        "size_bytes": 4762513,
+        "sha256": "6caefe31fdf51ea2aaa5807e55d1fb95074453fafe6de0c718d9c9612dff7b11"
+      },
+      "tr/focus_metrics.json": {
+        "path": "<PRIVATE_WORKSPACE>\\outputs\\h3_large_full_bowl_matched_standard_20260730\\tr\\focus_metrics.json",
+        "exists": true,
+        "size_bytes": 2880,
+        "sha256": "649b5c17d55b807077edccff318d0184b5fb17e7b9b924d254ac322617c4945c"
+      }
+    }
+  },
+  "comparison": {
+    "target_to_global_peak_ratio": {
+      "baseline": 0.4774004422821547,
+      "tr": 0.9848638267514425,
+      "absolute_change": 0.5074633844692877,
+      "relative_change": 1.0629721707910886,
+      "factor": 2.0629721707910886
+    },
+    "target_window_peak_mpa": {
+      "baseline": 2.864854335784912,
+      "tr": 2.593355178833008,
+      "absolute_change": -0.2714991569519043,
+      "relative_change": -0.09476892195201925,
+      "factor": 0.9052310780479808
+    },
+    "global_peak_mpa": {
+      "baseline": 3.9616923332214355,
+      "tr": 2.593355178833008,
+      "absolute_change": -1.3683371543884277,
+      "relative_change": -0.34539207977207287,
+      "factor": 0.6546079202279271
+    },
+    "global_peak_to_target_distance_mm": {
+      "baseline": 57.37867685156068,
+      "tr": 2.487468614388483,
+      "absolute_change": -54.891208237172194,
+      "reduction": 54.891208237172194,
+      "relative_reduction": 0.9566482053808317
+    }
+  },
+  "decision": {
+    "reuse_historical_pressure": false,
+    "new_pressure_execution_required": false,
+    "reason": "Strict equivalence and artifact completeness passed; the completed fresh pressure execution is valid."
+  },
+  "blocked_claims": [
+    "paper-grade numerical convergence",
+    "clinical efficacy or safety",
+    "thermal or dosing conclusions",
+    "multi-case generalization"
+  ]
+}

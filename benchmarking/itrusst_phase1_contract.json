@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "itrusst_phase1_v1_20260803",
+  "benchmark_family": "ITRUSST Phase-I acoustic intercomparison",
+  "claim_level": "engineering_benchmark",
+  "paper": {
+    "doi": "10.1121/10.0013426",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36050189/"
+  },
+  "dataset": {
+    "record": "https://zenodo.org/records/6020543",
+    "doi": "10.5281/zenodo.6020543",
+    "version": "v1.0",
+    "access": "open",
+    "license": "CC-BY-4.0",
+    "archive": "INTERCOMPARISON-PH1-DATA-V1.0.zip",
+    "size_bytes": 25304690409,
+    "md5": "ec8ac4631b7362973bab843a3df98182"
+  },
+  "comparison_code": {
+    "repository": "https://github.com/ucl-bug/transcranial-ultrasound-benchmarks",
+    "commit": "34bf0da566c8f5af1cfa26525b7b3706d17c2638",
+    "license": "LGPL-3.0-or-later",
+    "reference_files": ["compareTwo.m", "computeDifferenceMetrics.m", "fwhm2.m"]
+  },
+  "physics": {
+    "frequency_hz": 500000,
+    "regime": "linear_single_frequency_compressional_only",
+    "source_surface_velocity_m_per_s": 0.04,
+    "equivalent_source_pressure_pa": 60000,
+    "source_geometries": {
+      "1": {"name": "bowl", "radius_mm": 64.0, "aperture_mm": 64.0},
+      "2": {"name": "piston", "diameter_mm": 20.0}
+    },
+    "materials": {
+      "water": {"sound_speed_m_per_s": 1500, "density_kg_per_m3": 1000, "attenuation_db_per_cm_at_500khz": 0.0},
+      "skin": {"sound_speed_m_per_s": 1610, "density_kg_per_m3": 1090, "attenuation_db_per_cm_at_500khz": 0.2},
+      "brain": {"sound_speed_m_per_s": 1560, "density_kg_per_m3": 1040, "attenuation_db_per_cm_at_500khz": 0.3},
+      "cortical_bone": {"sound_speed_m_per_s": 2800, "density_kg_per_m3": 1850, "attenuation_db_per_cm_at_500khz": 4.0},
+      "trabecular_bone": {"sound_speed_m_per_s": 2300, "density_kg_per_m3": 1700, "attenuation_db_per_cm_at_500khz": 8.0}
+    }
+  },
+  "official_discretization": {
+    "comparison_dx_mm": 0.5,
+    "protocol_nominal_points_per_wavelength": 12,
+    "protocol_time_points_per_period": {"BM1_BM2": 25, "BM3_BM9": 48},
+    "protocol_bm1_bm7_grid_including_pml": [305, 305, 521],
+    "important_note": "Submitted model results may use finer native discretization; do not treat protocol nominal values as the native settings of every reference file.",
+    "kwave_reference_subset_native_settings": {
+      "BM1": {"grid_size": [2700, 864, 1], "dx_m": 0.00005, "ppw": 60, "ppp": 1200, "cfl": 0.05, "nt": 72000},
+      "BM3": {"grid_size": [2700, 864, 1], "dx_m": 0.00005, "ppw": 60, "ppp": 2400, "cfl": 0.025, "nt": 144000},
+      "BM4": {"grid_size": [2700, 864, 1], "dx_m": 0.00005, "ppw": 60, "ppp": 6000, "cfl": 0.01, "nt": 360000}
+    }
+  },
+  "index_conventions": {
+    "bm1_bm6_array_order": ["lateral", "axial"],
+    "bm7_bm9_array_order": ["x", "y", "z"],
+    "source_1_exit_plane_python": 19,
+    "source_2_exit_plane_python": 1,
+    "source_2_fixed_lateral_profile_python": 120,
+    "bm1_bm6_brain_start_python": 74,
+    "bm7_bm9_mask_file_pattern": "SKULL-MAPS/skull_mask_bm{benchmark}_dx_0.5mm.mat",
+    "babelvisco_bm7_bm9_candidate_axis_order_python": [2, 1, 0]
+  },
+  "benchmark_roles": {
+    "BM1": "free_field_source_prerequisite",
+    "BM3": "flat_cortical_bone_layer",
+    "BM4": "skin_three_layer_skull_brain_planar",
+    "BM7": "three_dimensional_skull_subset",
+    "BM8": "whole_skull",
+    "BM9": "whole_skull"
+  },
+  "benchmark_geometry": {
+    "BM3": {
+      "layers": [
+        {"material": "water", "start_mm": 0.0, "stop_mm": 30.0},
+        {"material": "cortical_bone", "start_mm": 30.0, "stop_mm": 36.5},
+        {"material": "water", "start_mm": 36.5, "stop_mm": 120.0}
+      ]
+    },
+    "BM4": {
+      "layers": [
+        {"material": "water", "start_mm": 0.0, "stop_mm": 26.0},
+        {"material": "skin", "start_mm": 26.0, "stop_mm": 30.0},
+        {"material": "cortical_bone", "role": "outer_table", "start_mm": 30.0, "stop_mm": 31.5},
+        {"material": "trabecular_bone", "start_mm": 31.5, "stop_mm": 35.5},
+        {"material": "cortical_bone", "role": "inner_table", "start_mm": 35.5, "stop_mm": 36.5},
+        {"material": "brain", "start_mm": 36.5, "stop_mm": 120.0}
+      ],
+      "source": "Aubry et al. 2022, JASA 152, 1003-1019, DOI 10.1121/10.0013426, Sec. II.F"
+    }
+  },
+  "metrics": {
+    "relative_linf_percent": "100*max(abs(candidate-reference))/max(abs(reference))",
+    "relative_l2_percent": "100*sqrt(sum((candidate-reference)^2)/sum(reference^2))",
+    "peak_difference_percent": "100*abs(candidate_peak-reference_peak)/abs(reference_peak)",
+    "focal_position_difference_mm": "comparison_dx_mm*euclidean_index_distance",
+    "minus_3db_width": "FWHM of squared amplitude through the reference peak",
+    "minus_6db_width": "FWHM of amplitude through the reference peak",
+    "minus_6db_volume": "largest connected component above half candidate/reference peak inside focal mask; BM7-BM9 only"
+  },
+  "execution_stages": {
+    "phase_a": ["BM1", "BM3", "BM4"],
+    "phase_b": ["BM7"],
+    "phase_c": ["BM8_or_BM9"]
+  },
+  "blocked_claims": [
+    "clinical_validation",
+    "experimental_validation",
+    "paper_grade_numerical_convergence",
+    "whole_skull_validation_before_BM8_or_BM9",
+    "benchmark_agreement_before_official_reference_execution"
+  ]
+}

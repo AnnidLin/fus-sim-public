@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "trace_id": "TRACE-20260829-001",
+  "as_of": "2026-08-29T08:22:06+08:00",
+  "window_start": "2026-08-29T00:02:00+08:00",
+  "target_hours": 10.0,
+  "elapsed_hours": 8.335,
+  "work_window_reached": false,
+  "closure_complete": false,
+  "status": "preclose_passed_pending_time_and_author_actions",
+  "submission_ready": false,
+  "solver_authorized": false,
+  "h115_external_comparison": "nonpassing",
+  "archive": {
+    "expected_file_count": 136,
+    "ready": false,
+    "blockers": [
+      "project_license_unresolved",
+      "source_revision_not_frozen",
+      "archive_doi_not_minted"
+    ]
+  },
+  "pending_author_action_count": 10,
+  "checks": {
+    "paper_bundle_passed": true,
+    "technical_preflight_passed": true,
+    "submission_remains_not_ready": true,
+    "manuscript_consistency_passed": true,
+    "run_ledger_valid": true,
+    "evidence_registry_valid": true,
+    "reproducibility_manifest_valid": true,
+    "archive_candidate_has_136_files": true,
+    "author_actions_remain_explicit": true,
+    "evidence_brief_remains_open": true
+  },
+  "failed_checks": [],
+  "retained_gaps": [
+    "Independent H115 per-ring complex drive or measured complex field/hologram is unavailable.",
+    "Case079 mapping, segmentation, registration and engineering target lack independent validation.",
+    "Private PhysioNet access and journal-specific consent/waiver wording require author confirmation.",
+    "Project licence, immutable source revision and archive DOI require author action.",
+    "A pinned test runner/development lock and retained full non-solver test report are pending.",
+    "Target journal, authorship and declarations are unresolved."
+  ],
+  "claim_boundary": "This is a technical pre-close snapshot, not physical validation, submission authorization, convergence evidence, or a clinical/safety conclusion."
+}

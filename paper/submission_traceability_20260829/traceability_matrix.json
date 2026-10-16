@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-28T18:07:29.515944+00:00",
+  "status": "passed",
+  "checks": {
+    "all_inputs_present": true,
+    "all_outputs_present": true,
+    "all_declared_hashes_match": true,
+    "table_rows_match": true,
+    "table_generation_passed": true,
+    "claim_boundaries_present": true
+  },
+  "items": [
+    {
+      "artifact": "Case079 Figures 2-4",
+      "kind": "figure",
+      "manifest": "paper/figures/pub2_20260812/figure_manifest.json",
+      "claim_boundary": "Single Case079 engineering evidence; PML perturbation only; not formal convergence, efficacy or safety evidence.",
+      "inputs": [
+        {
+          "path": "outputs\\pub2_250khz_reference_pair_throttled_20260807\\baseline\\pressure_max_mpa.npz",
+          "exists": true,
+          "sha256": "176313af72ce6663ddc21ce2d344472ed722d8fef655348ff077267bf237bacf",
+          "expected_sha256": "176313af72ce6663ddc21ce2d344472ed722d8fef655348ff077267bf237bacf",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_reference_pair_throttled_20260807\\tr\\pressure_max_mpa.npz",
+          "exists": true,
+          "sha256": "1b11aa03ba2cce8a9eec487e23b6813d9bc44f11801ca468dd0ae30b4fe84922",
+          "expected_sha256": "1b11aa03ba2cce8a9eec487e23b6813d9bc44f11801ca468dd0ae30b4fe84922",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_reference_pair_throttled_20260807\\baseline\\focus_metrics.json",
+          "exists": true,
+          "sha256": "eb2d3c6544ed090efab1dff994514a6a5b05c196e91d5b9c16c593415f7ca75f",
+          "expected_sha256": "eb2d3c6544ed090efab1dff994514a6a5b05c196e91d5b9c16c593415f7ca75f",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_reference_pair_throttled_20260807\\tr\\focus_metrics.json",
+          "exists": true,
+          "sha256": "649b5c17d55b807077edccff318d0184b5fb17e7b9b924d254ac322617c4945c",
+          "expected_sha256": "649b5c17d55b807077edccff318d0184b5fb17e7b9b924d254ac322617c4945c",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_pml16_baseline_20260810\\pressure_max_mpa.npz",
+          "exists": true,
+          "sha256": "5f5b42e34bea2c5ea3b067df464eb06e0ff34002d891905469073f923ea30d9f",
+          "expected_sha256": "5f5b42e34bea2c5ea3b067df464eb06e0ff34002d891905469073f923ea30d9f",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_pml16_tr_20260811\\tr\\pressure_max_mpa.npz",
+          "exists": true,
+          "sha256": "ce1e0afbcb8149fc848a937cd3c82308eb5ba3c5e5f16df139d7ec864fa21692",
+          "expected_sha256": "ce1e0afbcb8149fc848a937cd3c82308eb5ba3c5e5f16df139d7ec864fa21692",
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\pub2_250khz_pml16_tr_analysis_20260812\\paired_pml_analysis.json",
+          "exists": true,
+          "sha256": "d4044bda7781a34f533b9ae67ef879838fc24d011751271ce0f3e894d9b7976e",
+          "expected_sha256": "d4044bda7781a34f533b9ae67ef879838fc24d011751271ce0f3e894d9b7976e",
+          "hash_matches": true
+        }
+      ],
+      "outputs": [
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure2_baseline_vs_tr_localization.png",
+          "exists": true,
+          "sha256": "6653f4e2041daf5f121bae0bba3b3c4841a28fef639e67babd5653419f04dcf5",
+          "expected_sha256": "6653f4e2041daf5f121bae0bba3b3c4841a28fef639e67babd5653419f04dcf5",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure2_baseline_vs_tr_localization.svg",
+          "exists": true,
+          "sha256": "6c09d1bba0b4d4b613848f540bcae22a0a363d5846a8a77033244831208a5ea4",
+          "expected_sha256": "6c09d1bba0b4d4b613848f540bcae22a0a363d5846a8a77033244831208a5ea4",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure3_primary_endpoints.png",
+          "exists": true,
+          "sha256": "445436057df9ddbb0154e851d242041e82449849dee94eff2d2d038d3d52a451",
+          "expected_sha256": "445436057df9ddbb0154e851d242041e82449849dee94eff2d2d038d3d52a451",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure3_primary_endpoints.svg",
+          "exists": true,
+          "sha256": "fb04288ace9d1ea8f49dd2ba25b7c87d78cc90ae0eaf69693192ee51dbd70d97",
+          "expected_sha256": "fb04288ace9d1ea8f49dd2ba25b7c87d78cc90ae0eaf69693192ee51dbd70d97",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure4_pml12_vs_pml16_difference.png",
+          "exists": true,
+          "sha256": "5c1565073fbc41031e75d4bf20ab0f0d8ad8e99b092607c0e63fef64a19e565f",
+          "expected_sha256": "5c1565073fbc41031e75d4bf20ab0f0d8ad8e99b092607c0e63fef64a19e565f",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\pub2_20260812\\figure4_pml12_vs_pml16_difference.svg",
+          "exists": true,
+          "sha256": "a3e0d62774d70c4cf8df05ebfe5b54ae11cce0fa98ec46964ebbd9bfc00b2af1",
+          "expected_sha256": "a3e0d62774d70c4cf8df05ebfe5b54ae11cce0fa98ec46964ebbd9bfc00b2af1",
+          "hash_matches": true
+        }
+      ]
+    },
+    {
+      "artifact": "Supplementary Figure 1: H115 grid sensitivity",
+      "kind": "figure",
+      "manifest": "paper/figures/ucl_h115_grid_sensitivity_corrected_20260825/figure_manifest.json",
+      "claim_boundary": "Two-grid homogeneous-water sensitivity and nonpassing external comparison; not formal convergence or successful source validation.",
+      "inputs": [
+        {
+          "path": "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p5_coordinate_audit.json",
+          "exists": true,
+          "sha256": "3ef234fb4518eea4fd8e49f297064cdb5828796f1c08d3e9b4c8856316689a64",
+          "expected_sha256": null,
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p3_coordinate_audit.json",
+          "exists": true,
+          "sha256": "ce1de944a5ce1b7f9b83c4e50c04b61d44ebe4a77dae6e34dfb6b4ca6e83a590",
+          "expected_sha256": null,
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\ucl_h115_water_dx0p3_grid_sensitivity_full_20260823\\grid_sensitivity.json",
+          "exists": true,
+          "sha256": "81a9e2ef4641aaa2080b65903dc05a856490668e6612e6616d0c255d613208dc",
+          "expected_sha256": null,
+          "hash_matches": true
+        }
+      ],
+      "outputs": [
+        {
+          "path": "paper\\figures\\ucl_h115_grid_sensitivity_corrected_20260825\\figure_ucl_h115_grid_sensitivity.png",
+          "exists": true,
+          "sha256": "3c7eb48d0b8fef8aec95cff51c98824c6acddfb305b8e03371d8fbe3e2741099",
+          "expected_sha256": "3c7eb48d0b8fef8aec95cff51c98824c6acddfb305b8e03371d8fbe3e2741099",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\ucl_h115_grid_sensitivity_corrected_20260825\\figure_ucl_h115_grid_sensitivity.pdf",
+          "exists": true,
+          "sha256": "fb2f8d048b060d2c2d84c80566ef7f921e871d8e3683404c5ae615feaff457c6",
+          "expected_sha256": "fb2f8d048b060d2c2d84c80566ef7f921e871d8e3683404c5ae615feaff457c6",
+          "hash_matches": true
+        }
+      ]
+    },
+    {
+      "artifact": "Supplementary Figure 2: H115 source/registration",
+      "kind": "figure",
+      "manifest": "paper/figures/ucl_h115_source_registration_20260825/figure_manifest.json",
+      "claim_boundary": "Engineering sensitivity with a nonpassing primary external comparison; registration and aperture panels are secondary only.",
+      "inputs": [
+        {
+          "path": "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p5_coordinate_audit.json",
+          "exists": true,
+          "sha256": "3ef234fb4518eea4fd8e49f297064cdb5828796f1c08d3e9b4c8856316689a64",
+          "expected_sha256": null,
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\ucl_h115_water_nominal64_dx0p5_20260825\\comparison.json",
+          "exists": true,
+          "sha256": "6d394be119eda6cea6eabaf97e5a815c1d931db5236d352f4467ca2ed02777b0",
+          "expected_sha256": null,
+          "hash_matches": true
+        },
+        {
+          "path": "outputs\\ucl_h115_source_registration_audit_20260825\\source_registration_sensitivity.json",
+          "exists": true,
+          "sha256": "6358d54aa5756b1096f194e56304d10772debc3e88ee96482eea66b600465bc6",
+          "expected_sha256": null,
+          "hash_matches": true
+        }
+      ],
+      "outputs": [
+        {
+          "path": "paper\\figures\\ucl_h115_source_registration_20260825\\figure_ucl_h115_source_registration.png",
+          "exists": true,
+          "sha256": "c8d92b1184b53428e638979ddf36dbcfba16317728761070d46cb2415b05264e",
+          "expected_sha256": "c8d92b1184b53428e638979ddf36dbcfba16317728761070d46cb2415b05264e",
+          "hash_matches": true
+        },
+        {
+          "path": "paper\\figures\\ucl_h115_source_registration_20260825\\figure_ucl_h115_source_registration.pdf",
+          "exists": true,
+          "sha256": "9fd3e2915983376e756c50ab8cc98e3209dfeb8ad3b6009d3b7dee8d504359cc",
+          "expected_sha256": "9fd3e2915983376e756c50ab8cc98e3209dfeb8ad3b6009d3b7dee8d504359cc",
+          "hash_matches": true
+        }
+      ]
+    },
+    {
+      "artifact": "Supplementary Table 1: H115 endpoints",
+      "kind": "table",
+      "manifest": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.json",
+      "claim_boundary": "Held-out engineering comparison only; external validation remains nonpassing.",
+      "expected_rows": 24,
+      "observed_rows": 24,
+      "table_status": "passed",
+      "inputs": [
+        {
+          "path": "outputs/ucl_h115_source_registration_audit_20260825/effective_dx0p5_coordinate_audit.json",
+          "exists": true,
+          "sha256": "3ef234fb4518eea4fd8e49f297064cdb5828796f1c08d3e9b4c8856316689a64"
+        },
+        {
+          "path": "outputs/ucl_h115_source_registration_audit_20260825/effective_dx0p3_coordinate_audit.json",
+          "exists": true,
+          "sha256": "ce1de944a5ce1b7f9b83c4e50c04b61d44ebe4a77dae6e34dfb6b4ca6e83a590"
+        },
+        {
+          "path": "outputs/ucl_h115_water_nominal64_dx0p5_20260825/comparison.json",
+          "exists": true,
+          "sha256": "6d394be119eda6cea6eabaf97e5a815c1d931db5236d352f4467ca2ed02777b0"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.json",
+          "exists": true,
+          "sha256": "8af3f0d6468449228aab4af13562177bf613f179dfc85d06f09e26e401d225eb"
+        },
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.csv",
+          "exists": true,
+          "sha256": "708349eb8cabbb13c09d109378748906e696417735403eaa49c90f83d94184b3"
+        },
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.md",
+          "exists": true,
+          "sha256": "c4b1ed67acdb0b45b5e9d268b785798776c64b3b75473c2c3a8a36a1d46c2210"
+        }
+      ]
+    },
+    {
+      "artifact": "Supplementary Table 2: H115 methods",
+      "kind": "table",
+      "manifest": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.json",
+      "claim_boundary": "Reproducibility table only; external validation remains nonpassing and two grids are not formal convergence.",
+      "expected_rows": 3,
+      "observed_rows": 3,
+      "table_status": "passed",
+      "inputs": [
+        {
+          "path": "outputs/ucl_h115_water_validation_20260818/summary.json",
+          "exists": true,
+          "sha256": "e0a99e9f8d4fa6d81c36017312f88c249008206184c5631ccf3ce0193e1d2847"
+        },
+        {
+          "path": "outputs/ucl_h115_water_validation_20260818/package_validation.json",
+          "exists": true,
+          "sha256": "01908a9285347f935047535cabb2274ea05c2710703211fc28d63da9f61f1ccd"
+        },
+        {
+          "path": "outputs/ucl_h115_water_dx0p3_grid_sensitivity_full_20260823/summary.json",
+          "exists": true,
+          "sha256": "6161cdf3acb9ed159f92e8e361ab9100b1026fbbb5a55288a18bc697803f8b9b"
+        },
+        {
+          "path": "outputs/ucl_h115_water_dx0p3_grid_sensitivity_full_20260823/package_validation.json",
+          "exists": true,
+          "sha256": "13ba60fdceffcb4aaca81a3e2e62da99e82ca2a67f125b3de273c46114c68513"
+        },
+        {
+          "path": "outputs/ucl_h115_water_nominal64_dx0p5_20260825/summary.json",
+          "exists": true,
+          "sha256": "e671f14e5f4eb2fcce9c17894fb8490181297a4cf2771096cb479191bb93265d"
+        },
+        {
+          "path": "outputs/ucl_h115_source_registration_audit_20260825/package_validation.json",
+          "exists": true,
+          "sha256": "f97e8be2b78ace166fb92175d4e9513d61228ad1a027915700f44f529b23e4b3"
+        }
+      ],
+      "outputs": [
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.json",
+          "exists": true,
+          "sha256": "74d6d42f545586b30fa9131d80e9317d13cf47c1c97cfd84a7128054b54e2961"
+        },
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.csv",
+          "exists": true,
+          "sha256": "6a2f156e004aac398b801ea4b124e84b267c3dc8d526d921da6392f12d18b10e"
+        },
+        {
+          "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.md",
+          "exists": true,
+          "sha256": "3ed3f2a2baf2a8e17055f068d805f4cfc4d93dd71da369af607d640a9cf0e0d8"
+        }
+      ]
+    }
+  ],
+  "claim_boundary": "Traceability and package integrity only; H115 external validation remains nonpassing and Case079 remains single-case engineering evidence."
+}

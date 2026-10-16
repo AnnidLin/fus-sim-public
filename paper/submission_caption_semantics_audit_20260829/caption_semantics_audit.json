@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-28T21:43:00.679870+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_caption_semantics",
+  "submission_ready": false,
+  "artifact_group_count": 5,
+  "checks": {
+    "figure2_projection_and_coordinates_disclosed": true,
+    "figure2_pressure_definition_matches_manifest": true,
+    "figure2_shared_scale_disclosed": true,
+    "figure3_endpoint_definitions_disclosed": true,
+    "figure4_signed_difference_and_alignment_disclosed": true,
+    "figure4_blocks_formal_convergence": true,
+    "supplementary_grid_caption_matches_boundary": true,
+    "supplementary_source_caption_marks_secondary_arms": true,
+    "endpoint_table_caption_retains_nonpassing_verdict": true,
+    "methods_table_caption_retains_non_paper_grade": true,
+    "all_five_manifests_passed_or_bounded": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Caption-to-manifest agreement supports traceability only; it is not physical validation or submission authorization."
+}

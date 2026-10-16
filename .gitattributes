@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# A deliberately invalid, plain-text medical-file exclusion fixture.
+tests/fixtures/submission_archive_manifest/data/raw_ct/079.nii -text

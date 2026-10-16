@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "pub2_case079_verification_v1_20260812",
+  "freeze_date": "2026-08-12",
+  "status": "prospective_project_contract",
+  "question_of_interest": "Does matched full-wave time reversal improve simulated focal localization relative to baseline in frozen Case079 at 250 kHz?",
+  "context_of_use": "Single-case, within-model engineering comparison; not an absolute-pressure, safety, efficacy, or population-prediction claim.",
+  "rules": [
+    "Thresholds are project acceptance targets, not universal standards.",
+    "Unaligned preregistered benchmark metrics remain primary; post-hoc shift or gain fits are diagnostic only.",
+    "A failed or interrupted run is not imputed, resumed into the same evidence unit, or silently replaced.",
+    "Absolute pressure remains model-specific until experimental validation is completed."
+  ],
+  "acceptance_criteria": {
+    "artifact_integrity": {
+      "required": true,
+      "checks": [
+        "execution status completed",
+        "finite pressure field and scalar metrics",
+        "configuration, device, monitor, and hash manifests retained",
+        "independent package validator passes"
+      ]
+    },
+    "pml_sensitivity": {
+      "required": true,
+      "paired_variables": "PML12 versus PML16 with all other settings frozen and fields aligned on the common physical domain",
+      "limits": {
+        "relative_l2_percent_max": 1.0,
+        "relative_linf_percent_max": 2.0,
+        "peak_to_target_distance_change_mm_max": 0.75,
+        "target_to_global_ratio_absolute_change_max": 0.05
+      },
+      "current_status": "passed_for_tested_perturbation"
+    },
+    "time_step_sensitivity": {
+      "required_for_numerical_verification_claim": true,
+      "paired_variables": "CFL0.2 versus CFL0.1 with grid, PML, source, model, crop, and simulation time frozen",
+      "limits": {
+        "relative_l2_percent_max": 5.0,
+        "relative_linf_percent_max": 10.0,
+        "target_pressure_relative_change_percent_max": 5.0,
+        "peak_to_target_distance_change_mm_max": 0.75,
+        "target_to_global_ratio_absolute_change_max": 0.05
+      },
+      "current_status": "baseline_passed_tr_not_tested",
+      "current_result": {"relative_l2_percent": 0.654221, "relative_linf_percent": 1.37505, "target_pressure_relative_change_percent": -0.77049, "peak_to_target_distance_change_mm": 0.0, "target_to_global_ratio_absolute_change": 0.000524554}
+    },
+    "grid_sensitivity": {
+      "required_for_numerical_verification_claim": true,
+      "paired_variables": "dx0.75 mm versus one finer registered-grid configuration with physical model, source, target, PML thickness in physical units, CFL, crop, and duration controlled",
+      "limits": {
+        "target_pressure_relative_change_percent_max": 5.0,
+        "peak_to_target_distance_change_mm_max": 0.75,
+        "target_to_global_ratio_absolute_change_max": 0.05,
+        "minus6db_volume_relative_change_percent_max": 10.0
+      },
+      "current_status": "missing_matched_250khz_pair"
+    },
+    "domain_sensitivity": {
+      "required_for_strong_numerical_verification_claim": true,
+      "limits": {
+        "target_pressure_relative_change_percent_max": 5.0,
+        "peak_to_target_distance_change_mm_max": 0.75,
+        "target_to_global_ratio_absolute_change_max": 0.05
+      },
+      "current_status": "missing"
+    },
+    "itrusst_phase_a_external_benchmark": {
+      "role": "code-and-setup plausibility, not Case079 validation",
+      "project_targets": {
+        "focal_pressure_difference_percent_max": 10.0,
+        "focal_position_difference_mm_max": 1.0,
+        "relative_l2_percent_max": 20.0,
+        "bm1_control_relative_l2_percent_max": 10.0
+      },
+      "justification": "The ITRUSST intercomparison reports cross-model median focal-pressure and focal-position differences below 10% and 1 mm; it does not prescribe a universal pass/fail threshold. The 20% field-L2 target is therefore an explicit project choice.",
+      "current_status": {
+        "BM1": "passes_project_targets",
+        "BM3": "mixed_focal_position_exceeds_target",
+        "BM4": "does_not_pass_project_targets"
+      }
+    },
+    "public_270khz_experimental_validation": {
+      "role": "method-level external validation using independent CT and hydrophone measurements; not subject-specific validation of Case079",
+      "pilot_targets": {
+        "median_absolute_spatial_peak_pressure_error_percent_max": 25.0,
+        "median_focal_position_error_mm_max": 3.0,
+        "median_minus6db_focal_volume_error_percent_max": 40.0,
+        "report_all_individual_cases_and_maxima": true
+      },
+      "current_status": "feasible_not_started"
+    }
+  },
+  "claim_gates": {
+    "current_single_case_engineering_claim": {
+      "status": "supported_with_explicit_limitations",
+      "allowed": "TR improved simulated localization in one frozen case and the result was insensitive to the tested PML perturbation."
+    },
+    "paper_grade_numerical_verification": {
+      "status": "blocked",
+      "minimum_missing": ["completed CFL pair", "matched 250 kHz grid pair"]
+    },
+    "predictive_absolute_pressure_claim": {
+      "status": "blocked",
+      "minimum_missing": ["independent experimental validation", "material-property uncertainty analysis"]
+    },
+    "clinical_or_safety_claim": {
+      "status": "prohibited"
+    }
+  }
+}

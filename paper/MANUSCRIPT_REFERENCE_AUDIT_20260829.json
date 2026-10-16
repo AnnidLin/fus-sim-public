@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_for_scoped_claims",
+  "reference_count": 11,
+  "all_references_cited": true,
+  "all_citations_defined": true,
+  "entries": [
+    {"number": 1, "doi": "10.1016/j.brs.2024.04.013", "role": "ITRUSST reporting consensus", "supports": "reporting fields for interpretable transcranial ultrasound studies", "does_not_support": "validation of Case079 physics or safety", "source_type": "consensus", "status": "adequate_for_scoped_claim"},
+    {"number": 2, "doi": "10.1121/10.0013426", "role": "transcranial simulation benchmark", "supports": "frozen benchmark geometries, materials and comparison domains", "does_not_support": "uniform success of this project's BM3/BM4 results", "source_type": "benchmark_primary", "status": "adequate_for_scoped_claim"},
+    {"number": 3, "doi": "10.1109/ACCESS.2025.3584245", "role": "subject-specific phase-reversal context", "supports": "context that refocusing can be evaluated across multiple subject-specific head models", "does_not_support": "generalization of the single Case079 result", "source_type": "primary_research", "status": "adequate_for_scoped_claim"},
+    {"number": 4, "doi": "10.1109/TUFFC.2019.2941795", "role": "generic k-Wave experimental validation", "supports": "solver validation in water and layered absorbing media", "does_not_support": "the present source, skull mapping or Case079 pressure accuracy", "source_type": "primary_research", "status": "adequate_for_scoped_claim"},
+    {"number": 5, "doi": "10.1088/1361-6560/ada19d", "role": "cranial-bone experiment/simulation comparison", "supports": "the general value of CT-informed experimental comparison and the H115 study context", "does_not_support": "successful reproduction by the current simplified H115 source or validation of Case079", "source_type": "primary_research", "status": "adequate_for_scoped_claim"},
+    {"number": 6, "doi": "10.1088/1361-6560/aa5e98", "role": "acoustic-property-map sensitivity", "supports": "sensitivity to skull sound speed, thickness, smoothing and related map choices", "does_not_support": "the exact simple_hu300 constants", "source_type": "primary_research", "status": "adequate_for_scoped_claim"},
+    {"number": 7, "doi": "10.1121/10.0019380", "role": "uncertainty-estimation method", "supports": "the need and feasibility of uncertainty propagation in transcranial simulation", "does_not_support": "an uncertainty interval for the current deterministic Case079 run", "source_type": "methods_primary", "status": "adequate_for_scoped_claim"},
+    {"number": 8, "doi": "10.5522/04/28025240.v2", "role": "UCL comparator data record", "supports": "dataset identity, version, access route and CC BY 4.0 reuse basis", "does_not_support": "the physical correctness of the current source model", "source_type": "dataset_record", "status": "adequate_for_scoped_claim"},
+    {"number": 9, "doi": "10.1109/TUFFC.2022.3213185", "role": "hydrophone measurement review", "supports": "spatial averaging and positioning as measurement considerations", "does_not_support": "the approximate amplitude-domain average as a full complex hydrophone model", "source_type": "review", "status": "adequate_for_scoped_claim"},
+    {"number": 10, "doi": "10.1080/02656736.2017.1295322", "role": "heterogeneous skull sound-speed optimization", "supports": "experimental motivation for CT-informed heterogeneous sound-speed mapping", "does_not_support": "the frozen binary thresholds or combined density/attenuation constants", "source_type": "primary_research", "status": "adequate_for_scoped_claim"},
+    {"number": 11, "doi": "10.1109/TUFFC.2018.2827899", "role": "HU-to-acoustic-velocity measurement", "supports": "scanner photon-energy and reconstruction dependence of the HU-velocity relation", "does_not_support": "a universal mapping or the exact simple_hu300 profile", "source_type": "primary_research", "status": "adequate_for_scoped_claim"}
+  ],
+  "checks": {
+    "references_contiguous_1_to_11": true,
+    "doi_values_unique": true,
+    "every_entry_has_support_scope": true,
+    "every_entry_has_non_support_boundary": true,
+    "mapping_sources_not_overstated": true,
+    "generic_solver_validation_not_transferred_to_case079": true,
+    "dataset_record_not_used_as_physical_validation": true
+  },
+  "claim_boundary": "Citation coverage is adequate for the present scoped wording; it does not validate simple_hu300, Case079 anatomy/pressure, H115 source drive, convergence, efficacy or safety."
+}

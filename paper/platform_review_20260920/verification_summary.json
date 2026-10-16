@@ -1,0 +1,25 @@
+{
+  "trace_id": "TRACE-20260920-001",
+  "verified_date": "2026-09-20",
+  "executor": "Codex",
+  "scope": "Fresh read-only checks; no pressure solver or full regression suite",
+  "archive": {"function": "validate_submission_archive_integrity.build(Path.cwd())", "file_count": 136, "checks_passed": 12, "checks_failed": 0, "mismatches": [], "digest": "99e37dbb5411b7f2181ef560abf64017f9154a03cb65b85e13267be2ba320c5e"},
+  "status_consistency": {"function": "validate_submission_status_consistency.build(Path.cwd())", "checks_passed": 12, "checks_failed": 0},
+  "technical_preflight": {"function": "validate_h115_submission_preflight.build()", "checks_passed": 29, "checks_failed": 0, "submission_ready": false},
+  "registry": {"function": "validate_evidence_registry.validate with DEFAULT_REGISTRY and DEFAULT_SCHEMA", "checks_passed": 18, "checks_failed": 0},
+  "ledger_limited_check": {"entry_count": 63, "unique_run_ids": true, "missing_pressure_paths": []},
+  "matched_pair_artifact_hashes": {"count": 8, "mismatches": []},
+  "independent_raw_field_recalculation": {
+    "path": "outputs/h3_large_full_bowl_matched_standard_20260730",
+    "method": "Read pressure_max_mpa.npz; recompute finite status, global maximum, target voxel, radius-3 clipped index-box maximum and peak distance using stored dx_m; compare with focus_metrics.json",
+    "baseline": {"finite": true, "shape": [133, 98, 101], "target_index": [112, 40, 60], "target_point_mpa": 1.8913136720657349, "target_window_peak_mpa": 2.864854335784912, "global_peak_mpa": 3.9616923332214355, "target_point_ratio": 0.4774004422821547, "target_window_ratio": 0.7231390261583909, "peak_distance_mm": 57.378676851560684, "matches_saved_metrics": true},
+    "tr": {"finite": true, "shape": [133, 98, 101], "target_index": [112, 40, 60], "target_point_mpa": 2.5541017055511475, "target_window_peak_mpa": 2.593355178833008, "global_peak_mpa": 2.593355178833008, "target_point_ratio": 0.9848638267514425, "target_window_ratio": 1.0, "peak_distance_mm": 2.4874686143884825, "matches_saved_metrics": true}
+  },
+  "review_findings": [
+    "Master plan and July 31 freeze define target-window/global but quote target-point/global. Code and current manuscript use target-point/global. A dated discrepancy amendment is required before affected new analysis.",
+    "August 14 dx0.5 baseline stopped at a 14402.672-second monitoring ceiling without pressure, summary or focus_metrics. Stage return code 0 does not establish completion.",
+    "Existing technical validators miss the primary-endpoint prose conflict; some consume historical audit reports. Passing does not prove physical accuracy."
+  ],
+  "write_issue": "Initial CLI report-directory creation failed with WinError 5; build functions subsequently ran read-only. A scoped escalation created the new review directory. Historical outputs unchanged.",
+  "not_verified": ["full current test suite", "fresh solver reproducibility", "independent solver replication", "CT grid/domain convergence", "successful H115 validation", "clinical or safety validity"]
+}

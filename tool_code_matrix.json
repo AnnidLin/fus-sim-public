@@ -1,0 +1,71 @@
+[
+  {
+    "tool_id": "PRESTUS",
+    "name": "PREprocessing & Simulations for Transcranial Ultrasound Stimulation",
+    "url": "https://github.com/Donders-Institute/PRESTUS",
+    "language": "MATLAB",
+    "solver_backend": "k-Wave",
+    "input_data": ["T1 MRI", "SimNIBS charm", "CT/pseudo-CT workflows"],
+    "output_data": ["3D pressure/heating maps", "subject/MNI outputs"],
+    "evidence_level": "README明确",
+    "license": "GPL-3.0",
+    "what_to_learn": "complete pipeline organization from preprocessing to acoustic/heating reports",
+    "risk_or_limit": "heavy MATLAB/SimNIBS/k-Wave dependencies; research only",
+    "priority": "high"
+  },
+  {
+    "tool_id": "TUSX",
+    "name": "Transcranial Ultrasound Simulation Toolbox",
+    "url": "https://www.tusx.org/",
+    "language": "MATLAB",
+    "solver_backend": "k-Wave",
+    "input_data": ["structural MR or CT", "binary skull volume", "NIfTI coordinates"],
+    "output_data": ["pressure distributions", "cropped simulation volume"],
+    "evidence_level": "官网明确 + 预印本信息",
+    "what_to_learn": "simple target/transducer interface and k-Wave single-bowl pipeline",
+    "risk_or_limit": "exact GitHub README/license still needs confirmation",
+    "priority": "high"
+  },
+  {
+    "tool_id": "BabelBrain",
+    "name": "BabelBrain",
+    "url": "https://github.com/ProteusMRIgHIFU/BabelBrain",
+    "language": "Python GUI / mixed",
+    "solver_backend": "BabelViscoFDTD",
+    "input_data": ["MRI", "CT", "ZTE", "PETRA", "density maps"],
+    "output_data": ["acoustic field", "thermal effects", "NIfTI/reports"],
+    "evidence_level": "README明确",
+    "license": "BSD-3-Clause",
+    "what_to_learn": "mature report structure, transducer profiles, grouped sonication thermal modeling",
+    "risk_or_limit": "GPU/platform dependencies and complex stack",
+    "priority": "high"
+  },
+  {
+    "tool_id": "PlanTUS",
+    "name": "Heuristic planning of TUS transducer placements",
+    "url": "https://github.com/mlueckel/PlanTUS",
+    "language": "Python",
+    "solver_backend": "heuristic geometry planning",
+    "input_data": ["T1/T2 MRI", "SimNIBS charm mesh", "target ROI"],
+    "output_data": ["transform matrices", ".kps", ".mat/.txt placement files"],
+    "evidence_level": "README明确",
+    "license": "MIT",
+    "what_to_learn": "entry/target metrics: distance, tilt, skull-normal mismatch, avoidance regions",
+    "risk_or_limit": "not a replacement for acoustic simulation",
+    "priority": "high"
+  },
+  {
+    "tool_id": "Kranion",
+    "name": "Kranion",
+    "url": "https://github.com/jws2f/Kranion",
+    "language": "Java GUI / GPU shader",
+    "solver_backend": "ray tracing phase correction",
+    "input_data": ["CT/MRI registration", "skull CT"],
+    "output_data": ["phase correction file", "ray visualization"],
+    "evidence_level": "论文/README明确",
+    "license": "MIT per paper",
+    "what_to_learn": "phase correction and hydrophone validation workflow",
+    "risk_or_limit": "not a complete pressure/thermal solver",
+    "priority": "medium_after_freefield"
+  }
+]

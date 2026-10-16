@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "question_of_interest": "Does matched full-wave time reversal improve simulated focal localization relative to baseline in frozen Case079?",
+  "context_of_use": "Within-model, single-case relative comparison of target/global peak ratio and global-peak-to-target distance.",
+  "excluded_uses": [
+    "absolute in-situ pressure prediction",
+    "clinical efficacy",
+    "safety assessment",
+    "population generalization",
+    "formal numerical convergence"
+  ],
+  "evidence": {
+    "software_tests": {"status": "passed", "detail": "324 unittest cases passed"},
+    "reproducibility_governance": {"status": "passed", "detail": "ledger, registry, manifest and final package validators passed"},
+    "external_code_benchmarks": {
+      "status": "partial",
+      "BM1": {"peak_difference_percent": 0.4739128617, "focal_position_difference_mm": 0.5, "relative_l2_percent": 3.2625588402},
+      "BM3": {"peak_difference_percent": 0.2292940310, "focal_position_difference_mm": 2.0, "relative_l2_percent": 15.7682302241},
+      "BM4": {"peak_difference_percent": 13.5334692963, "focal_position_difference_mm": 1.5, "relative_l2_percent": 27.1000436898}
+    },
+    "external_benchmark_posthoc_diagnostic": {
+      "status": "completed_not_a_replacement_metric",
+      "BM1": {"fixed_mask_l2_percent": 3.2360877196, "shift_and_scale_l2_percent": 3.1053837421},
+      "BM3": {"fixed_mask_l2_percent": 15.4975983923, "main_lobe_l2_percent": 4.3294208387, "below_minus12db_l2_percent": 29.5087802482, "shift_and_scale_l2_percent": 15.2636587252},
+      "BM4": {"fixed_mask_l2_percent": 26.9503895644, "reference_over_candidate_scale": 0.8333187541, "scale_only_l2_percent": 18.4346359254, "shift_and_scale_l2_percent": 17.7691131894}
+    },
+    "pml_sensitivity": {"status": "passed_for_tested_perturbation", "detail": "Matched PML12/PML16 baseline and TR; localization distances unchanged"},
+    "current_cfl_sensitivity": {"status": "missing", "detail": "CFL0.1 attempt interrupted before core outputs"},
+    "current_grid_sensitivity": {"status": "missing", "detail": "No matched 250-kHz baseline/TR refinement"},
+    "physical_domain_sensitivity": {"status": "missing", "detail": "PML thickness is not an expanded-domain test"},
+    "input_uncertainty_quantification": {"status": "missing", "detail": "Single simple_hu300 mapping only"},
+    "model_specific_experimental_validation": {"status": "missing", "detail": "No matched Case079/transducer hydrophone comparator"},
+    "independent_public_experimental_validation": {"status": "feasible_not_started", "detail": "UCL 270-kHz selective subset is about 2.31 GB; validates the method chain, not Case079"},
+    "independent_cases": {"status": "missing", "detail": "Case079 only"}
+  },
+  "adequacy": {
+    "single_case_within_model_localization_claim": "conditionally_adequate_with_explicit_limitations",
+    "numerical_convergence_claim": "not_adequate",
+    "absolute_pressure_accuracy_claim": "not_adequate",
+    "generalization_claim": "not_adequate",
+    "efficacy_or_safety_claim": "prohibited"
+  },
+  "frozen_acceptance_contract": "paper/PUB2_VERIFICATION_CONTRACT_20260812.json"
+}

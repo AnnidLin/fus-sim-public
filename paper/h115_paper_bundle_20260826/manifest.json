@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:42:29.371522+00:00",
+  "status": "passed",
+  "expected_count": 31,
+  "file_count": 31,
+  "missing": [],
+  "files": [
+    {
+      "path": "paper/PUB2_MANUSCRIPT_DRAFT_V0_1_20260812.md",
+      "size_bytes": 30224,
+      "sha256": "bbb39be5f056f367038e1985d03ea696505ebf7d9d3166773ecb875e457a0314"
+    },
+    {
+      "path": "paper/PUB2_METHODS_RESULTS_EVIDENCE_20260812.md",
+      "size_bytes": 10887,
+      "sha256": "528bdbdefeb80ebbb0e63554f985d820bfe68b8c186971aabce07136bd87d52a"
+    },
+    {
+      "path": "paper/UCL_H115_PAPER_READINESS_20260823.md",
+      "size_bytes": 5169,
+      "sha256": "73a0099d5f8500f13c707a573367b74957dd377a2deb26538a30bf7313f80772"
+    },
+    {
+      "path": "paper/UCL_H115_VALIDATION_DECISION_BRIEF_ZH_20260826.md",
+      "size_bytes": 3590,
+      "sha256": "2c9fda4861ff757dadea035195cfd8cda909b5cd21ea1776d6243324d9b5cad5"
+    },
+    {
+      "path": "paper/MANUSCRIPT_EVIDENCE_MAP.md",
+      "size_bytes": 13399,
+      "sha256": "84caa90a22a932379364a02d8abd19e01be9169c52926005925ce3712057587c"
+    },
+    {
+      "path": "paper/PUB2_REPORTING_CHECKLIST_20260812.md",
+      "size_bytes": 3920,
+      "sha256": "867782fcdcaefb6276ea5b4fb8d1319f9016e430334b2914bfc45f41196dc9d0"
+    },
+    {
+      "path": "paper/PUB2_PUBLIC_HYDROPHONE_VALIDATION_FEASIBILITY_20260812.md",
+      "size_bytes": 7943,
+      "sha256": "542294d6bed95faa890faacdd596077ffea047cc1f3ec6ab83e8c1a19b2bd653"
+    },
+    {
+      "path": "paper/H115_REPRODUCTION_RECIPE_20260826.md",
+      "size_bytes": 5755,
+      "sha256": "d5214b22905d77fa5d430c3532050aa7fe86eb05824e700667df62560f5b665b"
+    },
+    {
+      "path": "paper/H115_REVIEWER_RISK_REGISTER_20260826.md",
+      "size_bytes": 6947,
+      "sha256": "bc80ffdfa3fb232ba41512df738a33561002f263409ab598649f4871c603cfc4"
+    },
+    {
+      "path": "paper/H115_DELIVERABLES_INDEX_ZH_20260826.md",
+      "size_bytes": 3960,
+      "sha256": "cb51d3eaa76c8f86736ec437eea4377775eaf8e847bfb843f6449781861b8639"
+    },
+    {
+      "path": "paper/h115_submission_preflight_20260826/submission_preflight.json",
+      "size_bytes": 2359,
+      "sha256": "de5b2809817cb3f1410560dae88b6d2bc62598f5d33d316bd9b9fd993c6aacf5"
+    },
+    {
+      "path": "paper/h115_submission_preflight_20260826/submission_preflight.md",
+      "size_bytes": 2148,
+      "sha256": "e15a7fb86273d4266d543421f4bd627a930870091f60465d09848f77d6d5c493"
+    },
+    {
+      "path": "paper/figures/ucl_h115_grid_sensitivity_corrected_20260825/figure_manifest.json",
+      "size_bytes": 1062,
+      "sha256": "71b48aefc0359e31cad8ee873787fe2da25fa31926d5ff73fca2be4d4ebccf7b"
+    },
+    {
+      "path": "paper/figures/ucl_h115_grid_sensitivity_corrected_20260825/figure_ucl_h115_grid_sensitivity.png",
+      "size_bytes": 511771,
+      "sha256": "3c7eb48d0b8fef8aec95cff51c98824c6acddfb305b8e03371d8fbe3e2741099"
+    },
+    {
+      "path": "paper/figures/ucl_h115_grid_sensitivity_corrected_20260825/figure_ucl_h115_grid_sensitivity.pdf",
+      "size_bytes": 127007,
+      "sha256": "fb2f8d048b060d2c2d84c80566ef7f921e871d8e3683404c5ae615feaff457c6"
+    },
+    {
+      "path": "paper/figures/ucl_h115_source_registration_20260825/figure_manifest.json",
+      "size_bytes": 1034,
+      "sha256": "566d2ce63501b2a7ad36f68186dff5fcc362cacd94e2ec3b8b1f86f2b5d34950"
+    },
+    {
+      "path": "paper/figures/ucl_h115_source_registration_20260825/figure_ucl_h115_source_registration.png",
+      "size_bytes": 429334,
+      "sha256": "c8d92b1184b53428e638979ddf36dbcfba16317728761070d46cb2415b05264e"
+    },
+    {
+      "path": "paper/figures/ucl_h115_source_registration_20260825/figure_ucl_h115_source_registration.pdf",
+      "size_bytes": 28291,
+      "sha256": "9fd3e2915983376e756c50ab8cc98e3209dfeb8ad3b6009d3b7dee8d504359cc"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.json",
+      "size_bytes": 5910,
+      "sha256": "8af3f0d6468449228aab4af13562177bf613f179dfc85d06f09e26e401d225eb"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.csv",
+      "size_bytes": 2294,
+      "sha256": "708349eb8cabbb13c09d109378748906e696417735403eaa49c90f83d94184b3"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.md",
+      "size_bytes": 2603,
+      "sha256": "c4b1ed67acdb0b45b5e9d268b785798776c64b3b75473c2c3a8a36a1d46c2210"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.json",
+      "size_bytes": 2962,
+      "sha256": "74d6d42f545586b30fa9131d80e9317d13cf47c1c97cfd84a7128054b54e2961"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.csv",
+      "size_bytes": 1232,
+      "sha256": "6a2f156e004aac398b801ea4b124e84b267c3dc8d526d921da6392f12d18b10e"
+    },
+    {
+      "path": "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.md",
+      "size_bytes": 1242,
+      "sha256": "3ed3f2a2baf2a8e17055f068d805f4cfc4d93dd71da369af607d640a9cf0e0d8"
+    },
+    {
+      "path": "outputs/evidence_briefs/ucl_h115_source_registration_20260825/evidence_brief.json",
+      "size_bytes": 2092,
+      "sha256": "ac8c50e1e99f67dbb53eb812523cb68bc3e20842b92e948159368a6493bb8a5e"
+    },
+    {
+      "path": "outputs/evidence_briefs/ucl_h115_source_registration_20260825/validation_contract.json",
+      "size_bytes": 1135,
+      "sha256": "135d32ac6875233b37cd5599691617832ee2a19ac937625b2e8717aa7b64807c"
+    },
+    {
+      "path": "outputs/evidence_briefs/ucl_h115_source_registration_20260825/gap_feedback.json",
+      "size_bytes": 1613,
+      "sha256": "b505e297869b0154c3efe4136e503ce39ec30e53accbbeedd9a478cbad24edde"
+    },
+    {
+      "path": "outputs/ucl_h115_source_registration_audit_20260825/source_registration_sensitivity.json",
+      "size_bytes": 18684,
+      "sha256": "6358d54aa5756b1096f194e56304d10772debc3e88ee96482eea66b600465bc6"
+    },
+    {
+      "path": "outputs/ucl_h115_source_registration_audit_20260825/manuscript_consistency.json",
+      "size_bytes": 5111,
+      "sha256": "e910d30f5035c4332473dfe81a8574b01a073c130568401c0afc039bb92bb6ee"
+    },
+    {
+      "path": "outputs/ucl_h115_source_registration_audit_20260825/package_validation.json",
+      "size_bytes": 3400,
+      "sha256": "f97e8be2b78ace166fb92175d4e9513d61228ad1a027915700f44f529b23e4b3"
+    },
+    {
+      "path": "outputs/ucl_h115_recheck_20260826/reproducibility_recheck.json",
+      "size_bytes": 2876,
+      "sha256": "8b930184f65894c33594ca51bb46629889e7e0e8488a89e5ebe516a3ef2c97a4"
+    }
+  ],
+  "excluded_large_artifacts": [
+    "pressure_max_mpa.npz; retained in the execution package validation"
+  ],
+  "claim_boundary": "Paper-facing traceability only; not successful external validation or formal convergence."
+}

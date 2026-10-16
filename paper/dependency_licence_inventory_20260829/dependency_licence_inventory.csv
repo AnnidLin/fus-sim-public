@@ -1,0 +1,30 @@
+name,expected_version,installed_version,version_matches,licence_summary,project_url,installed
+beartype,0.22.9,0.22.9,True,MIT License,"Docs, https://beartype.readthedocs.io",True
+colorama,0.4.6,0.4.6,True,BSD License,"Homepage, https://github.com/tartley/colorama",True
+contourpy,1.3.3,1.3.3,True,BSD License,"Homepage, https://github.com/contourpy/contourpy",True
+cycler,0.12.1,0.12.1,True,BSD License,"homepage, https://matplotlib.org/cycler/",True
+deepdiff,8.6.2,8.6.2,True,MIT License,"Documentation, https://zepworks.com/deepdiff/",True
+Deprecated,1.3.1,1.3.1,True,MIT License,https://github.com/laurent-laporte-pro/deprecated,True
+fonttools,4.62.1,4.62.1,True,MIT,http://github.com/fonttools/fonttools,True
+h5py,3.15.1,3.15.1,True,BSD-3-Clause,"Homepage, https://www.h5py.org/",True
+jaxtyping,0.3.2,0.3.2,True,MIT License,"repository, https://github.com/google/jaxtyping",True
+k-Wave-python,0.6.1,0.6.1,True,GNU General Public License v3 (GPLv3),"Homepage, http://www.k-wave.org/",True
+kiwisolver,1.5.0,1.5.0,True,BSD License,"homepage, https://github.com/nucleic/kiwi",True
+matplotlib,3.10.7,3.10.7,True,Python Software Foundation License,"Homepage, https://matplotlib.org",True
+nibabel,5.4.2,5.4.2,True,MIT,"Homepage, https://nipy.org/nibabel",True
+numpy,2.2.6,2.2.6,True,BSD License,"homepage, https://numpy.org",True
+opencv-python,4.13.0.92,4.13.0.92,True,Apache Software License,https://github.com/opencv/opencv-python,True
+orderly-set,5.5.0,5.5.0,True,MIT License,"Download, https://github.com/seperman/orderly-set/tarball/master",True
+packaging,26.2,26.2,True,Apache-2.0 OR BSD-2-Clause,"Documentation, https://packaging.pypa.io/",True
+pillow,12.2.0,12.2.0,True,MIT-CMU,"Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",True
+pydicom,3.0.1,3.0.1,True,MIT License,"documentation, https://pydicom.github.io/pydicom",True
+pyparsing,3.3.2,3.3.2,True,MIT,"Documentation, https://pyparsing-docs.readthedocs.io/en/latest/",True
+python-dateutil,2.9.0.post0,2.9.0.post0,True,BSD License; Apache Software License,https://github.com/dateutil/dateutil,True
+scipy,1.15.3,1.15.3,True,BSD License,"homepage, https://scipy.org/",True
+setuptools,82.0.1,82.0.1,True,MIT,"Source, https://github.com/pypa/setuptools",True
+six,1.17.0,1.17.0,True,MIT License,https://github.com/benjaminp/six,True
+tqdm,4.67.3,4.67.3,True,MPL-2.0 AND MIT,"homepage, https://tqdm.github.io",True
+typing_extensions,4.15.0,4.15.0,True,PSF-2.0,"Bug Tracker, https://github.com/python/typing_extensions/issues",True
+wadler_lindig,0.1.7,0.1.7,True,Apache Software License,"repository, https://github.com/patrick-kidger/wadler_lindig",True
+wheel,0.47.0,0.47.0,True,MIT,"Changelog, https://wheel.readthedocs.io/en/stable/news.html",True
+wrapt,2.1.2,2.1.2,True,BSD-2-Clause,"Homepage, https://github.com/GrahamDumpleton/wrapt",True

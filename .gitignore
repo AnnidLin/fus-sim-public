@@ -1,0 +1,39 @@
+# Data and output directories
+data/
+outputs/
+.tmp/
+__pycache__/
+*.pyc
+
+# Heavy scientific and data files
+*.npz
+*.nii
+*.zip
+*.bin
+*.exe
+
+# IDE and system files
+.vscode/
+.idea/
+literature_tFUS_review/.obsidian/workspace.json
+.DS_Store
+Thumbs.db
+
+# Public export boundaries
+*.nii.gz
+*.dcm
+*.h5
+*.hdf5
+*.mat
+*.pdf
+*.pem
+*.key
+.env
+.env.*
+.venv/
+.pytest_cache/
+.tmp/
+tmp/
+scratch/
+# This exact plain-text test fixture is NOT an image.
+!tests/fixtures/submission_archive_manifest/data/raw_ct/079.nii

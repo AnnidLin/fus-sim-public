@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "trace_id": "TRACE-20260829-001",
+  "closed_at": "2026-08-29T10:02:08+08:00",
+  "elapsed_hours": 10.0,
+  "status": "completed_technical_scope_author_actions_pending",
+  "technical_closure_complete": true,
+  "submission_ready": false,
+  "solver_started": false,
+  "physical_defaults_changed": false,
+  "external_actions_performed": false,
+  "h115_external_comparison": "nonpassing",
+  "governance_snapshot": {
+    "generated_at": "2026-08-29T08:22:31+08:00",
+    "evidence_registry_valid": true,
+    "run_ledger_valid": true,
+    "reproducibility_manifest_valid": true,
+    "failed_check_count": 0,
+    "final_refresh": "not_written_existing_outputs_permission_denied"
+  },
+  "stable_archive": {
+    "file_count": 136,
+    "total_size_bytes": 1722038,
+    "content_digest_sha256": "99e37dbb5411b7f2181ef560abf64017f9154a03cb65b85e13267be2ba320c5e",
+    "integrity_status": "passed_archive_integrity_blocked_release",
+    "modified_during_closeout": false
+  },
+  "archived_evidence_brief_status": "in_progress_non_solver_historical_snapshot",
+  "final_status_authority": [
+    "outputs/evidence_briefs/submission_readiness_20260829/gap_feedback.json",
+    "paper/SUBMISSION_FINAL_CLOSURE_20260829.json"
+  ],
+  "release_blockers": [
+    "project_license_unresolved",
+    "source_revision_not_frozen",
+    "archive_doi_not_minted"
+  ],
+  "retained_gap_count": 6,
+  "claim_boundary": "Technical closure is complete only for the bounded non-solver submission-preparation scope. It is not submission authorization, public-release authorization, successful H115 physical validation, clinical evidence or paper-grade convergence."
+}

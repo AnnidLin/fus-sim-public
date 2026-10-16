@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:42:58.472872+00:00",
+  "status": "passed",
+  "checks": {
+    "archive_has_136_files": true,
+    "archive_has_no_missing_files": true,
+    "archive_has_no_prohibited_matches": true,
+    "archive_not_release_ready": true,
+    "archive_retains_three_blockers": true,
+    "preflight_has_zero_technical_failures": true,
+    "preflight_not_submission_ready": true,
+    "manuscript_consistency_passed": true,
+    "paper_bundle_passed_31_files": true,
+    "canonical_docs_report_136_files": true,
+    "canonical_docs_have_no_stale_counts": true,
+    "decision_sheet_is_no_go": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Cross-document status consistency only; not physical validation or submission authorization."
+}

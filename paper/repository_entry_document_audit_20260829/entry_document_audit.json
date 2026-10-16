@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:03:27.217947+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_entry_document_boundaries",
+  "submission_ready": false,
+  "test_file_count": 115,
+  "checks": {
+    "readme_date_is_current": true,
+    "readme_retains_submission_false": true,
+    "readme_reports_h115_6_of_8_and_0_of_8": true,
+    "readme_reports_recovered_cfl": true,
+    "readme_has_no_stale_interrupted_cfl_status": true,
+    "readme_blocks_solver_authorization": true,
+    "readme_test_count_is_bounded_and_true": true,
+    "readme_does_not_overstate_full_test_execution": true,
+    "readme_links_reviewer_guide": true,
+    "runbook_is_not_authorization": true,
+    "runbook_marks_example_paths_as_historical_risk": true,
+    "runbook_requires_edd_and_device_gate": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Entry-document currency prevents operational misuse; it does not validate simulation physics or authorize release."
+}

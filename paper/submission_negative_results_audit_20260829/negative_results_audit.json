@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-28T21:03:25.239774+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_negative_results_and_limitations_retained",
+  "submission_ready": false,
+  "h115_failed_endpoint_count": 12,
+  "effective_failed_endpoint_count": 4,
+  "nominal_failed_endpoint_count": 8,
+  "checks": {
+    "table_retains_24_endpoints": true,
+    "effective_grids_each_pass_6_of_8": true,
+    "nominal_geometry_retains_0_of_8": true,
+    "effective_failures_are_axial_position_and_transverse_l2": true,
+    "nominal_all_eight_failures_retained": true,
+    "manuscript_reports_both_effective_failure_values": true,
+    "manuscript_reports_nominal_worsening": true,
+    "manuscript_blocks_posthoc_registration": true,
+    "manuscript_blocks_formal_convergence": true,
+    "manuscript_retains_nonpassing_boundary": true,
+    "reviewer_register_retains_all_eight_endpoint_gate": true,
+    "mapping_qc_retains_unvalidated_boundaries": true,
+    "provenance_retains_private_author_confirmation": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Retention of negative results reduces reporting bias; it does not make the nonpassing comparison successful validation."
+}

@@ -1,0 +1,12 @@
+comparison,method,metric,reference_value,candidate_value,absolute_change,relative_change,status
+baseline_to_TR,matched,target_to_global_peak_ratio,0.4774004423,0.9848638268,0.5074633845,1.062972171,supported
+baseline_to_TR,matched,global_peak_to_target_distance_mm,57.37867685,2.487468614,-54.89120824,-0.9566482054,supported
+baseline_to_TR,matched,target_pressure_mpa,1.891313672,2.554101706,0.6627880335,0.3504379222,simulated_pressure_only
+baseline_to_TR,matched,global_peak_mpa,3.961692333,2.593355179,-1.368337154,-0.3453920798,simulated_pressure_only
+PML12_to_PML16,baseline,relative_L2,0,1.834476111e-5,1.834476111e-5,,supported
+PML12_to_PML16,baseline,relative_Linf,0,6.753811954e-5,6.753811954e-5,,supported
+PML12_to_PML16,TR,relative_L2,0,5.052964468e-5,5.052964468e-5,,supported
+PML12_to_PML16,TR,relative_Linf,0,1.463365976e-4,1.463365976e-4,,supported
+PML12_to_PML16,baseline,peak_distance_change_mm,57.37867685,57.37867685,0,0,supported
+PML12_to_PML16,TR,peak_distance_change_mm,2.487468614,2.487468614,0,0,supported
+CFL0.2_to_CFL0.1,baseline,all_primary_metrics,,,,,unavailable_interrupted_no_core_outputs

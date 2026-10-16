@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.claim_policy.schema.v1",
+  "title": "fus-sim Claim Policy",
+  "type": "object",
+  "required": [
+    "policy_version",
+    "module",
+    "scope",
+    "current_claim_level",
+    "allowed_claims",
+    "blocked_claims",
+    "claim_flags",
+    "required_report_fields",
+    "enforcement_rules"
+  ],
+  "properties": {
+    "policy_version": {"const": "1.0.0"},
+    "module": {"const": "claim_policy"},
+    "scope": {"type": "string"},
+    "current_claim_level": {"type": "string"},
+    "allowed_claims": {"type": "array", "items": {"type": "string"}},
+    "blocked_claims": {"type": "array", "items": {"type": "string"}},
+    "claim_flags": {"type": "object"},
+    "required_report_fields": {"type": "array", "items": {"type": "string"}},
+    "enforcement_rules": {"type": "array", "items": {"type": "string"}}
+  }
+}

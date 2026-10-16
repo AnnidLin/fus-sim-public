@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.0",
+  "status": "conditional_project_licence_missing",
+  "project_licence": null,
+  "project_licence_author_decision_required": true,
+  "dependencies": [
+    {
+      "name": "beartype",
+      "expected_version": "0.22.9",
+      "installed_version": "0.22.9",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "Docs, https://beartype.readthedocs.io",
+      "installed": true
+    },
+    {
+      "name": "colorama",
+      "expected_version": "0.4.6",
+      "installed_version": "0.4.6",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "Homepage, https://github.com/tartley/colorama",
+      "installed": true
+    },
+    {
+      "name": "contourpy",
+      "expected_version": "1.3.3",
+      "installed_version": "1.3.3",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "Homepage, https://github.com/contourpy/contourpy",
+      "installed": true
+    },
+    {
+      "name": "cycler",
+      "expected_version": "0.12.1",
+      "installed_version": "0.12.1",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "homepage, https://matplotlib.org/cycler/",
+      "installed": true
+    },
+    {
+      "name": "deepdiff",
+      "expected_version": "8.6.2",
+      "installed_version": "8.6.2",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "Documentation, https://zepworks.com/deepdiff/",
+      "installed": true
+    },
+    {
+      "name": "Deprecated",
+      "expected_version": "1.3.1",
+      "installed_version": "1.3.1",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "https://github.com/laurent-laporte-pro/deprecated",
+      "installed": true
+    },
+    {
+      "name": "fonttools",
+      "expected_version": "4.62.1",
+      "installed_version": "4.62.1",
+      "version_matches": true,
+      "licence_summary": "MIT",
+      "project_url": "http://github.com/fonttools/fonttools",
+      "installed": true
+    },
+    {
+      "name": "h5py",
+      "expected_version": "3.15.1",
+      "installed_version": "3.15.1",
+      "version_matches": true,
+      "licence_summary": "BSD-3-Clause",
+      "project_url": "Homepage, https://www.h5py.org/",
+      "installed": true
+    },
+    {
+      "name": "jaxtyping",
+      "expected_version": "0.3.2",
+      "installed_version": "0.3.2",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "repository, https://github.com/google/jaxtyping",
+      "installed": true
+    },
+    {
+      "name": "k-Wave-python",
+      "expected_version": "0.6.1",
+      "installed_version": "0.6.1",
+      "version_matches": true,
+      "licence_summary": "GNU General Public License v3 (GPLv3)",
+      "project_url": "Homepage, http://www.k-wave.org/",
+      "installed": true
+    },
+    {
+      "name": "kiwisolver",
+      "expected_version": "1.5.0",
+      "installed_version": "1.5.0",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "homepage, https://github.com/nucleic/kiwi",
+      "installed": true
+    },
+    {
+      "name": "matplotlib",
+      "expected_version": "3.10.7",
+      "installed_version": "3.10.7",
+      "version_matches": true,
+      "licence_summary": "Python Software Foundation License",
+      "project_url": "Homepage, https://matplotlib.org",
+      "installed": true
+    },
+    {
+      "name": "nibabel",
+      "expected_version": "5.4.2",
+      "installed_version": "5.4.2",
+      "version_matches": true,
+      "licence_summary": "MIT",
+      "project_url": "Homepage, https://nipy.org/nibabel",
+      "installed": true
+    },
+    {
+      "name": "numpy",
+      "expected_version": "2.2.6",
+      "installed_version": "2.2.6",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "homepage, https://numpy.org",
+      "installed": true
+    },
+    {
+      "name": "opencv-python",
+      "expected_version": "4.13.0.92",
+      "installed_version": "4.13.0.92",
+      "version_matches": true,
+      "licence_summary": "Apache Software License",
+      "project_url": "https://github.com/opencv/opencv-python",
+      "installed": true
+    },
+    {
+      "name": "orderly-set",
+      "expected_version": "5.5.0",
+      "installed_version": "5.5.0",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "Download, https://github.com/seperman/orderly-set/tarball/master",
+      "installed": true
+    },
+    {
+      "name": "packaging",
+      "expected_version": "26.2",
+      "installed_version": "26.2",
+      "version_matches": true,
+      "licence_summary": "Apache-2.0 OR BSD-2-Clause",
+      "project_url": "Documentation, https://packaging.pypa.io/",
+      "installed": true
+    },
+    {
+      "name": "pillow",
+      "expected_version": "12.2.0",
+      "installed_version": "12.2.0",
+      "version_matches": true,
+      "licence_summary": "MIT-CMU",
+      "project_url": "Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+      "installed": true
+    },
+    {
+      "name": "pydicom",
+      "expected_version": "3.0.1",
+      "installed_version": "3.0.1",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "documentation, https://pydicom.github.io/pydicom",
+      "installed": true
+    },
+    {
+      "name": "pyparsing",
+      "expected_version": "3.3.2",
+      "installed_version": "3.3.2",
+      "version_matches": true,
+      "licence_summary": "MIT",
+      "project_url": "Documentation, https://pyparsing-docs.readthedocs.io/en/latest/",
+      "installed": true
+    },
+    {
+      "name": "python-dateutil",
+      "expected_version": "2.9.0.post0",
+      "installed_version": "2.9.0.post0",
+      "version_matches": true,
+      "licence_summary": "BSD License; Apache Software License",
+      "project_url": "https://github.com/dateutil/dateutil",
+      "installed": true
+    },
+    {
+      "name": "scipy",
+      "expected_version": "1.15.3",
+      "installed_version": "1.15.3",
+      "version_matches": true,
+      "licence_summary": "BSD License",
+      "project_url": "homepage, https://scipy.org/",
+      "installed": true
+    },
+    {
+      "name": "setuptools",
+      "expected_version": "82.0.1",
+      "installed_version": "82.0.1",
+      "version_matches": true,
+      "licence_summary": "MIT",
+      "project_url": "Source, https://github.com/pypa/setuptools",
+      "installed": true
+    },
+    {
+      "name": "six",
+      "expected_version": "1.17.0",
+      "installed_version": "1.17.0",
+      "version_matches": true,
+      "licence_summary": "MIT License",
+      "project_url": "https://github.com/benjaminp/six",
+      "installed": true
+    },
+    {
+      "name": "tqdm",
+      "expected_version": "4.67.3",
+      "installed_version": "4.67.3",
+      "version_matches": true,
+      "licence_summary": "MPL-2.0 AND MIT",
+      "project_url": "homepage, https://tqdm.github.io",
+      "installed": true
+    },
+    {
+      "name": "typing_extensions",
+      "expected_version": "4.15.0",
+      "installed_version": "4.15.0",
+      "version_matches": true,
+      "licence_summary": "PSF-2.0",
+      "project_url": "Bug Tracker, https://github.com/python/typing_extensions/issues",
+      "installed": true
+    },
+    {
+      "name": "wadler_lindig",
+      "expected_version": "0.1.7",
+      "installed_version": "0.1.7",
+      "version_matches": true,
+      "licence_summary": "Apache Software License",
+      "project_url": "repository, https://github.com/patrick-kidger/wadler_lindig",
+      "installed": true
+    },
+    {
+      "name": "wheel",
+      "expected_version": "0.47.0",
+      "installed_version": "0.47.0",
+      "version_matches": true,
+      "licence_summary": "MIT",
+      "project_url": "Changelog, https://wheel.readthedocs.io/en/stable/news.html",
+      "installed": true
+    },
+    {
+      "name": "wrapt",
+      "expected_version": "2.1.2",
+      "installed_version": "2.1.2",
+      "version_matches": true,
+      "licence_summary": "BSD-2-Clause",
+      "project_url": "Homepage, https://github.com/GrahamDumpleton/wrapt",
+      "installed": true
+    }
+  ],
+  "dependency_count": 29,
+  "archive_prohibited_prefixes": [
+    "data/raw_ct",
+    "data/source_code_refs",
+    "outputs/ucl_270khz_freefield_intake_20260812"
+  ],
+  "archive_exclusions": [
+    {
+      "path": "data/raw_ct/079.nii",
+      "reason": "restricted health data; record DOI, size and SHA-256 but do not redistribute"
+    },
+    {
+      "path": "CT-derived voxel property volumes and masks",
+      "reason": "potentially reconstructable anatomy; exclude pending formal derived-data/privacy decision"
+    },
+    {
+      "path": "pressure_max_mpa.npz and full solver fields",
+      "reason": "large generated artifacts; retain hashes and compact summaries in the execution record"
+    },
+    {
+      "path": "data/source_code_refs/PRESTUS_source and BabelBrain_source",
+      "reason": "third-party source snapshots; cite upstream repositories and licences rather than repackaging"
+    },
+    {
+      "path": "credentials, signed agreements and private ethics records",
+      "reason": "private author/institutional records; never include in a public archive"
+    }
+  ],
+  "checks": {
+    "29_exactly_pinned_dependencies": true,
+    "all_pinned_dependencies_installed": true,
+    "all_installed_versions_match": true,
+    "all_dependencies_have_licence_metadata": true,
+    "root_project_licence_absent": true,
+    "raw_ct_prefix_prohibited": true,
+    "third_party_source_prefix_prohibited": true,
+    "ucl_intake_prefix_prohibited": true,
+    "raw_ct_explicitly_excluded": true,
+    "reconstructable_anatomy_explicitly_excluded": true,
+    "large_pressure_fields_explicitly_excluded": true,
+    "private_records_explicitly_excluded": true
+  },
+  "claim_boundary": "Installed-package metadata is an inventory aid, not legal advice; the copyright holder must choose the project licence and approve the final notices before release."
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "source_evidence_brief": "outputs/evidence_briefs/kwave_simulation_quality/evidence_brief.json",
+  "default_preset": "quick",
+  "presets": {
+    "smoke": {
+      "quality_level": "smoke",
+      "intended_use": "Script, I/O, source, sensor, and medium connectivity checks only.",
+      "evidence_level": "plumbing_only_not_physical_evidence",
+      "screening_only": true,
+      "is_paper_grade_candidate": false,
+      "required_summary_fields": ["preset", "dx_m", "ppw_min", "pml_size", "cfl", "grid_size", "nt", "dt_s", "runtime_s", "backend", "device", "memory_estimate"],
+      "quality_requirements": {
+        "grid_convergence_required": false,
+        "pml_review_required": false,
+        "cfl_review_required": false,
+        "runtime_checkpoints_required": true
+      },
+      "runtime_policy": {
+        "run_only_when_explicit": true,
+        "default_checkpoint_minutes": 2,
+        "hard_stop_minutes": 5
+      }
+    },
+    "quick": {
+      "quality_level": "quick",
+      "intended_use": "Candidate screening, trend comparison, and pipeline validation.",
+      "evidence_level": "screening_only_not_paper_grade",
+      "screening_only": true,
+      "is_paper_grade_candidate": false,
+      "required_summary_fields": ["preset", "dx_m", "ppw_min", "pml_size", "cfl", "grid_size", "nt", "dt_s", "runtime_s", "backend", "device", "memory_estimate"],
+      "quality_requirements": {
+        "grid_convergence_required": false,
+        "pml_review_required": true,
+        "cfl_review_required": true,
+        "runtime_checkpoints_required": true
+      },
+      "runtime_policy": {
+        "run_only_when_explicit": true,
+        "default_checkpoint_minutes": 2,
+        "hard_stop_minutes": 10
+      }
+    },
+    "standard": {
+      "quality_level": "standard",
+      "intended_use": "Numerical sanity validation before stronger pressure or thermal interpretation.",
+      "evidence_level": "engineering_validation_not_full_reproduction",
+      "screening_only": false,
+      "is_paper_grade_candidate": false,
+      "required_summary_fields": ["preset", "dx_m", "ppw_min", "pml_size", "cfl", "grid_size", "nt", "dt_s", "runtime_s", "backend", "device", "memory_estimate", "pml_review", "cfl_review"],
+      "quality_requirements": {
+        "grid_convergence_required": false,
+        "pml_review_required": true,
+        "cfl_review_required": true,
+        "runtime_checkpoints_required": true
+      },
+      "runtime_policy": {
+        "run_only_when_explicit": true,
+        "default_checkpoint_minutes": 2,
+        "hard_stop_minutes": 30
+      }
+    },
+    "paper_grade": {
+      "quality_level": "paper_grade",
+      "intended_use": "Paper-grade reproduction candidate after convergence and boundary checks.",
+      "evidence_level": "requires_full_numerical_quality_evidence",
+      "screening_only": false,
+      "is_paper_grade_candidate": true,
+      "required_summary_fields": ["preset", "dx_m", "ppw_min", "pml_size", "cfl", "grid_size", "nt", "dt_s", "runtime_s", "backend", "device", "memory_estimate", "grid_convergence", "pml_review", "cfl_review", "environment_record"],
+      "quality_requirements": {
+        "grid_convergence_required": true,
+        "pml_review_required": true,
+        "cfl_review_required": true,
+        "runtime_checkpoints_required": true,
+        "environment_record_required": true
+      },
+      "runtime_policy": {
+        "run_only_when_explicit": true,
+        "default_checkpoint_minutes": 2,
+        "hard_stop_minutes": 120
+      }
+    }
+  }
+}

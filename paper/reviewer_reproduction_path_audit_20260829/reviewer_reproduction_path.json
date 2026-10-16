@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:03:27.157752+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_non_solver_reviewer_path",
+  "submission_ready": false,
+  "command_script_count": 7,
+  "checks": {
+    "all_command_scripts_exist": true,
+    "all_command_scripts_are_archived": true,
+    "guide_has_both_external_dois": true,
+    "guide_discloses_restricted_case079": true,
+    "guide_discloses_three_release_blockers": true,
+    "guide_requires_scratch_outputs": true,
+    "guide_has_no_solver_execute_command": true,
+    "guide_explicitly_blocks_pressure_solver": true,
+    "guide_retains_nonpassing_boundary": true,
+    "guide_retains_submission_false": true,
+    "archive_still_blocked": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Executable-reader-path completeness does not reproduce excluded solver fields or establish physical validation."
+}

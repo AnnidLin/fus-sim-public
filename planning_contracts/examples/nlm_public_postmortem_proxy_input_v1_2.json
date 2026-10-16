@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.2.0",
+  "contract_id": "nlm_additional_head_proxy_geometry_v1_2",
+  "stage": "public_postmortem_geometry_screening",
+  "subject": {
+    "case_id": "nlm_additional_head_72m",
+    "data_origin": "public_postmortem_donor",
+    "specimen_state": "formalin_preserved",
+    "clinical_patient_data": false
+  },
+  "acoustic_model": {
+    "model_path": "outputs\\nlm_ct_acoustic_model_affine_simple_hu300_dx0p75_20260723\\acoustic_model_3d_affine.npz",
+    "model_sha256": "6cc20480faa27a202056e0e7c45a765326a4e5a3a3dc65738bb956726bb476db",
+    "shape_ijk": [334, 334, 311],
+    "spacing_mm_ijk": [0.75, 0.75, 0.75],
+    "affine_ijk_to_world_mm": [
+      [0.75, 0.0, 0.0, -124.71069079637527],
+      [0.0, 0.75, 0.0, -196.36768847703934],
+      [0.0, 0.0, 0.75, -230.5],
+      [0.0, 0.0, 0.0, 1.0]
+    ],
+    "coordinate_system": "RAS_mm",
+    "mapping_profile": "acoustic_mapping_profiles\\simple_hu300.json",
+    "material_labels": {"background": 0, "soft_tissue": 1, "skull": 2}
+  },
+  "target_roi": {
+    "roi_id": "nlm_deep_head_image_derived_proxy_r5mm",
+    "anatomical_status": "image_derived_proxy",
+    "semantic_boundary": "not_tumor_or_lesion",
+    "mask_path": "outputs\\nlm_proxy_acoustic_grid_20260723\\deep_head_proxy_on_acoustic_grid.nii.gz",
+    "mask_sha256": "aed996b411cb8cfa69709cb5d658d0ee5c095481a44be71aea9981dcf81188eb",
+    "center_ijk": [174, 128, 215],
+    "voxel_count": 1264
+  },
+  "trajectory_screening": {
+    "status": "geometric_candidate_only",
+    "entry_plan_path": "outputs\\nlm_ct_entry_plan_left_x_20260723\\entry_plan.json",
+    "entry_plan_sha256": "2142029dac7b56a1989c55ba3b4977501535d5b9e20c35b2c992e2477f6db469",
+    "dry_run_path": "outputs\\nlm_ct_entry_plan_left_x_20260723\\dry_run_15mm\\quality_dry_run_summary.json",
+    "dry_run_sha256": "cb129b704461cd98b7e3ca330634232332ece1a0e7586064628b9920fd419adb",
+    "target_ijk": [174, 128, 215],
+    "entry_ijk": [76, 128, 215],
+    "source_center_ijk": [46, 128, 215],
+    "target_label": 1,
+    "entry_label": 2,
+    "source_label": 0,
+    "has_skull_crossing": true,
+    "source_material_semantics": "mixed_medium_idealized_source",
+    "source_label_counts": {
+      "background": 180,
+      "soft_tissue": 169,
+      "skull": 0
+    },
+    "mixed_medium_screening_only": true
+  },
+  "readiness_gates": {
+    "automated_public_data_pipeline_ready": true,
+    "engineering_sandbox_input_ready": true,
+    "expert_required_for_engineering_sandbox": false,
+    "expert_human_registration_qc_ready": false,
+    "registered_anatomical_roi_ready": false,
+    "hardware_geometry_ready": false,
+    "mixed_medium_quick_dry_run_recorded": true,
+    "standard_simulation_execution_permitted": false,
+    "engineering_blockers": [
+      "hardware_geometry_missing",
+      "mixed_medium_source_not_external_hardware",
+      "standard_or_paper_grade_execution_not_permitted"
+    ],
+    "anatomical_or_clinical_blockers": [
+      "expert_human_registration_qc_missing",
+      "registered_anatomical_roi_missing"
+    ]
+  },
+  "provenance": {
+    "readiness_report_path": "outputs\\nlm_public_case_readiness_20260723\\public_case_readiness.json",
+    "historical_quick_pressure_outputs_exist": true,
+    "contract_authorizes_new_pressure_execution": false,
+    "clinical_safety_claim": false,
+    "claim_boundary": "mixed_medium_public_postmortem_quick_screening_input_only"
+  }
+}

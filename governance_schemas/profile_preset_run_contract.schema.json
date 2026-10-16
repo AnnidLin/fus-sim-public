@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.profile_preset_run_contract.schema.v1",
+  "title": "fus-sim Profile/Preset/Run Separation Contract",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "generated_at",
+    "module",
+    "profile",
+    "preset",
+    "run",
+    "separation_policy",
+    "claim_policy",
+    "conformance_target"
+  ],
+  "properties": {
+    "contract_version": {"type": "string"},
+    "module": {"const": "profile_preset_run_contract"},
+    "profile": {"type": "object"},
+    "preset": {"type": "object"},
+    "run": {"type": "object"},
+    "separation_policy": {"type": "object"},
+    "claim_policy": {"type": "object"},
+    "conformance_target": {"type": "object"}
+  }
+}

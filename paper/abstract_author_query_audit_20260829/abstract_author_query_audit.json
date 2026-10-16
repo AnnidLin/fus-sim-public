@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:03:27.334516+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_abstract_and_author_query_mapping",
+  "submission_ready": false,
+  "abstract_word_count": 244,
+  "conservative_abstract_ceiling": 250,
+  "query_count": 6,
+  "query_action_mapping": {
+    "Q1": [
+      "A04"
+    ],
+    "Q2": [
+      "A05"
+    ],
+    "Q3": [
+      "A05"
+    ],
+    "Q4": [
+      "A01"
+    ],
+    "Q5": [
+      "A05",
+      "A10"
+    ],
+    "Q6": [
+      "A06",
+      "A07",
+      "A08"
+    ]
+  },
+  "checks": {
+    "abstract_at_or_below_250_words": true,
+    "six_author_queries_retained": true,
+    "all_queries_have_action_mapping": true,
+    "all_mapped_actions_exist": true,
+    "all_mapped_actions_pending": true,
+    "all_mapped_actions_have_owner_evidence_impact": true,
+    "scope_action_covers_single_case_numerical_boundary": true,
+    "release_query_maps_licence_revision_doi": true,
+    "ledger_retains_submission_false": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "A journal-neutral word ceiling and owned query mapping reduce administrative ambiguity; target-journal and author decisions remain pending."
+}

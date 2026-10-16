@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:03:27.276178+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_claim_scope",
+  "submission_ready": false,
+  "forbidden_positive_phrase_hits": [],
+  "checks": {
+    "title_retains_simulation_scope": true,
+    "abstract_reports_single_case_scope": true,
+    "abstract_reports_h115_6_8_6_8_0_8": true,
+    "abstract_blocks_convergence_accuracy_generalization_efficacy_safety": true,
+    "abstract_uses_simulated_pressure_language": true,
+    "no_forbidden_positive_phrase": true,
+    "methods_block_experimental_validation_claim": true,
+    "discussion_retains_nonpassing_external_comparison": true,
+    "discussion_blocks_case079_validation_transfer": true,
+    "data_availability_does_not_imply_release": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Absence of overclaim language improves reporting discipline; it does not establish physical validity or publication readiness."
+}

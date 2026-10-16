@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "figure": "UCL H115 dx0.50-to-dx0.30 grid sensitivity and held-out measurement comparison",
+  "inputs": [
+    "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p5_coordinate_audit.json",
+    "outputs\\ucl_h115_source_registration_audit_20260825\\effective_dx0p3_coordinate_audit.json",
+    "outputs\\ucl_h115_water_dx0p3_grid_sensitivity_full_20260823\\grid_sensitivity.json"
+  ],
+  "outputs": {
+    "png": {
+      "path": "paper\\figures\\ucl_h115_grid_sensitivity_corrected_20260825\\figure_ucl_h115_grid_sensitivity.png",
+      "sha256": "3c7eb48d0b8fef8aec95cff51c98824c6acddfb305b8e03371d8fbe3e2741099"
+    },
+    "pdf": {
+      "path": "paper\\figures\\ucl_h115_grid_sensitivity_corrected_20260825\\figure_ucl_h115_grid_sensitivity.pdf",
+      "sha256": "fb2f8d048b060d2c2d84c80566ef7f921e871d8e3683404c5ae615feaff457c6"
+    }
+  },
+  "claim_boundary": "Two-grid homogeneous-water sensitivity and nonpassing external comparison; not formal convergence or successful source validation."
+}

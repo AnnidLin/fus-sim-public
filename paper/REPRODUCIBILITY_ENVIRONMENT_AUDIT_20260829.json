@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_with_test_runner_gap",
+  "runtime": {
+    "python": "3.12.10",
+    "implementation": "CPython",
+    "os": "Windows 11 build 26200",
+    "kwave_python": "0.6.1",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.7",
+    "h5py": "3.15.1",
+    "backend": "cpp/cpu"
+  },
+  "cli_help_checks": {
+    "analyze_ucl_h115_water_validation.py": true,
+    "analyze_ucl_h115_source_registration.py": true,
+    "generate_ucl_h115_grid_sensitivity_figure.py": true,
+    "generate_ucl_h115_source_registration_figure.py": true,
+    "generate_h115_validation_table.py": true,
+    "generate_h115_methods_table.py": true,
+    "validate_h115_reconstruction.py": true,
+    "validate_h115_manuscript_consistency.py": true,
+    "validate_ucl_h115_source_registration_package.py": true,
+    "generate_h115_paper_bundle_manifest.py": true,
+    "validate_h115_paper_bundle_manifest.py": true
+  },
+  "checks": {
+    "python_matches_manuscript": true,
+    "kwave_matches_manuscript": true,
+    "os_matches_manuscript": true,
+    "cpu_backend_matches_manuscript": true,
+    "scientific_dependencies_are_exactly_pinned": true,
+    "all_11_documented_cli_interfaces_load": true,
+    "accepted_h115_runs_are_standard_not_paper_grade": true,
+    "accepted_h115_runs_are_completed": true,
+    "pytest_available_in_kwave_runtime": false,
+    "pytest_pinned_in_requirements": false
+  },
+  "retained_gap": "The scientific runtime and non-solver CLI interfaces are reproducible, but pytest is neither installed in the retained k-Wave environment nor pinned in requirements-kwave312.txt. Focused submission checks were invoked directly; a fresh full pytest run is not claimed.",
+  "claim_boundary": "Environment/interface audit only; not a rerun of pressure solvers, physical validation or formal convergence."
+}

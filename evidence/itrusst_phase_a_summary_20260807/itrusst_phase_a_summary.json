@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "report_id": "itrusst_phase_a_focused_bowl_summary",
+  "status": "complete",
+  "contract": "benchmarking/itrusst_phase1_contract.json",
+  "source_scope": "focused_bowl_source_1",
+  "cases": [
+    {
+      "benchmark": "BM1",
+      "output_dir": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm1_sc1_axisymmetric_ppw12_20260803",
+      "comparison_path": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm1_sc1_axisymmetric_ppw12_20260803\\comparison.json",
+      "comparison_sha256": "c299cf4cef25c612aa304c3ddba53435223318cb82e810ce4849e491f459350b",
+      "field_sha256": "39206377c7ef51e305898fca02cd664a4789d1b3d5b0297876fbdd4ea2119fef",
+      "coordinate_system": "axisymmetric",
+      "dx_mm": 0.25,
+      "comparison_dx_mm": 0.5,
+      "ppw": 12.0,
+      "points_per_period": 25,
+      "nt": 1500,
+      "omp_threads": null,
+      "solver_runtime_s": 302.4204667999875,
+      "monitored_wall_s": 310.03100000001723,
+      "relative_l2_percent": 3.2625588401892234,
+      "relative_linf_percent": 4.671579757512872,
+      "peak_difference_percent": 0.47391286171407737,
+      "focal_position_difference_mm": 0.5,
+      "reference_peak_pa": 1094346.75,
+      "candidate_peak_pa": 1099533.0,
+      "reference_peak_index": [
+        70,
+        124
+      ],
+      "candidate_peak_index": [
+        70,
+        125
+      ],
+      "reference_widths": {
+        "lateral_minus_3db_mm": 2.9676371588213613,
+        "lateral_minus_6db_mm": 4.070480322394715,
+        "axial_minus_3db_mm": 18.741522137119198,
+        "axial_minus_6db_mm": 26.246911635749726
+      },
+      "candidate_widths_at_reference_peak": {
+        "lateral_minus_3db_mm": 2.9747575680464706,
+        "lateral_minus_6db_mm": 4.082392071004946,
+        "axial_minus_3db_mm": 18.946381077965384,
+        "axial_minus_6db_mm": 26.521144115697204
+      }
+    },
+    {
+      "benchmark": "BM3",
+      "output_dir": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm3_sc1_axisymmetric_ppw12_retry1_20260804",
+      "comparison_path": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm3_sc1_axisymmetric_ppw12_retry1_20260804\\comparison.json",
+      "comparison_sha256": "2647fff1feebdb6efc7f90d84e592ce204f6f6a3f9c984ed7ed5f4e0acf5e0cc",
+      "field_sha256": "17590e608c225df117fba705c57e54fcdd6099db039a3ab828e07256cf8299d4",
+      "coordinate_system": "axisymmetric",
+      "dx_mm": 0.25,
+      "comparison_dx_mm": 0.5,
+      "ppw": 12.0,
+      "points_per_period": 96,
+      "nt": 5760,
+      "omp_threads": null,
+      "solver_runtime_s": 1123.3167971000075,
+      "monitored_wall_s": 1130.1720000000205,
+      "relative_l2_percent": 15.768230224111118,
+      "relative_linf_percent": 12.291140772473502,
+      "peak_difference_percent": 0.22929403101128332,
+      "focal_position_difference_mm": 2.0,
+      "reference_peak_pa": 419139.78125,
+      "candidate_peak_pa": 418178.71875,
+      "reference_peak_index": [
+        70,
+        111
+      ],
+      "candidate_peak_index": [
+        70,
+        115
+      ],
+      "reference_widths": {
+        "lateral_minus_3db_mm": 3.3989732971200937,
+        "lateral_minus_6db_mm": 4.66011026179973,
+        "axial_minus_3db_mm": 22.142859777327907,
+        "axial_minus_6db_mm": 31.474281368611557
+      },
+      "candidate_widths_at_reference_peak": {
+        "lateral_minus_3db_mm": 3.4673762632357636,
+        "lateral_minus_6db_mm": 4.771867373192961,
+        "axial_minus_3db_mm": 21.268859839818752,
+        "axial_minus_6db_mm": 32.20695088789219
+      }
+    },
+    {
+      "benchmark": "BM4",
+      "output_dir": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm4_sc1_axisymmetric_ppw12_throttled_20260807",
+      "comparison_path": "<PRIVATE_WORKSPACE>\\outputs\\itrusst_bm4_sc1_axisymmetric_ppw12_throttled_20260807\\comparison.json",
+      "comparison_sha256": "2748f9e7aea2521e38f762886f7dc18b06c13ce00ad1ad34b5201a6bf79916df",
+      "field_sha256": "2ff32a0dd9568da622dbdbd741531a1f0cbecd6c46e0ff43d21abc29e0d7d0bb",
+      "coordinate_system": "axisymmetric",
+      "dx_mm": 0.25,
+      "comparison_dx_mm": 0.5,
+      "ppw": 12.0,
+      "points_per_period": 144,
+      "nt": 8640,
+      "omp_threads": 6,
+      "solver_runtime_s": 1276.11666900001,
+      "monitored_wall_s": 1280.218000000008,
+      "relative_l2_percent": 27.100043689838966,
+      "relative_linf_percent": 19.700020257156254,
+      "peak_difference_percent": 13.533469296284565,
+      "focal_position_difference_mm": 1.5,
+      "reference_peak_pa": 316400.53125,
+      "candidate_peak_pa": 359220.5,
+      "reference_peak_index": [
+        70,
+        114
+      ],
+      "candidate_peak_index": [
+        70,
+        111
+      ],
+      "reference_widths": {
+        "lateral_minus_3db_mm": 3.188075956933588,
+        "lateral_minus_6db_mm": 4.36751884554846,
+        "axial_minus_3db_mm": 19.535552553026335,
+        "axial_minus_6db_mm": 27.474012963840913
+      },
+      "candidate_widths_at_reference_peak": {
+        "lateral_minus_3db_mm": 3.2569415095853316,
+        "lateral_minus_6db_mm": 4.470959311886745,
+        "axial_minus_3db_mm": 19.247930242884323,
+        "axial_minus_6db_mm": 26.868819138493045
+      }
+    }
+  ],
+  "interpretation_policy": {
+    "pre_registered_project_pass_threshold": null,
+    "cross_model_statistics_are_context_only": true,
+    "allowed_claim": "Three planned Phase-A engineering benchmark cases were executed and compared with the frozen official k-Wave fields.",
+    "blocked_claims": [
+      "paper-grade numerical convergence",
+      "whole-skull validation",
+      "experimental or clinical validation",
+      "thermal or safety validation"
+    ]
+  }
+}

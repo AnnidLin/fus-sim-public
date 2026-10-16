@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "case079_h1_bbb_proxy_v1",
+  "stage": "research_pure_simulation",
+  "patient_model": {
+    "case_id": "079",
+    "model_path": "outputs/ct_acoustic_model_3d_profile_hu300_dx0p75/acoustic_model_3d.npz",
+    "model_sha256": "c5848bf564f0538d542b407700663dc57f9e43bd6e8563479ffc333454f6eb91",
+    "shape_ijk": [267, 267, 267],
+    "spacing_m_ijk": [0.000750000006519258, 0.000750000006519258, 0.000750000006519258],
+    "axis_order": "ijk",
+    "index_origin": "zero_based",
+    "array_order": "numpy_c_order",
+    "crop_origin_ijk": [37, 100, 79],
+    "material_labels": {
+      "background": 0,
+      "soft_tissue": 1,
+      "skull": 2
+    },
+    "world_mapping": {
+      "status": "unavailable",
+      "reason": "The active acoustic-model NPZ does not preserve an authoritative voxel-to-world affine.",
+      "affine_ijk_to_world_mm": null
+    }
+  },
+  "target_roi": {
+    "roi_id": "target_020_sphere_r3mm_contract_fixture",
+    "roi_kind": "synthetic_sphere_proxy",
+    "anatomical_status": "synthetic_not_anatomical",
+    "coordinate_space": "full_model_zero_based_ijk",
+    "center_full_ijk": [151, 136, 105],
+    "center_local_ijk": [114, 36, 26],
+    "voxel_count": 251,
+    "generation": {
+      "method": "sphere_from_center",
+      "radius_m": 0.003,
+      "mask_path": null
+    }
+  },
+  "transducer_plan": {
+    "trajectory_id": "offset_y-10p0_z-02p5_h1",
+    "entry_plan_path": "outputs/a5_heldout_d60_trajectory_selection_20260719/offset_y-10p0_z-02p5/entry_plan.json",
+    "entry_plan_sha256": "da46b5daa64c473e78452aa833e08e1139590badaff63e44cf17e403f7f86906",
+    "frequency_hz": 500000.0,
+    "aperture_diameter_m": 0.06,
+    "radius_of_curvature_m": 0.07443537530000001,
+    "source_point_count": 2979,
+    "source_point_order": "numpy_c_order_argwhere",
+    "source_mask_sha256": "78bfe794004ff4df3ba1e41879684a55c29694fa41c2ed76bc067bb040ae5907",
+    "target_full_ijk": [151, 136, 105],
+    "source_center_full_ijk": [53, 123, 102],
+    "entry_full_ijk": [74, 126, 103],
+    "pml_size": 12,
+    "cfl": 0.2
+  },
+  "exposure_protocol": {
+    "purpose": "bbb_opening_simulation_proxy",
+    "status": "calibration_reference_only",
+    "drive_pressure_pa": 1000000.0,
+    "pressure_semantics": "source_excitation_not_insitu_dose",
+    "tone_burst_cycles": 2,
+    "prf_hz": null,
+    "duty_cycle_fraction": null,
+    "total_sonication_time_s": null,
+    "microbubble": {
+      "status": "not_specified",
+      "product": null,
+      "dose": null,
+      "timing": null
+    },
+    "clinical_dose_claim": false
+  },
+  "plan_metrics": {
+    "status": "not_computed",
+    "roi_peak_pressure_pa": null,
+    "roi_mean_pressure_pa": null,
+    "roi_coverage_fraction": null,
+    "insitu_pnp_pa": null,
+    "mechanical_index": null,
+    "skull_peak_pressure_pa": null,
+    "global_peak_pressure_pa": null,
+    "max_temperature_rise_c": null,
+    "clinical_safety_claim": false
+  },
+  "provenance": {
+    "created_at": "2026-07-21",
+    "created_by": "Codex",
+    "source_evidence_brief": "outputs/evidence_briefs/bbb_planning_contract/evidence_brief.json",
+    "pressure_execution": false
+  }
+}

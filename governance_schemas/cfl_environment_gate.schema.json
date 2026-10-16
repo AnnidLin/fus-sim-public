@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fus-sim.cfl_environment_gate.schema.v1",
+  "title": "fus-sim CFL / Environment Gate",
+  "type": "object",
+  "required": [
+    "gate_version",
+    "generated_at",
+    "module",
+    "scope",
+    "inputs",
+    "decision",
+    "observed_run_quality",
+    "historical_environment_record",
+    "missing_environment_fields",
+    "checks",
+    "blocked_claims",
+    "not_executed"
+  ],
+  "properties": {
+    "gate_version": {"const": "1.0.0"},
+    "module": {"const": "cfl_environment_gate"},
+    "inputs": {"type": "object"},
+    "decision": {"type": "object"},
+    "observed_run_quality": {"type": "object"},
+    "historical_environment_record": {"type": "object"},
+    "missing_environment_fields": {"type": "array", "items": {"type": "string"}},
+    "checks": {"type": "array"},
+    "blocked_claims": {"type": "array"},
+    "not_executed": {"type": "array"}
+  }
+}

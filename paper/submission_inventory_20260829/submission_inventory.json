@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:42:29.693401+00:00",
+  "status": "passed_inventory_author_inputs_pending",
+  "submission_ready": false,
+  "target_journal": null,
+  "journal_limits_evaluated": false,
+  "manuscript": {
+    "path": "paper/PUB2_MANUSCRIPT_DRAFT_V0_1_20260812.md",
+    "sha256": "bbb39be5f056f367038e1985d03ea696505ebf7d9d3166773ecb875e457a0314",
+    "bytes": 30224,
+    "approximate_word_count_including_references": 4303,
+    "abstract_word_count": 244,
+    "level_2_sections": [
+      "Abstract",
+      "Introduction",
+      "Methods",
+      "Results",
+      "Discussion",
+      "Data and code availability",
+      "Figure legends",
+      "References",
+      "Pre-submission author queries"
+    ],
+    "reference_count": 11,
+    "main_figure_legend_count": 3,
+    "supplementary_figure_legend_count": 2,
+    "supplementary_table_legend_count": 2,
+    "pre_submission_author_query_count": 6
+  },
+  "asset_groups": [
+    "paper/figures/pub2_20260812/figure_manifest.json",
+    "paper/figures/ucl_h115_grid_sensitivity_corrected_20260825/figure_manifest.json",
+    "paper/figures/ucl_h115_source_registration_20260825/figure_manifest.json",
+    "paper/tables/ucl_h115_validation_20260826/h115_validation_endpoints.json",
+    "paper/tables/ucl_h115_validation_20260826/h115_methods_parameters.json"
+  ],
+  "paper_bundle_file_count": 31,
+  "archive_file_count": 136,
+  "checks": {
+    "required_sections_present": true,
+    "references_are_1_to_11": true,
+    "three_main_figure_legends": true,
+    "two_supplementary_figure_legends": true,
+    "two_supplementary_table_legends": true,
+    "five_asset_groups_present": true,
+    "paper_bundle_passed": true,
+    "archive_has_136_files_and_is_blocked": true,
+    "claim_boundary_present": true,
+    "author_queries_retained": true
+  },
+  "author_pending": [
+    "target journal and article type",
+    "journal word/figure/table/supplement limits",
+    "authors, affiliations, ORCIDs and CRediT roles",
+    "funding, competing interests and acknowledgements",
+    "private PhysioNet access and journal-specific consent/waiver wording",
+    "project licence, immutable revision and archive DOI"
+  ],
+  "claim_boundary": "Inventory completeness is not submission authorization, physical validation or formal convergence."
+}

@@ -1,0 +1,22 @@
+category,parameter,value,unit_or_note,evidence_status
+anatomy,case,Case079,NIfTI CT,supported
+model,acoustic_mapping,simple_hu300 explicit-alpha,alpha_power=1.5,supported
+geometry,grid_spacing,0.7500000065,mm,supported
+geometry,reference_grid,133x98x101,voxels,supported
+geometry,PML16_grid,137x98x101,voxels,supported
+time,reference_nt,1867,steps,supported
+time,reference_dt,5.3571429e-8,s,supported
+time,simulation_window,100,us,supported
+source,frequency,250,kHz,supported
+source,excitation_pressure,1,MPa prescribed source amplitude,supported
+source,tone_burst,2,cycles,supported
+transducer,aperture,60,mm,supported
+transducer,radius,74.435,mm,supported
+transducer,source_points,4971,all background,supported
+numerics,minimum_PPW,8,minimum sound speed,supported
+numerics,reference_CFL,0.2,dimensionless,supported
+numerics,PML_levels,12 and 16,grid points,supported
+numerics,preset,standard,engineering_validation_not_full_reproduction,supported
+runtime,backend,Python k-Wave 0.6.1,CPU,supported
+runtime,Python,3.12.10,Windows 11,supported
+

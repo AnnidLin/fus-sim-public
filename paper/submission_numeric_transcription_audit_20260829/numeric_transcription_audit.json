@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-28T21:23:20.545086+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_numeric_transcription",
+  "submission_ready": false,
+  "expected_tokens": {
+    "ratio_pair": "0.4774 to 0.9849",
+    "distance_pair": "57.38 to 2.49 mm",
+    "target_pressure_pair": "1.891 to 2.554 MPa",
+    "global_pressure_pair": "3.962 to 2.593 MPa",
+    "target_pressure_change": "+35.04%",
+    "global_pressure_change": "−34.54%",
+    "pml_baseline_l2": "1.83 × 10−5",
+    "pml_baseline_linf": "6.75 × 10−5",
+    "pml_tr_l2": "5.05 × 10−5",
+    "pml_tr_linf": "1.46 × 10−4",
+    "cfl_l2_linf": "0.654%/1.375%",
+    "cfl_target_change": "−0.770%"
+  },
+  "checks": {
+    "ratio_pair": true,
+    "distance_pair": true,
+    "target_pressure_pair": true,
+    "global_pressure_pair": true,
+    "target_pressure_change": true,
+    "global_pressure_change": true,
+    "pml_baseline_l2": true,
+    "pml_baseline_linf": true,
+    "pml_tr_l2": true,
+    "pml_tr_linf": true,
+    "cfl_l2_linf": true,
+    "cfl_target_change": true,
+    "pressure_units_are_mpa": true,
+    "distance_units_are_mm": true,
+    "cfl_claim_is_baseline_only": true,
+    "pressure_accuracy_boundary_retained": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Scalar transcription and units only; this audit does not validate the underlying physics or authorize submission."
+}

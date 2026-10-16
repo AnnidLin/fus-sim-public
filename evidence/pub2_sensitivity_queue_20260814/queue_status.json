@@ -1,0 +1,28 @@
+{
+  "status": "stopped",
+  "finished_at_utc": "2026-08-14T18:54:11.033605+00:00",
+  "results": [
+    {
+      "status": "failed",
+      "cell_id": "dx0p5_grid",
+      "method": "baseline",
+      "results": [
+        {
+          "stage_id": "baseline",
+          "return_code": 0,
+          "stopped_reason": null,
+          "output_validation": {
+            "status": "failed",
+            "checks": {
+              "pressure_max_mpa.npz.exists": false,
+              "summary.json.exists": false,
+              "focus_metrics.json.exists": false
+            }
+          },
+          "status": "failed",
+          "finished_at_utc": "2026-08-14T18:54:11.023977+00:00"
+        }
+      ]
+    }
+  ]
+}

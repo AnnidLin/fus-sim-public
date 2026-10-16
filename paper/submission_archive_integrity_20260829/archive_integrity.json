@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-29T00:42:58.612593+00:00",
+  "trace_id": "TRACE-20260829-001",
+  "status": "passed_archive_integrity_blocked_release",
+  "archive_ready": false,
+  "file_count": 136,
+  "mismatches": [],
+  "bad_paths": [],
+  "recomputed_content_digest_sha256": "99e37dbb5411b7f2181ef560abf64017f9154a03cb65b85e13267be2ba320c5e",
+  "checks": {
+    "manifest_has_136_files": true,
+    "paths_are_unique": true,
+    "paths_are_repository_relative": true,
+    "all_sizes_and_hashes_match": true,
+    "total_size_matches": true,
+    "content_digest_matches": true,
+    "csv_matches_manifest": true,
+    "no_missing_or_prohibited": true,
+    "archive_remains_blocked": true,
+    "exact_release_blockers_retained": true,
+    "three_external_dependencies_recorded": true,
+    "restricted_and_large_artifacts_excluded": true
+  },
+  "failed_checks": [],
+  "claim_boundary": "Bitwise archive integrity and exclusion checks do not establish physical validation or release authorization."
+}

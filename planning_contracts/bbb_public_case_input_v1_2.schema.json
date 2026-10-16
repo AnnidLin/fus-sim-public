@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fus-sim.local/schema/bbb-public-case-input-v1.2.json",
+  "title": "fus-sim BBB Public Case Input Contract v1.2",
+  "type": "object",
+  "required": ["schema_version", "contract_id", "stage", "subject", "acoustic_model", "target_roi", "trajectory_screening", "readiness_gates", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.2.0"},
+    "contract_id": {"type": "string", "minLength": 1},
+    "stage": {"const": "public_postmortem_geometry_screening"},
+    "subject": {"$ref": "#/$defs/Subject"},
+    "acoustic_model": {"$ref": "#/$defs/AcousticModel"},
+    "target_roi": {"$ref": "#/$defs/TargetROI"},
+    "trajectory_screening": {"$ref": "#/$defs/Trajectory"},
+    "readiness_gates": {"$ref": "#/$defs/Readiness"},
+    "provenance": {"$ref": "#/$defs/Provenance"}
+  },
+  "$defs": {
+    "Index3": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 0},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "Vector3Positive": {
+      "type": "array",
+      "items": {"type": "number", "exclusiveMinimum": 0},
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "Hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "Subject": {
+      "type": "object",
+      "required": ["case_id", "data_origin", "specimen_state", "clinical_patient_data"],
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {"type": "string", "minLength": 1},
+        "data_origin": {"const": "public_postmortem_donor"},
+        "specimen_state": {"const": "formalin_preserved"},
+        "clinical_patient_data": {"const": false}
+      }
+    },
+    "AcousticModel": {
+      "type": "object",
+      "required": ["model_path", "model_sha256", "shape_ijk", "spacing_mm_ijk", "affine_ijk_to_world_mm", "coordinate_system", "mapping_profile", "material_labels"],
+      "additionalProperties": false,
+      "properties": {
+        "model_path": {"type": "string", "minLength": 1},
+        "model_sha256": {"$ref": "#/$defs/Hash"},
+        "shape_ijk": {"$ref": "#/$defs/Index3"},
+        "spacing_mm_ijk": {"$ref": "#/$defs/Vector3Positive"},
+        "affine_ijk_to_world_mm": {
+          "type": "array",
+          "items": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "coordinate_system": {"const": "RAS_mm"},
+        "mapping_profile": {"type": "string", "minLength": 1},
+        "material_labels": {
+          "type": "object",
+          "required": ["background", "soft_tissue", "skull"],
+          "additionalProperties": false,
+          "properties": {
+            "background": {"const": 0},
+            "soft_tissue": {"const": 1},
+            "skull": {"const": 2}
+          }
+        }
+      }
+    },
+    "TargetROI": {
+      "type": "object",
+      "required": ["roi_id", "anatomical_status", "semantic_boundary", "mask_path", "mask_sha256", "center_ijk", "voxel_count"],
+      "additionalProperties": false,
+      "properties": {
+        "roi_id": {"type": "string", "minLength": 1},
+        "anatomical_status": {"const": "image_derived_proxy"},
+        "semantic_boundary": {"const": "not_tumor_or_lesion"},
+        "mask_path": {"type": "string", "minLength": 1},
+        "mask_sha256": {"$ref": "#/$defs/Hash"},
+        "center_ijk": {"$ref": "#/$defs/Index3"},
+        "voxel_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "SourceLabelCounts": {
+      "type": "object",
+      "required": ["background", "soft_tissue", "skull"],
+      "additionalProperties": false,
+      "properties": {
+        "background": {"type": "integer", "minimum": 1},
+        "soft_tissue": {"type": "integer", "minimum": 1},
+        "skull": {"const": 0}
+      }
+    },
+    "Trajectory": {
+      "type": "object",
+      "required": ["status", "entry_plan_path", "entry_plan_sha256", "dry_run_path", "dry_run_sha256", "target_ijk", "entry_ijk", "source_center_ijk", "target_label", "entry_label", "source_label", "has_skull_crossing", "source_material_semantics", "source_label_counts", "mixed_medium_screening_only"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {"const": "geometric_candidate_only"},
+        "entry_plan_path": {"type": "string", "minLength": 1},
+        "entry_plan_sha256": {"$ref": "#/$defs/Hash"},
+        "dry_run_path": {"type": "string", "minLength": 1},
+        "dry_run_sha256": {"$ref": "#/$defs/Hash"},
+        "target_ijk": {"$ref": "#/$defs/Index3"},
+        "entry_ijk": {"$ref": "#/$defs/Index3"},
+        "source_center_ijk": {"$ref": "#/$defs/Index3"},
+        "target_label": {"const": 1},
+        "entry_label": {"const": 2},
+        "source_label": {"const": 0},
+        "has_skull_crossing": {"const": true},
+        "source_material_semantics": {"const": "mixed_medium_idealized_source"},
+        "source_label_counts": {"$ref": "#/$defs/SourceLabelCounts"},
+        "mixed_medium_screening_only": {"const": true}
+      }
+    },
+    "Readiness": {
+      "type": "object",
+      "required": ["automated_public_data_pipeline_ready", "engineering_sandbox_input_ready", "expert_required_for_engineering_sandbox", "expert_human_registration_qc_ready", "registered_anatomical_roi_ready", "hardware_geometry_ready", "mixed_medium_quick_dry_run_recorded", "standard_simulation_execution_permitted", "engineering_blockers", "anatomical_or_clinical_blockers"],
+      "additionalProperties": false,
+      "properties": {
+        "automated_public_data_pipeline_ready": {"const": true},
+        "engineering_sandbox_input_ready": {"const": true},
+        "expert_required_for_engineering_sandbox": {"const": false},
+        "expert_human_registration_qc_ready": {"const": false},
+        "registered_anatomical_roi_ready": {"const": false},
+        "hardware_geometry_ready": {"const": false},
+        "mixed_medium_quick_dry_run_recorded": {"const": true},
+        "standard_simulation_execution_permitted": {"const": false},
+        "engineering_blockers": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 3
+        },
+        "anatomical_or_clinical_blockers": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 2
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "required": ["readiness_report_path", "historical_quick_pressure_outputs_exist", "contract_authorizes_new_pressure_execution", "clinical_safety_claim", "claim_boundary"],
+      "additionalProperties": false,
+      "properties": {
+        "readiness_report_path": {"type": "string", "minLength": 1},
+        "historical_quick_pressure_outputs_exist": {"const": true},
+        "contract_authorizes_new_pressure_execution": {"const": false},
+        "clinical_safety_claim": {"const": false},
+        "claim_boundary": {"const": "mixed_medium_public_postmortem_quick_screening_input_only"}
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-08-25T12:21:40.685819+00:00",
+  "status": "observation_with_failed_preregistered_checks",
+  "amplitude_fit": {
+    "training_endpoint": "axial spatial peak",
+    "scale_factor": 0.06212216439300937
+  },
+  "axial_held_out": {
+    "normalized_correlation": 0.9914911549757764,
+    "normalized_relative_l2_percent": 3.779594045757485,
+    "scale_factor": 0.06212216439300937,
+    "measured_peak_distance_mm": 49.005909155277436,
+    "simulated_peak_distance_mm": 51.18274185389224,
+    "peak_position_difference_mm": 2.1768326986148026
+  },
+  "transverse_held_out": {
+    "normalized_correlation": 0.9873603634812257,
+    "normalized_relative_l2_percent": 15.469311341107025,
+    "common_points": 2809,
+    "common_fraction": 0.3546269410427976,
+    "peak_pressure_error_percent": 0.6017155423993004,
+    "peak_position_difference_mm": 0.0,
+    "x_width_error_percent": 4.295445193466717,
+    "y_width_error_percent": 7.160086887327891,
+    "measured": {
+      "minus6db_x_width_mm": 8.232629808901754,
+      "minus6db_y_width_mm": 8.013627695463292,
+      "peak_x_mm": -0.015999999959603883,
+      "peak_y_mm": 0.019999999494757503
+    },
+    "simulated": {
+      "minus6db_x_width_mm": 8.586257910324132,
+      "minus6db_y_width_mm": 8.587410401285435,
+      "peak_x_mm": -0.015999999959603883,
+      "peak_y_mm": 0.019999999494757503
+    }
+  },
+  "checks": {
+    "axial_peak_position": false,
+    "axial_normalized_l2": true,
+    "transverse_peak_pressure": true,
+    "transverse_peak_position": true,
+    "transverse_correlation": true,
+    "transverse_normalized_l2": false,
+    "transverse_x_width": true,
+    "transverse_y_width": true
+  },
+  "claim_boundary": "One homogeneous-water engineering validation observation; not Case079, skull, thermal or clinical evidence."
+}

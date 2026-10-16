@@ -1,0 +1,14 @@
+{
+  "event": "attention_required",
+  "stage": "auto",
+  "status": "emergency_ceiling_stopped",
+  "at_utc": "2026-08-14T18:54:08.272068+00:00",
+  "elapsed_s": 14402.67200000002,
+  "return_code": null,
+  "expected_output_exists": {
+    "pressure": false,
+    "summary": false,
+    "focus_metrics": false
+  },
+  "stop_reason": "maximum monitored wall time reached after dynamic adjustments"
+}

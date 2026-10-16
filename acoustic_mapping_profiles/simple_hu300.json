@@ -1,0 +1,38 @@
+{
+  "profile_id": "simple_hu300",
+  "description": "Binary CT-HU mapping matching the original fus-sim default behavior.",
+  "mapping_type": "binary_threshold",
+  "thresholds_hu": {
+    "air_lt": -500,
+    "bone_gte": 300
+  },
+  "materials": {
+    "background": {
+      "label": 0,
+      "name": "air_or_coupling_background",
+      "sound_speed_m_s": 1500.0,
+      "density_kg_m3": 1000.0,
+      "alpha_db_mhz_cm": 0.002
+    },
+    "soft_tissue": {
+      "label": 1,
+      "name": "soft_tissue_or_brain",
+      "sound_speed_m_s": 1540.0,
+      "density_kg_m3": 1040.0,
+      "alpha_db_mhz_cm": 0.6
+    },
+    "skull": {
+      "label": 2,
+      "name": "skull_bone",
+      "sound_speed_m_s": 2800.0,
+      "density_kg_m3": 1900.0,
+      "alpha_db_mhz_cm": 8.0
+    }
+  },
+  "evidence_source": "fus-sim current default; paper_parameter_matrix.csv Gao baseline context; outputs/ct_segmentation_eval_079 threshold comparison",
+  "review_status": "baseline_compatible",
+  "notes": [
+    "This profile preserves the prior 300 HU binary skull threshold for backward compatibility.",
+    "It is a quick neuromodulation screening profile, not a paper-grade continuous skull mapping."
+  ]
+}

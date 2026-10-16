@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-16",
+  "trace_id": "TRACE-20261016-001",
+  "scope": "public packaging and synthetic software checks only",
+  "python_files_parsed": 552,
+  "json_files_parsed": 81,
+  "public_file_count_before_reports": 914,
+  "file_audit_findings": [],
+  "credential_pattern_findings": [],
+  "credential_scan_boundary": "Selected common key and credential-URL patterns; not a guarantee against every possible secret. Private Git history is not included.",
+  "synthetic_smoke": {
+    "status": "passed",
+    "solver_started": false,
+    "medical_data_used": false,
+    "voxel_count": 123
+  },
+  "unit_tests": {
+    "status": "passed",
+    "run": 11,
+    "failures": 0,
+    "errors": 0,
+    "modules": [
+      "tests.test_bbb_roi",
+      "tests.test_windows_process_tree_guard_20260807",
+      "tests.test_generate_submission_archive_manifest"
+    ],
+    "temporary_directory": "workspace-local .tmp/public-smoke"
+  },
+  "initial_attempt": {
+    "run": 21,
+    "errors": 2,
+    "explanation": "One planning-contract test requires excluded CT model; it remains an archive-dependent historical test, not in public suite. A temp-file write was denied by sandbox; repeated synthetic suite with workspace-local temporary directory passed."
+  },
+  "not_claimed": [
+    "full test suite passes",
+    "complete experiment regeneration",
+    "successful H115 validation",
+    "clinical safety",
+    "formal CT convergence"
+  ],
+  "staged_manifest_check": {
+    "indexed_files": 914,
+    "missing_or_extra_paths": 0,
+    "staged_content_sha256_mismatches": 0,
+    "tracked_deletions": 0
+  },
+  "historical_formatting": {
+    "git_diff_check": "reports inherited trailing whitespace/blank EOF only; source formatting preserved",
+    "diagnostic_lines": 885
+  },
+  "privacy_review": {
+    "date": "2026-10-16",
+    "scope": "All tracked snapshot paths and UTF-8 content; known personal identifiers, institutional paths and interpersonal references",
+    "findings_remaining": 0,
+    "changed_files": 25,
+    "python_files_parsed_after_redaction": 552,
+    "history": "Owner-authorized replacement of public main history with a privacy-reviewed root snapshot. Private local history backup retained. Remote caches and third-party copies are outside this operation.",
+    "boundary": "Scholarly citations, third-party attribution and GitHub account handle retained. Remote caches and third-party copies are outside this check."
+  }
+}

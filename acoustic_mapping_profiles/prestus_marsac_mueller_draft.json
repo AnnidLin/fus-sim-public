@@ -1,0 +1,93 @@
+{
+  "profile_id": "prestus_marsac_mueller_draft",
+  "description": "Review-pending source-backed draft profile based on PRESTUS Marsac-style density/sound-speed mapping and Mueller-style attenuation mapping. This is for model-build validation only and must not be used as a default pressure baseline.",
+  "mapping_type": "prestus_marsac_mueller",
+  "thresholds_hu": {
+    "air_lt": -500,
+    "bone_gte": 300
+  },
+  "materials": {
+    "background": {
+      "label": 0,
+      "name": "air_or_coupling_background",
+      "sound_speed_m_s": 1500.0,
+      "density_kg_m3": 1000.0,
+      "alpha_db_mhz_cm": 0.002
+    },
+    "soft_tissue": {
+      "label": 1,
+      "name": "soft_tissue_or_brain",
+      "sound_speed_m_s": 1540.0,
+      "density_kg_m3": 1040.0,
+      "alpha_db_mhz_cm": 0.6
+    },
+    "skull": {
+      "label": 2,
+      "name": "skull_bone_source_backed_draft",
+      "sound_speed_m_s": 2800.0,
+      "density_kg_m3": 1900.0,
+      "alpha_db_mhz_cm": 8.0
+    }
+  },
+  "source_backed_mapping": {
+    "route": "PRESTUS marsac density/sound-speed + PRESTUS mueller attenuation draft",
+    "hu_min": 300,
+    "hu_max": 2000,
+    "density": {
+      "algorithm": "prestus_marsac",
+      "formula": "rho_water + (rho_bone - rho_water) * (clip(HU, HU_min, HU_max) - HU_min) / (HU_max - HU_min)",
+      "rho_water_kg_m3": 1000.0,
+      "rho_bone_kg_m3": 2100.0,
+      "source_locator": "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_density.m:86-108"
+    },
+    "sound_speed": {
+      "algorithm": "prestus_marsac",
+      "formula": "c_water + (c_skull - c_water) * (rho - rho_water) / (rho_bone - rho_water)",
+      "c_water_m_s": 1500.0,
+      "c_skull_m_s": 3360.0,
+      "rho_water_kg_m3": 1000.0,
+      "rho_bone_kg_m3": 2100.0,
+      "source_locator": "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_soundspeed.m:48-57"
+    },
+    "attenuation": {
+      "algorithm": "prestus_mueller",
+      "formula": "alpha_at_500khz = alpha_min + (alpha_max - alpha_min) * (1 - (clip(HU, HU_min, HU_max) - HU_min) / (HU_max - HU_min))^0.5; alpha_coeff = alpha_at_500khz / 0.5^alpha_power",
+      "alpha_min_db_cm_at_500khz": 4.0,
+      "alpha_max_db_cm_at_500khz": 8.7,
+      "alpha_power": 1.0,
+      "output_unit_assumption": "dB/MHz/cm alpha0 for k-Wave-style alpha_coeff when alpha_power=1",
+      "source_locator": "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_attenuation.m:52-68",
+      "unit_risk": "high"
+    }
+  },
+  "alpha_semantics": {
+    "alpha_power": 1.0,
+    "alpha_mode": null,
+    "alpha_coeff_kind": "alpha0_prefactor",
+    "alpha_coeff_unit": "dB/MHz/cm",
+    "reference_frequency_hz": 500000.0,
+    "source_route": "PRESTUS medium_pct_attenuation.m mueller route",
+    "source_locator": "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_attenuation.m:52-68",
+    "status": "review_pending_requires_kWaveMedium_semantics_audit",
+    "notes": [
+      "PRESTUS mueller route defines alpha_min/max at 500 kHz and converts to alpha0 using alpha_at_500khz / 0.5^alpha_power.",
+      "This metadata records intended semantics only; it does not validate pressure simulations."
+    ]
+  },
+  "evidence_source": "PRESTUS source snapshot downloaded to data/source_code_refs/PRESTUS_source; see outputs/source_formula_extraction/key_formula_candidates.md",
+  "source_locators": [
+    "data/source_code_refs/PRESTUS_source/doc/doc_pseudoCT.md:85-230",
+    "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_density.m:86-108",
+    "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_soundspeed.m:48-57",
+    "data/source_code_refs/PRESTUS_source/functions/medium/medium_pct_attenuation.m:52-68",
+    "data/source_code_refs/BabelBrain_source/TranscranialModeling/BabelIntegrationBASE.py:237-274",
+    "data/source_code_refs/BabelBrain_source/TranscranialModeling/BabelIntegrationBASE.py:422-533"
+  ],
+  "review_status": "review_pending_model_build_only_do_not_use_as_default",
+  "notes": [
+    "This profile is for model-build-only validation. Do not use for pressure or thermal conclusions yet.",
+    "Density and sound speed follow PRESTUS Marsac-style source route.",
+    "Attenuation follows PRESTUS Mueller-style source route but remains high-risk because alpha units and k-Wave Python semantics require further audit.",
+    "Do not promote this profile unless model-build validation, unit audit, and user-reviewed evidence gates pass."
+  ]
+}
