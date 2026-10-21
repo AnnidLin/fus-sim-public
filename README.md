@@ -1,10 +1,10 @@
 # fus-sim
 
-**经颅聚焦超声研究工具与证据快照 · Project paused on 2026-10-16**
+**经颅聚焦超声研究工具与证据快照 · Public research snapshot (baseline 2026-10-16) · issues and PRs reviewed, best effort**
 
 Python/k-Wave research workflows for transcranial focused ultrasound: CT-derived acoustic models, source-array/time-reversal focusing, numerical benchmarks, sensitivity analysis and reproducibility records.
 
-维护者决定将项目暂告一段落。本仓库公开保留可分享的代码、测试、研究笔记、稿件草案与精简结果，供学习和后续研究参考。项目不承诺持续维护。
+本仓库公开保留可分享的代码、测试、研究笔记、稿件草案与精简结果，供学习和后续研究参考。日常以 best-effort 方式维护：issue 与 pull request 会被查看并在可行时回应；代码基线以 2026-10-16 的公开快照为准，只有明确接受后才会改动，不承诺路线图或时间表。
 
 **Research software only.** H115 external comparison remains **nonpassing**. Complete CT convergence, validated absolute pressure, independent-solver agreement and clinical safety have not been established. Public release does not mean the manuscript is submission-ready.
 
