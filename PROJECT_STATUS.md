@@ -1,10 +1,11 @@
 # 项目状态 / Project status
 
-**2026-10-16：按维护者决定，本项目阶段性停止开发，以公开研究快照保留。**
+**2026-10-16：按维护者决定，本项目以公开研究快照保留。2026-10-21：恢复 best-effort 维护。**
 
-This is a paused research snapshot, not an actively maintained clinical product.
-Historical plans, TODOs and manuscript drafts describe work at their original dates;
-they do not authorize new simulations or imply that the remaining work was completed.
+This repository is a public research snapshot. Issues and pull requests are reviewed on a
+best-effort basis; the code baseline stays at the 2026-10-16 snapshot unless a change is
+explicitly accepted. Historical plans, TODOs and manuscript drafts describe work at their
+original dates; they do not authorize new simulations or imply that the remaining work was completed.
 
 ## What was achieved
 
